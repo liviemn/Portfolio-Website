@@ -1,7 +1,7 @@
 import React from 'react';
-import Typewriter from 'typewriter-effect';
 import { FaLinkedin, FaSpotify } from "react-icons/fa";
 import ThreeModel from '../Components/ThreeModel';
+import Introduction from '../Components/Introduction';
 
 const Home: React.FC = () => {
   return (
@@ -29,28 +29,12 @@ const Home: React.FC = () => {
       {/* Main Section */}
       <div className="relative pt-16 min-h-screen px-8">
         {/* Pin the 3D model to the right */}
-        <div className="absolute top-24 right-80 w-[400px] h-[400px]">
+        <div className="absolute top-30 right-80 w-[400px] h-[400px]">
           <ThreeModel />
         </div>
 
-        {/* Text content on the left */}
-        <div className="max-w-3xl font-mono text-gray-600 text-left text-6xl ml-4">
-          <Typewriter
-            options={{
-              strings: ["Nice to meet you!", "I'm Olivia!"],
-              autoStart: true,
-              loop: true,
-              delay: 80,
-            }}
-          />
-        </div>
-
-        {/* Paragraph below text */}
-        <p className="text-base font-mono text-gray-700 mt-8 max-w-md ml-4">
-          I'm a computer science major in George Mason University. Years of experience in customer service
-          and proficient in Java, Python, HTML & CSS, and C. Actively looking for internships or 
-          other opportunities!
-        </p>
+        {/* Include the Introduction component */}
+        <Introduction />
       </div>
     </>
   );
