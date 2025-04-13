@@ -29,12 +29,13 @@ const Home: React.FC = () => {
       {/* Main Section */}
       <div className="relative pt-16 min-h-screen px-8">
         {/* Pin the 3D model to the right */}
-        <div className="absolute top-30 right-80 w-[400px] h-[400px]">
+        <div className="absolute top-40 right-60 w-[400px] h-[400px]">
           <ThreeModel />
         </div>
 
-        {/* Include the Introduction component */}
-        <Introduction />
+        <div className="bg-white/40 backdrop-blur-lg border border-white/30 rounded-3xl p-10 shadow-lg max-w-3xl mt-28">
+          <Introduction />
+        </div>
       </div>
     </>
   );
