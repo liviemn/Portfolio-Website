@@ -1,43 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
-
 @import "tailwindcss";
 
 @font-face {
-font-family: 'Gg Sans';
-src: url('/gg-sans-regular.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
+    font-family: Montserrat;
+    src: url("../src/assets/fonts/Montserrat-SemiBold.ttf");
 }
 
 @font-face {
-font-family: 'Gg Sans';
-src: url('/gg-sans-bold.ttf') format('truetype');
-font-weight: bold;
-font-style: normal;
+    font-family: Poetsen;
+    src: url("../src/assets/fonts/PoetsenOne-Regular.ttf");
 }
 
-@font-face {
-    font-family: 'Gg Sans';
-    src: url('/gg-sans-italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Gg Sans';
-    src: url('/gg-sans-bolditalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
+@theme {
+    --font-montserrat: Montserrat, "sans-serif";
+    --font-poetsen: Poetsen, "sans-serif";
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    #7ca4d9 0%,
-    #d1cbe9 50%,
-    #a17cc7 100%
-  );
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+    background: linear-gradient(135deg, #7ca4d9 0%, #d1cbe9 50%, #a17cc7 100%);
+    background-size: 200% 200%; /* Make the gradient large enough to animate */
+    animation: moveGradient 5s linear infinite; /* Continuous animation in one direction */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: var(--font-montserrat);
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  @keyframes moveGradient {
+    0% {
+      background-position: 0% 50%; /* Start at the left */
+    }
+    100% {
+      background-position: 100% 50%; /* Move to the right */
+    }
+  }
+  
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poetsen); /* Use Poetsen font for headings */
+  color: #fff; /* White color for headings for contrast */
+}
+
+p {
+  font-family: var(--font-montserrat); /* Use Montserrat font for paragraphs */
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #fff; /* White color for paragraph text */
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+section {
+  padding: 50px 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #5b65d5;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4a54b1; /* Darker shade of the button color */
 }

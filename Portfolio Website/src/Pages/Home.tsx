@@ -1,34 +1,36 @@
-import React from 'react';
-import { FaLinkedin, FaSpotify } from "react-icons/fa";
+import React, { useState, useEffect } from 'react';
+import Navigation from '../Components/Navigation'; // Import the Navigation component
 import ThreeModel from '../Components/ThreeModel';
 import Introduction from '../Components/Introduction';
 
 const Home: React.FC = () => {
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setShowNavbar(false); // Scrolling down
+      } else {
+        setShowNavbar(true); // Scrolling up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <>
-      {/* Floating Icons on top-right of header */}
-      <div className="absolute top-4 right-6 z-50 flex space-x-4">
-        <a
-          href="https://www.linkedin.com/in/liviemoon"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-blue-400 text-3xl transition-colors"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://open.spotify.com/user/liviemn"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-green-400 text-3xl transition-colors"
-        >
-          <FaSpotify />
-        </a>
-      </div>
+      {/* Include Navigation Component */}
+      <Navigation />
 
       {/* Main Section */}
       <div className="relative pt-16 min-h-screen px-8">
-        {/* Pin the 3D model to the right */}
         <div className="absolute top-40 right-60 w-[400px] h-[400px]">
           <ThreeModel />
         </div>
