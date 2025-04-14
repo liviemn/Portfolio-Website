@@ -16,12 +16,11 @@
 }
 
 body {
-    background: linear-gradient(135deg, #7ca4d9 0%, #d1cbe9 50%, #a17cc7 100%);
-    background-size: 200% 200%; /* Make the gradient large enough to animate */
-    animation: moveGradient 5s linear infinite; /* Continuous animation in one direction */
+    background: linear-gradient(90deg, #f1e0c6 0%, #d4b39d 50%, #a88e6f 100%);
+    background-size: 200% 200%;
+    animation: bilinear-gradient 5s infinite alternate;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
     font-family: var(--font-montserrat);
     color: #333;
     line-height: 1.6;
@@ -29,16 +28,48 @@ body {
     margin: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
-  }
-  
-  @keyframes moveGradient {
+}
+
+@keyframes bilinear-gradient {
     0% {
-      background-position: 0% 50%; /* Start at the left */
+      background-position: 0% 50%;
     }
     100% {
-      background-position: 100% 50%; /* Move to the right */
+      background-position: 100% 50%;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
+  
+  @keyframes slideOutRight {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+  
+  .animate-slide-in {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-out {
+    animation: slideOutRight 0.8s ease-in forwards;
+  }
+  
+
   
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poetsen); /* Use Poetsen font for headings */
