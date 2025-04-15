@@ -32,6 +32,7 @@ const Icons: React.FC = () => {
       style={{
         bottom: '100px',
         left: '100px',
+        color: '#3E2B2B',
         opacity: opacityValue,
         transform: `translateX(-${transformValue}px)`, // Move to the left as scroll happens
         transition: 'transform 0.3s ease-out, opacity 0.3s ease-out', // Smooth transition for both transform and opacity
@@ -41,7 +42,7 @@ const Icons: React.FC = () => {
         href="https://www.linkedin.com/in/liviemoon"
         target="_blank"
         rel="noopener noreferrer"
-        className="hover:!text-[#a0522d] transition-transform transform hover:scale-110"
+        className="!text-[#3E2B2B] hover:!text-white transition-transform transform hover:scale-110"
       >
         <FaLinkedin />
       </a>
@@ -49,7 +50,7 @@ const Icons: React.FC = () => {
         href="https://open.spotify.com/user/liviemn"
         target="_blank"
         rel="noopener noreferrer"
-        className="hover:!text-[#a0522d] transition-transform transform hover:scale-110"
+        className="!text-[#3E2B2B] hover:!text-white transition-transform transform hover:scale-110"
       >
         <FaSpotify />
       </a>
@@ -57,7 +58,7 @@ const Icons: React.FC = () => {
         href="https://github.com/liviemn"
         target="_blank"
         rel="noopener noreferrer"
-        className="hover:!text-[#a0522d] transition-transform transform hover:scale-110"
+        className="!text-[#3E2B2B] hover:!text-white transition-transform transform hover:scale-110"
       >
         <FaGithub />
       </a>
