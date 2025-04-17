@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import SpotifyActivity from '../Components/Lanyard';
+import AboutBoxes from '../Components/AboutBoxes'
+import coffeecup from '../assets/coffeecup.png'
 
 function About() {
   const [visible, setVisible] = useState(true);
@@ -32,43 +34,17 @@ function About() {
     >
       {/* Oval Header */}
       <div className="absolute top-35 left-16 rotate-[-6deg]">
-        <div className="px-10 py-4 rounded-2x1 bg-[#3E2B2B] backdrop-blur-md shadow-md text-4xl font-poetsen text-white">
+        <div className="px-10 py-4 rounded-2x1 bg-[#3E2B2B] backdrop-blur-md shadow-lg text-4xl font-poetsen text-white drop-shadow-lg">
           About Me
         </div>
       </div>
 
       {/* Body Boxes */}
-      <div className="absolute left-1/4 top-1/3 transform -translate-x-1/2">
-        <div className="flex flex-col space-y-8">
-          <div className="flex space-x-4">
-            {/* First Box */}
-            <div className="relative w-48 h-53 bg-white text-[#3E2B2B] rounded-xl shadow-md p-4 flex items-center justify-center border-2 border-[#3E2B2B]">
-              <div className="absolute top-[-20px] left-3 w-25 h-10 bg-[#3E2B2B] rounded-full flex items-center justify-center">
-                <span className="text-sm text-white font-poetsen">LIKES</span>
-              </div>
-              Box 1
-            </div>
-            {/* Second Box */}
-            <div className="relative w-48 h-53 bg-white text-[#3E2B2B] rounded-xl shadow-md p-4 flex items-center justify-center border-2 border-[#3E2B2B]">
-              <div className="absolute top-[-20px] left-3 w-25 h-10 bg-[#3E2B2B] rounded-full flex items-center justify-center">
-                  <span className="text-sm text-white font-poetsen">DISLIKES</span>
-              </div>
-              Box 2
-            </div>
-          </div>
-
-          {/* Third Box */}
-          <div className="relative w-100 h-38 bg-white text-[#3E2B2B] rounded-xl shadow-md p-4 flex items-center justify-center border-2 border-[#3E2B2B]">
-            <div className="absolute top-[-20px] left-3 w-25 h-10 bg-[#3E2B2B] rounded-full flex items-center justify-center">
-              <span className="text-sm text-white font-poetsen">HOBBIES</span>
-            </div>
-            Box 3
-          </div>
-        </div>
-      </div>
+        <AboutBoxes />
 
       {/* Spotify Activity */}
-      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'}`}>
+      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-8`}>
+        <img src={coffeecup} alt="Coffee Cup" className="w-80 h-80 translate-y-28 translate-x-18" />
         <SpotifyActivity userId="348153501148381184" />
       </div>
     </div>

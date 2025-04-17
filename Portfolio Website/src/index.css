@@ -73,7 +73,6 @@ body {
   
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poetsen); /* Use Poetsen font for headings */
-  color: #fff; /* White color for headings for contrast */
 }
 
 p {
@@ -83,7 +82,6 @@ p {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  color: #fff; /* White color for paragraph text */
 }
 
 a {
@@ -99,7 +97,7 @@ section {
 
 button {
   padding: 10px 20px;
-  background-color: #5b65d5;
+  background-color: white;
   color: white;
   font-size: 1.2rem;
   border: none;
@@ -109,5 +107,5 @@ button {
 }
 
 button:hover {
-  background-color: #4a54b1; /* Darker shade of the button color */
+  background-color: #3E2B2B;
 }
