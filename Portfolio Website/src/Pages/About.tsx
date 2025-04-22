@@ -32,19 +32,16 @@ function About() {
       ref={aboutRef}
       className="relative h-screen flex justify-end items-end pr-16 pb-40"
     >
-      {/* Oval Header */}
       <div className="absolute top-35 left-16 rotate-[-6deg]">
         <div className="px-10 py-4 rounded-2x1 bg-[#3E2B2B] backdrop-blur-md shadow-lg text-4xl font-poetsen text-white drop-shadow-lg">
           About Me
         </div>
       </div>
 
-      {/* Body Boxes */}
         <AboutBoxes />
 
-      {/* Spotify Activity */}
-      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-8`}>
-        <img src={coffeecup} alt="Coffee Cup" className="w-80 h-80 translate-y-28 translate-x-18" />
+      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-8 translate-y-20`}>
+        <img src={coffeecup} alt="Coffee Cup" className="w-80 h-80 translate-y-36 translate-x-18" />
         <SpotifyActivity userId="348153501148381184" />
       </div>
     </div>

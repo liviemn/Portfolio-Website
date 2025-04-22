@@ -10,9 +10,22 @@
     src: url("../src/assets/fonts/PoetsenOne-Regular.ttf");
 }
 
+@font-face {
+    font-family: Fredoka;
+    src: url("../src/assets/fonts/Fredoka.ttf");
+}
+
+@font-face {
+    font-family: InterBold;
+    src: url("../src/assets/fonts/InterBold.ttf");
+}
+
+
 @theme {
     --font-montserrat: Montserrat, "sans-serif";
     --font-poetsen: Poetsen, "sans-serif";
+    --font-fredoka: Fredoka, "sans-serif";
+    --font-interbold: InterBold, "sans-serif";
 }
 
 body {
@@ -38,6 +51,10 @@ body {
       background-position: 100% 50%;
     }
 }
+.gradient-inner {
+    background: linear-gradient(to bottom, #A3C8C8, #4A7F7F);
+  }
+  
 
 @keyframes slideInRight {
     0% {
@@ -68,44 +85,32 @@ body {
   .animate-slide-out {
     animation: slideOutRight 0.8s ease-in forwards;
   }
+
+  /* Add this CSS to your global styles or within a style tag inside the component */
+  .outline-effect {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
   
-
+  .outline-effect::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid white;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+  }
   
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poetsen); /* Use Poetsen font for headings */
-}
-
-p {
-  font-family: var(--font-montserrat); /* Use Montserrat font for paragraphs */
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-
-a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-section {
-  padding: 50px 20px;
-  margin: 20px 0;
-  text-align: center;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: white;
-  color: white;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #3E2B2B;
-}
+  .outline-effect.active::after {
+    transform: scale(1);
+    opacity: 1;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  

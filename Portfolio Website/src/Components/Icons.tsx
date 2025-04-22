@@ -5,18 +5,16 @@ const Icons: React.FC = () => {
   const [transformValue, setTransformValue] = useState(0);
   const [opacityValue, setOpacityValue] = useState(1);
 
-  // Detect scroll position
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const pageHeight = window.innerHeight;
 
-      // Calculate how much to move the icons and fade them out based on scroll
-      const newTransform = Math.min(scrollPosition / 2, 150); // Adjust divisor to control slide speed
-      const newOpacity = Math.max(1 - scrollPosition / pageHeight, 0); // Fade out as you scroll down
+      const newTransform = Math.min(scrollPosition / 2, 150);
+      const newOpacity = Math.max(1 - scrollPosition / pageHeight, 0);
 
-      setTransformValue(newTransform); // Update translateX value
-      setOpacityValue(newOpacity); // Update opacity
+      setTransformValue(newTransform);
+      setOpacityValue(newOpacity);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -34,8 +32,8 @@ const Icons: React.FC = () => {
         left: '100px',
         color: '#3E2B2B',
         opacity: opacityValue,
-        transform: `translateX(-${transformValue}px)`, // Move to the left as scroll happens
-        transition: 'transform 0.3s ease-out, opacity 0.3s ease-out', // Smooth transition for both transform and opacity
+        transform: `translateX(-${transformValue}px)`,
+        transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
       }}
     >
       <a
