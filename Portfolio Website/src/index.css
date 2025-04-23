@@ -52,7 +52,7 @@ body {
     }
 }
 .gradient-inner {
-    background: linear-gradient(to bottom, #A3C8C8, #4A7F7F);
+    background: linear-gradient(to bottom, #B89C8D 0%, #8E6B55 50%, #6F4E4B 100%);
   }
   
 
