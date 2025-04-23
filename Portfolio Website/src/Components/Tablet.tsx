@@ -9,15 +9,32 @@ const Tablet: React.FC = () => {
   const [selectedBox, setSelectedBox] = useState<string | null>(null);
 
   // Function to handle box click
-  const handleBoxClick = (boxName: string) => {
+  const handleBoxClick = (boxName: string, event: React.MouseEvent) => {
+    const ripple = document.createElement('span');
+    const button = event.currentTarget as HTMLElement;
+    const size = Math.max(button.offsetWidth, button.offsetHeight);
+    const rect = button.getBoundingClientRect();
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+  
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+  
+    ripple.classList.add('ripple');
+    button.appendChild(ripple);
+  
     setSelectedBox(boxName);
+  
+    setTimeout(() => ripple.remove(), 600);
   };
+  
 
   return (
     <div className="w-4/5 h-3/4 bg-white border-4 border-brown rounded-3xl shadow-xl flex justify-center items-center mt-25">
       <div className="w-69/70 h-49/50 gradient-inner border-4 border-brown shadow-xl rounded-2xl flex justify-center items-center relative">
         
-        <div className="absolute top-8 left-20 text-6xl text-white font-fredoka">
+        <div className="absolute top-8 left-20 text-7xl text-white font-londrina">
           <h1>My Coding Journey</h1>
         </div>
 
@@ -25,8 +42,8 @@ const Tablet: React.FC = () => {
         <div className="space-y-4 items-start absolute left-20 top-40 text-white font-fredoka max-h-[300px] overflow-y-auto">
           {/* Box 1 */}
           <div
-            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer"
-            onClick={() => handleBoxClick('Website')}
+            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
+            onClick={(e) => handleBoxClick('Website', e)}
           >
             <div className="flex items-center gap-x-3">
               <img src={File} alt="file icon" className="w-6 h-6 ml-6" />
@@ -35,8 +52,8 @@ const Tablet: React.FC = () => {
           </div>
           {/* Box 2 */}
           <div
-            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer"
-            onClick={() => handleBoxClick('Project Two')}
+            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
+            onClick={(e) => handleBoxClick('Project Two', e)}
           >
             <div className="flex gap-x-3">
               <img src={File} alt="file icon" className="w-6 h-6 ml-6" />
@@ -45,8 +62,8 @@ const Tablet: React.FC = () => {
           </div>
           {/* Box 3 */}
           <div
-            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer"
-            onClick={() => handleBoxClick('Project Three')}
+            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
+            onClick={(e) => handleBoxClick('Project Three', e)}
           >
             <div className="flex items-center gap-x-3">
               <img src={File} alt="file icon" className="w-6 h-6 ml-6" />
@@ -55,8 +72,8 @@ const Tablet: React.FC = () => {
           </div>
           {/* Box 4 */}
           <div
-            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer"
-            onClick={() => handleBoxClick('Project Four')}
+            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
+            onClick={(e) => handleBoxClick('Project Four', e)}
           >
             <div className="flex items-center gap-x-3 ml-6">
               <img src={File} alt="file icon" className="w-6 h-6" />
@@ -65,8 +82,8 @@ const Tablet: React.FC = () => {
           </div>
           {/* Box 5 */}
           <div
-            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer"
-            onClick={() => handleBoxClick('Project Five')}
+            className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
+            onClick={(e) => handleBoxClick('Project Five', e)}
           >
             <div className="flex items-center gap-x-3 ml-6">
               <img src={File} alt="file icon" className="w-6 h-6" />
@@ -88,7 +105,7 @@ const Tablet: React.FC = () => {
                   href={(() => {
                     switch (selectedBox) {
                       case 'Website':
-                        return 'https://github.com/your-username/website-repo';
+                        return 'https://github.com/liviemn/Portfolio-Website';
                       case 'Project Two':
                         return 'https://github.com/your-username/project-two-repo';
                       case 'Project Three':
