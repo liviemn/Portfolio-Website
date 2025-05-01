@@ -31,15 +31,18 @@ const Tablet: React.FC = () => {
   
 
   return (
-    <div className="w-4/5 h-3/4 bg-white border-4 border-brown rounded-3xl shadow-xl flex justify-center items-center mt-25">
-      <div className="w-69/70 h-49/50 gradient-inner border-4 border-brown shadow-xl rounded-2xl flex justify-center items-center relative">
+    <div className="w-4/5 h-3/4 bg-white border-4 border-brown rounded-3xl shadow-xl mt-25">
+      <div className="w-full h-15 bg-[#3E2B2B] rounded-t-2xl flex items-center justify-center text-white font-pixel text-3xl">
         
-        <div className="absolute top-8 left-20 text-7xl text-white font-londrina">
+      </div>
+      <div className="w-65/70 h-40/50 gradient-inner border-4 border-brown shadow-xl flex justify-center items-center relative mt-8 mx-auto">
+        
+        <div className="absolute top-8 left-20 text-7xl text-white font-pixel">
           <h1>My Coding Journey</h1>
         </div>
 
         {/* Left side container with a list of boxes */}
-        <div className="space-y-4 items-start absolute left-20 top-40 text-white font-fredoka max-h-[300px] overflow-y-auto">
+        <div className="space-y-4 items-start absolute left-20 top-40 text-white font-pixel max-h-[300px] overflow-y-auto">
           {/* Box 1 */}
           <div
             className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
@@ -94,7 +97,7 @@ const Tablet: React.FC = () => {
 
         {/* Right side content */}
         <div 
-          className="absolute right-20 top-40 text-white font-fredoka"
+          className="absolute right-20 top-40 text-white font-pixel"
           style={{ maxWidth: '400px'}}
         >
           {selectedBox ? (

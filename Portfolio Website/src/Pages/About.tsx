@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import SpotifyActivity from '../Components/Lanyard';
-import AboutBoxes from '../Components/AboutBoxes'
-import coffeecup from '../assets/coffeecup.png'
+import AboutBoxes from '../Components/AboutBoxes';
+import coffeecup from '../assets/coffeecup.png';
+import sleeping from '../assets/sleeping.gif'
 
 function About() {
   const [visible, setVisible] = useState(true);
@@ -41,6 +42,12 @@ function About() {
         <AboutBoxes />
 
       <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-8 translate-y-20`}>
+        <img
+          src={sleeping}
+          alt="Sleeping"
+          className="absolute left-45 bottom-[-10px] w-40 h-40 z-10"
+          style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
+        />
         <img src={coffeecup} alt="Coffee Cup" className="w-80 h-80 translate-y-36 translate-x-18" />
         <SpotifyActivity userId="348153501148381184" />
       </div>

@@ -6,7 +6,7 @@ const Introduction: React.FC = () => {
     <div className="flex flex-col justify-center h-full py-16">
       <div className="max-w-3xl font-poetsen text-[#3E2B2B] text-left text-6xl ml-4">
         <Typewriter
-          words={["Moon Cafe Open!", "Hi, I'm Olivia!"]}
+          words={["Hello!", "My name is Olivia :)"]}
           loop
           cursor
           cursorStyle="_"

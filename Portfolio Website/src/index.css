@@ -25,6 +25,11 @@
     src: url("../src/assets/fonts/LondrinaSolid-Regular.ttf");
 }
 
+@font-face {
+    font-family: Pixel;
+    src: url("../src/assets/fonts/Pixel.ttf")
+}
+
 
 @theme {
     --font-montserrat: Montserrat, "sans-serif";
@@ -32,14 +37,21 @@
     --font-fredoka: Fredoka, "sans-serif";
     --font-interbold: InterBold, "sans-serif";
     --font-londrina: Londrina, "sans-serif";
+    --font-pixel: Pixel, "sans-serif";
 }
 
 body {
-    background: linear-gradient(90deg, #f1e0c6 0%, #d4b39d 50%, #a88e6f 100%);
+    /*background: linear-gradient(135deg, #b79891, #a38178, #94716b);
     background-size: 200% 200%;
-    animation: bilinear-gradient 5s infinite alternate;
+    animation: gradient-flow 15s ease-in-out infinite;
     background-repeat: no-repeat;
+    background-attachment: fixed;*/
+    background-image: url('./assets/wood.png');
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
     font-family: var(--font-montserrat);
     color: #333;
     line-height: 1.6;
@@ -49,16 +61,20 @@ body {
     scroll-behavior: smooth;
 }
 
-@keyframes bilinear-gradient {
+/*@keyframes gradient-flow {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
     }
     100% {
-      background-position: 100% 50%;
+        background-position: 0% 50%;
     }
-}
+} */
+
 .gradient-inner {
-    background: linear-gradient(to bottom, #B89C8D 0%, #8E6B55 50%, #6F4E4B 100%);
+    background: linear-gradient(to bottom, #878280 0%, #8E6B55 50%, #6F4E4B 100%);
   }
   
 

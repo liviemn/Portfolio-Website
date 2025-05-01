@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from '../Components/Navigation';
 import Introduction from '../Components/Introduction';
-import CafeMenu from '../assets/CafeMenu.png';
+import GLBModelLoader from '../Components/ThreeJS';
 import Icons from '../Components/Icons';
 import Ribbon from '../assets/ribbon.png';
 
 const Home: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [menuTransform, setMenuTransform] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      const newTransform = Math.min(currentScrollY / 2, 150);
-
-      setMenuTransform(newTransform);
 
       setLastScrollY(currentScrollY);
     };
@@ -29,12 +24,9 @@ const Home: React.FC = () => {
       <Navigation />
 
       <div className="relative pt-16 min-h-screen px-8">
-        <img 
-          src={CafeMenu} 
-          alt="Cafe Menu" 
-          className={`absolute top-5 right-0 w-full max-w-4xl h-auto transition-transform duration-500 ease-in-out hover:-rotate-1 hover:scale-105`}
-          style={{ transform: `translateY(-${menuTransform}px)` }}
-        />
+        <div className="absolute right-[-100px] top-[-300px] transform -translate-y-1/2 z-0">
+          <GLBModelLoader />
+        </div>
 
         <Icons />
 
