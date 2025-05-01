@@ -34,7 +34,7 @@ const GLBModelLoader: React.FC = () => {
     // Load the GLB model using GLTFLoader
     const loader = new GLTFLoader();
     loader.load(
-      '/src/assets/isometric.glb',
+      '/public/isometric.glb',
       (gltf) => {
         modelLoaded.current = true; // Set the flag before adding the model
         const model = gltf.scene;
