@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Tablet from '../Components/Tablet'
 
 function Projects() {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import SpotifyActivity from '../Components/Lanyard';
 import AboutBoxes from '../Components/AboutBoxes';
 import coffeecup from '../assets/coffeecup.png';

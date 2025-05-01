@@ -35,7 +35,7 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
   const [prevTrackId, setPrevTrackId] = useState<string | null>(null);
   const [fade, setFade] = useState(false);
   const [gradient, setGradient] = useState<string>('');
-  const [textColor, setTextColor] = useState<string>('black'); // Default text color
+  const [, setTextColor] = useState<string>('black'); // Default text color
   const tiltRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
 

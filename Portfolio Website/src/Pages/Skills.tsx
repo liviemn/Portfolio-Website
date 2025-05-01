@@ -1,4 +1,3 @@
-import GLBModelLoader from '../Components/ThreeJS'
 
 function Skills() {
   return (
