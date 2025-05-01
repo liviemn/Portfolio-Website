@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import File from '../assets/file.png';
 import Pochacco from '../assets/pochacco.gif'
 import { FaGithub } from "react-icons/fa";
-
+import pixelbg from '../assets/pixelbg.gif';
+import { RectangleHorizontal, Minus, X } from "lucide-react";
 
 const Tablet: React.FC = () => {
   // State to keep track of the selected box
@@ -28,14 +29,31 @@ const Tablet: React.FC = () => {
   
     setTimeout(() => ripple.remove(), 600);
   };
-  
 
   return (
     <div className="w-4/5 h-3/4 bg-white border-4 border-brown rounded-3xl shadow-xl mt-25">
-      <div className="w-full h-15 bg-[#3E2B2B] rounded-t-2xl flex items-center justify-center text-white font-pixel text-3xl">
-        
+      <div className="w-full h-15 bg-[#3E2B2B] rounded-t-2xl flex items-center justify-end text-white font-pixel text-3xl px-4">
+        <div className="flex items-center divide-x divide-black text-white">
+          <div className="px-4">
+            <RectangleHorizontal className="w-6 h-6 cursor-pointer hover:text-gray-300" />
+          </div>
+          <div className="px-4 border-l border-black">
+            <Minus className="w-6 h-6 cursor-pointer hover:text-gray-300" />
+          </div>
+          <div className="px-4 border-l border-black">
+            <X className="w-6 h-6 cursor-pointer hover:text-gray-300" />
+          </div>
+        </div>
       </div>
-      <div className="w-65/70 h-40/50 gradient-inner border-4 border-brown shadow-xl flex justify-center items-center relative mt-8 mx-auto">
+      <div 
+        className="w-65/70 h-40/50 border-4 border-brown shadow-xl flex justify-center items-center relative mt-8 mx-auto rounded-xl"
+        style={{
+            backgroundImage: `url(${pixelbg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+        }}
+      >
         
         <div className="absolute top-8 left-20 text-7xl text-white font-pixel">
           <h1>My Coding Journey</h1>
@@ -97,11 +115,11 @@ const Tablet: React.FC = () => {
 
         {/* Right side content */}
         <div 
-          className="absolute right-20 top-40 text-white font-pixel"
-          style={{ maxWidth: '400px'}}
+          className="absolute right-20 top-35 text-white font-pixel"
+          style={{ maxWidth: '430px'}}
         >
           {selectedBox ? (
-            <div>
+            <div className="p-6 bg-[#3E2B2B] rounded-xl border-4 border-white shadow-md text-white">
               <div className="flex items-center gap-8 mb-4">
                 <h2 className="text-5xl break-words">{selectedBox}</h2>
                 <a
@@ -110,11 +128,8 @@ const Tablet: React.FC = () => {
                       case 'Website':
                         return 'https://github.com/liviemn/Portfolio-Website';
                       case 'Project Two':
-                        return 'https://github.com/your-username/project-two-repo';
                       case 'Project Three':
-                        return 'https://github.com/your-username/project-two-repo';
                       case 'Project Four':
-                        return 'https://github.com/your-username/project-two-repo';
                       case 'Project Five':
                         return 'https://github.com/your-username/project-two-repo';
                       default:
@@ -123,28 +138,24 @@ const Tablet: React.FC = () => {
                   })()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#3E2B2B] hover:text-white text-5xl"
+                  className="text-white hover:text-gray-300 text-5xl"
                 >
                   <FaGithub />
                 </a>
               </div>
               <p className="text-lg leading-relaxed break-words">
-                {/* Render different content based on selected box */}
                 {selectedBox === 'Website' && (
                   <span>
                     I created a website portfolio to showcase myself and my skills!
                     I had a fun time designing and creating this website.
                     <div className="flex flex-wrap gap-3 mt-6">
-                      <div className="w-25 h-auto bg-[#3E2B2B] rounded-full flex justify-center items-center text-sm text-white px-2 py-1">React</div>
-                      <div className="w-25 h-auto bg-[#3E2B2B] rounded-full flex justify-center items-center text-sm text-white px-2 py-1">Typescript</div>
-                      <div className="w-25 h-auto bg-[#3E2B2B] rounded-full flex justify-center items-center text-sm text-white px-2 py-1">TailwindCSS</div>
-                      <div className="w-25 h-auto bg-[#3E2B2B] rounded-full flex justify-center items-center text-sm text-white px-2 py-1">ThreeJS</div>
-                      <div className="w-25 h-auto bg-[#3E2B2B] rounded-full flex justify-center items-center text-sm text-white px-2 py-1">HTML</div>
-                      <div className="w-25 h-auto bg-[#3E2B2B] rounded-full flex justify-center items-center text-sm text-white px-2 py-1">CSS</div>
-                      <div className="w-25 h-auto bg-[#3E2B2B] rounded-full flex justify-center items-center text-sm text-white px-2 py-1">Lanyard</div>
+                      {['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'].map((tech) => (
+                        <div key={tech} className="bg-white text-[#3E2B2B] rounded-full px-3 py-1 text-sm font-semibold">
+                          {tech}
+                        </div>
+                      ))}
                     </div>
                   </span>
-                  
                 )}
                 {selectedBox === 'Project Two' && <span>Coming Soon.</span>}
                 {selectedBox === 'Project Three' && <span>Coming Soon.</span>}
