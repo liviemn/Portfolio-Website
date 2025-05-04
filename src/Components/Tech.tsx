@@ -1,25 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import StackIcon from "tech-stack-icons";
+import { FaReact, FaHtml5, FaNodeJs, FaPython, FaJava } from 'react-icons/fa';
+import { SiTypescript, SiCss3, SiThreedotjs, SiVite, SiTailwindcss } from 'react-icons/si';
 import Wood from "../assets/darkwood.jpeg";
 
+// Left, Middle, Right Columns
 const techsLeft = [
-  { name: "reactjs", label: "React" },
-  { name: "html5", label: "HTML" },
-  { name: "nodejs", label: "Node.js" },
+  { icon: <FaReact className="w-12 h-12 mb-2 text-white" />, label: "React" },
+  { icon: <FaHtml5 className="w-12 h-12 mb-2 text-white" />, label: "HTML" },
+  { icon: <FaNodeJs className="w-12 h-12 mb-2 text-white" />, label: "Node.js" },
 ];
 
 const techsMiddle = [
-  { name: "typescript", label: "TypeScript" },
-  { name: "css3", label: "CSS" },
-  { name: "java", label: "Java" },
-  { name: "threejs", label: "Three.js" },
+  { icon: <SiTypescript className="w-12 h-12 mb-2 text-white" />, label: "TypeScript" },
+  { icon: <SiCss3 className="w-12 h-12 mb-2 text-white" />, label: "CSS" },
+  { icon: <FaJava className="w-12 h-12 mb-2 text-white" />, label: "Java" },
+  { icon: <SiThreedotjs className="w-12 h-12 mb-2 text-white" />, label: "Three.js" },
 ];
 
 const techsRight = [
-  { name: "python", label: "Python" },
-  { name: "vitejs", label: "Vite" },
-  { name: "tailwindcss", label: "TailwindCSS" },
+  { icon: <FaPython className="w-12 h-12 mb-2 text-white" />, label: "Python" },
+  { icon: <SiVite className="w-12 h-12 mb-2 text-white" />, label: "Vite" },
+  { icon: <SiTailwindcss className="w-12 h-12 mb-2 text-white" />, label: "TailwindCSS" },
 ];
 
 // Helper to assign delay based on "how far from center"
@@ -34,21 +36,21 @@ const Tech: React.FC = () => {
         {/* Left Column */}
         <div className="flex flex-col justify-center gap-6">
           {techsLeft.map((tech, index) => (
-            <TechCard key={tech.name} tech={tech} column={0} row={index} />
+            <TechCard key={index} tech={tech} column={0} row={index} />
           ))}
         </div>
 
         {/* Middle Column */}
         <div className="flex flex-col justify-center gap-6">
           {techsMiddle.map((tech, index) => (
-            <TechCard key={tech.name} tech={tech} column={1} row={index} />
+            <TechCard key={index} tech={tech} column={1} row={index} />
           ))}
         </div>
 
         {/* Right Column */}
         <div className="flex flex-col justify-center gap-6">
           {techsRight.map((tech, index) => (
-            <TechCard key={tech.name} tech={tech} column={2} row={index} />
+            <TechCard key={index} tech={tech} column={2} row={index} />
           ))}
         </div>
       </div>
@@ -56,7 +58,7 @@ const Tech: React.FC = () => {
   );
 };
 
-const TechCard: React.FC<{ tech: { name: string; label: string }, column: number, row: number }> = ({ tech, column, row }) => {
+const TechCard: React.FC<{ tech: { icon: React.ReactElement; label: string }, column: number, row: number }> = ({ tech, column, row }) => {
     const delay = getDelay(column, row);
   
     return (
@@ -64,7 +66,7 @@ const TechCard: React.FC<{ tech: { name: string; label: string }, column: number
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2.2, delay }}
-        viewport={{ once: true, amount: 0.3 }} // 👈 critical: amount controls how much of the card must be visible
+        viewport={{ once: true, amount: 0.3 }}
         className="rounded-2xl bg-gradient-to-r from-[#D6B98C] via-[#C8A370] to-[#B58A56] p-[3px] hover:scale-105 transition-transform duration-300 shadow-md"
       >
         <div
@@ -73,10 +75,7 @@ const TechCard: React.FC<{ tech: { name: string; label: string }, column: number
             backgroundImage: `url(${Wood})`,
           }}
         >
-          <StackIcon 
-            name={tech.name} 
-            className="w-12 h-12 mb-2"
-          />
+          {tech.icon}
           <p className="text-sm text-center font-semibold text-white">{tech.label}</p>
         </div>
       </motion.div>

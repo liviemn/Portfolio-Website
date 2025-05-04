@@ -1,4 +1,3 @@
-import FadeIn from '../Components/FadeIn'
 import Tech from '../Components/Tech';
 function Skills() {
     return (
