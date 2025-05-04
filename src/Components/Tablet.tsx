@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import File from '../assets/file.png';
 import Pochacco from '../assets/pochacco.gif'
 import { FaGithub } from "react-icons/fa";
-import pixelbg from '../assets/pixelbg.gif';
+import pixelbg from '../assets/pixelbg.webp';
 import { RectangleHorizontal, Minus, X } from "lucide-react";
 
 const Tablet: React.FC = () => {
