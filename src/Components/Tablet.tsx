@@ -51,7 +51,6 @@ const Tablet: React.FC = () => {
             backgroundImage: `url(${pixelbg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
         }}
       >
         
