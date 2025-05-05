@@ -35,7 +35,7 @@ const Home: React.FC = () => {
             <img 
               src={Ribbon}
               alt="Ribbon"
-              className="absolute -top-6 -left-6 w-30 h-30 xl:w-30 2xl:w-38 xl:h-30 2xl:h-38 pointer-events-none"
+              className="absolute -top-6 -left-6 w-30 h-30 xl:w-30 2xl:w-34 xl:h-30 2xl:h-34 pointer-events-none"
             />
 
             <Introduction />
