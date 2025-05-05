@@ -31,7 +31,7 @@ const getDelay = (column: number, row: number) => {
 
 const Tech: React.FC = () => {
   return (
-    <div className="absolute left-8 2xl:left-[-520px] right-8 bg-transparent p-10 max-w-7xl mx-auto mt-28 z-10">
+    <div className="absolute left-8 2xl:left-[-400px] right-8 bg-transparent p-10 max-w-7xl mx-auto mt-28 z-10">
       <div className="flex justify-start items-center gap-12">
         {/* Left Column */}
         <div className="flex flex-col justify-center gap-6">
