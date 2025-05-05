@@ -31,11 +31,11 @@ function About() {
     <div
       id="About"
       ref={aboutRef}
-      className="relative h-screen flex justify-end items-end pr-16 pb-40"
+      className="relative h-screen flex justify-end items-end pr-[5vw] pb-[20vh]"
     >
-      {/* About Me Ribbon */}
-      <div className="absolute top-35 left-16 rotate-[-6deg]">
-        <div className="px-10 py-4 rounded-2xl bg-[#3E2B2B] backdrop-blur-md shadow-lg text-4xl font-poetsen text-white drop-shadow-lg">
+      {/* About Me*/}
+      <div className="absolute top-[17vh] left-[5vw] rotate-[-6deg]">
+        <div className="px-[2.5vw] py-[1vh] rounded-[1vw] bg-[#3E2B2B] backdrop-blur-md shadow-lg text-[2.6vw] font-poetsen text-white drop-shadow-lg">
           About Me
         </div>
       </div>
@@ -44,13 +44,13 @@ function About() {
       <AboutBoxes />
 
       {/* Bottom Row (sleeping gif + coffee cup + Spotify) */}
-      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-8 translate-y-20 relative`}>
+      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-[2vw] translate-y-[8vh] relative`}>
         
         {/* Sleeping GIF */}
         <img
           src={sleeping}
           alt="Sleeping"
-          className="absolute left-[25%] bottom-[-10px] w-40 xl:w-40 2xl:w-52 h-40 xl:h-40 2xl:h-52 z-10"
+          className="absolute left-[11vw] bottom-[-1vh] w-[11vw] h-[11vw] z-10"
           style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
         />
 
@@ -58,7 +58,7 @@ function About() {
         <img
           src={coffeecup}
           alt="Coffee Cup"
-          className="w-80 xl:w-80 2xl:w-96 h-80 xl:h-80 2xl:h-96 translate-y-36 translate-x-16 xl:translate-x-16 2xl:translate-x-20"
+          className="w-[22vw] h-[22vw] translate-y-[18vh] translate-x-[4vw]"
         />
 
         {/* Spotify */}

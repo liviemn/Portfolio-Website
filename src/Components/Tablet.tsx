@@ -28,7 +28,7 @@ const Tablet: React.FC = () => {
   };
 
   return (
-    <div className="w-[75vw] h-[75vh] bg-white border-[0.3vw] border-brown rounded-[1.5vw] shadow-xl mt-[11vh] mx-auto">
+    <div className="w-[75vw] h-[75vh] bg-white border-[0.3vw] border-brown rounded-[1.5vw] shadow-xl mt-[30vh] mx-auto">
       
       {/* Top Bar */}
       <div className="w-full h-[7vh] bg-[#3E2B2B] rounded-t-[1.2vw] flex items-center justify-end text-white font-pixel px-[1vw]">

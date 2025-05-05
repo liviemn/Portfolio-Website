@@ -23,19 +23,19 @@ const Home: React.FC = () => {
     <>
       <Navigation />
 
-      <div className="relative pt-16 min-h-screen px-8">
-        <div className="absolute right-[-100px] top-[-300px] transform -translate-y-1/2 z-0">
+      <div className="relative pt-[8vh] min-h-screen px-[4vw]">
+        <div className="absolute right-[-7vw] top-[-35vh] transform -translate-y-1/2 z-0">
           <GLBModelLoader />
         </div>
 
         <Icons />
 
-        <section id="Home" className="scroll-mt-32">
-          <div className="absolute top-20 left-8 w-400 h-100 xl:h-100 2xl:h-120 bg-white/40 backdrop-blur-lg border border-white/30 rounded-3xl p-10 shadow-lg max-w-3xl xl:max-w-3xl 2xl:max-w-4xl mt-28 z-10">
+        <section id="Home" className="scroll-mt-[8vh]">
+          <div className="absolute top-[10vh] left-[3vw] w-[53vw] h-[49vh] bg-white/40 backdrop-blur-lg border border-white/30 rounded-[2vw] p-[3vw] shadow-lg mt-[13.5vh] z-10">
             <img 
               src={Ribbon}
               alt="Ribbon"
-              className="absolute -top-6 -left-6 w-30 h-30 xl:w-30 2xl:w-34 xl:h-30 2xl:h-34 pointer-events-none"
+              className="absolute -top-[3vh] -left-[2vw] w-[9vw] h-[9vw] pointer-events-none"
             />
 
             <Introduction />

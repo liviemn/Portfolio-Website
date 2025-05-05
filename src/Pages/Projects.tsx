@@ -9,8 +9,8 @@ function Projects() {
       >
         <Tablet />
 
-      <div className="absolute top-8 left-16 rotate-[-6deg]">
-        <div className="px-10 py-4 rounded-2xl bg-[#3E2B2B] backdrop-blur-md shadow-lg text-4xl font-poetsen text-white drop-shadow-lg">
+      <div className="absolute top-[17vh] left-[5vw] rotate-[-6deg]">
+        <div className="px-[2.5vw] py-[1vh] rounded-[1vw] bg-[#3E2B2B] backdrop-blur-md shadow-lg text-[2.6vw] font-poetsen text-white drop-shadow-lg">
           Projects
         </div>
       </div>
