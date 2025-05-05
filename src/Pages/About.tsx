@@ -50,7 +50,7 @@ function About() {
         <img
           src={sleeping}
           alt="Sleeping"
-          className="absolute left-[25%] xl:left-[25%] 2xl:left-[10%] bottom-[-10px] w-40 xl:w-40 2xl:w-52 h-40 xl:h-40 2xl:h-52 z-10"
+          className="absolute left-[25%] xl:left-[25%] 2xl:left-[30%] bottom-[-10px] w-40 xl:w-40 2xl:w-52 h-40 xl:h-40 2xl:h-52 z-10"
           style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
         />
 
