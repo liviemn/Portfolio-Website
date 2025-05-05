@@ -28,7 +28,7 @@ const Tablet: React.FC = () => {
   };
 
   return (
-    <div className="w-4/5 h-3/4 bg-white border-4 border-brown rounded-3xl shadow-xl mt-24">
+    <div className="w-4/5 xl:w-4/5 2xl:w-[70%] h-3/4 xl:h-3/4 2xl:h-3/4 bg-white border-4 border-brown rounded-3xl shadow-xl mt-24">
       
       {/* Top Bar */}
       <div className="w-full h-15 bg-[#3E2B2B] rounded-t-2xl flex items-center justify-end text-white font-pixel text-3xl px-4">
@@ -47,7 +47,7 @@ const Tablet: React.FC = () => {
 
       {/* Inner Screen */}
       <div
-        className="w-[92%] h-[80%] border-4 border-brown shadow-xl flex justify-center items-start relative mt-8 mx-auto rounded-xl"
+        className="w-[92%] xl:w-[92%] 2xl:w-[95%] h-[80%] xl:h-[80%] 2xl:h-[80%] border-4 border-brown shadow-xl flex justify-center items-start relative mt-8 mx-auto rounded-xl"
         style={{
           backgroundImage: `url(${pixelbg})`,
           backgroundSize: 'cover',
