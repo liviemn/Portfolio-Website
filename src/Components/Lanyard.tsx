@@ -155,12 +155,12 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
   return (
     <div 
       ref={tiltRef}
-      className="relative w-[320px] h-[600px] bg-black rounded-[2.5rem] border-[10px] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center transform">
+      className="relative w-[320px] xl:w-[320px] 2xl:w-[400px] h-[600px] xl:h-[600px] 2xl:h-[700px] bg-black rounded-[2.5rem] border-[10px] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center transform">
       <div className="absolute top-0 w-[140px] h-[24px] bg-black rounded-b-xl z-10 left-1/2 -translate-x-1/2" />
 
       <div
         
-        className={`relative w-[280px] h-[550px] rounded-xl bg-zinc-900 shadow-inner transform transition-opacity duration-500 ease-in-out ${
+        className={`relative w-[280px] xl:w-[280px] 2xl:w-[350px] h-[550px] rounded-xl bg-zinc-900 shadow-inner transform transition-opacity duration-500 ease-in-out ${
           fade ? 'opacity-0' : 'opacity-100'
         } overflow-hidden`}
         style={{ background: gradient }}
@@ -178,14 +178,14 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
         </div>
 
         <div className="p-3 text-white flex flex-col items-center text-center h-[40%] justify-center">
-          <h2 className="text-base font-interbold">
+          <h2 className="text-base xl:text-base 2xl:text-lg font-interbold">
             {spotify ? spotify.song : 'O F F L I N E'}
           </h2>
-          <p className="text-xs mt-1 text-zinc-300">{spotify?.artist}</p>
-          <p className="text-[10px] text-zinc-400 italic">{spotify?.album}</p>
+          <p className="text-xs xl:text-xs 2xl:text-sm mt-1 text-zinc-300">{spotify?.artist}</p>
+          <p className="text-[10px] xl:text-[10px] 2xl:text-xs text-zinc-400 italic">{spotify?.album}</p>
 
           <div className="p-3 flex flex-col justify-center items-center h-[40%] text-white">
-            <div className="w-[220px] h-1 bg-zinc-800 rounded-full overflow-hidden mb-4">
+            <div className="w-[220px] 2xl:w-[280px] h-1 bg-zinc-800 rounded-full overflow-hidden mb-4">
               <div
                 className="h-full bg-white"
                 style={{
