@@ -2,17 +2,17 @@ import FadeIn from '../Components/FadeIn'
 
 const AboutBoxes = () => {
     return (
-        <div className="absolute left-1/4 top-1/3 transform -translate-x-1/2">
+        <div className="absolute left-[30%] top-[33.5%] transform -translate-x-1/2">
             <FadeIn>
-                <div className="flex flex-col space-y-8">
-                    <div className="flex space-x-4">
+                <div className="flex flex-col space-y-[4vh]">
+                    <div className="flex space-x-[1.5vw]">
 
                         {/* INTERESTS Box */}
-                        <div className="relative w-48 xl:w-48 2xl:w-56 h-53 xl:h-53 2xl:h-60 bg-white text-[#3E2B2B] rounded-xl shadow-md p-4 xl:p-4 2xl:p-6 flex border-2 border-[#3E2B2B]">
-                            <div className="absolute top-[-20px] left-3 w-25 xl:w-25 2xl:w-28 h-10 xl:h-10 2xl:h-12 bg-[#3E2B2B] rounded-full flex items-center justify-center">
-                                <span className="text-sm xl:text-sm 2xl:text-base text-white font-poetsen">INTERESTS</span>
+                        <div className="relative w-[14vw] h-[26vh] bg-white text-[#3E2B2B] rounded-[1vw] shadow-md p-[1vw] flex border-[0.2vw] border-[#3E2B2B]">
+                            <div className="absolute top-[-2.5vh] left-[1vw] w-[7vw] h-[5vh] bg-[#3E2B2B] rounded-full flex items-center justify-center">
+                                <span className="text-[1vw] text-white font-poetsen">INTERESTS</span>
                             </div>
-                            <ul className="list-disc pl-6 pt-4 text-sm xl:text-sm 2xl:text-base space-y-1">
+                            <ul className="list-disc pl-[2vw] pt-[2vh] text-[1vw] space-y-[0.2vh]">
                                 <li>MBTI</li>
                                 <li>Gaming</li>
                                 <li>Baking</li>
@@ -23,11 +23,11 @@ const AboutBoxes = () => {
                         </div>
 
                         {/* GAMES Box */}
-                        <div className="relative w-48 xl:w-48 2xl:w-56 h-53 xl:h-53 2xl:h-60 bg-white text-[#3E2B2B] rounded-xl shadow-md p-4 xl:p-4 2xl:p-6 flex border-2 border-[#3E2B2B]">
-                            <div className="absolute top-[-20px] left-3 w-25 xl:w-25 2xl:w-28 h-10 xl:h-10 2xl:h-12 bg-[#3E2B2B] rounded-full flex items-center justify-center">
-                                <span className="text-sm xl:text-sm 2xl:text-base text-white font-poetsen">GAMES</span>
+                        <div className="relative w-[14vw] h-[26vh] bg-white text-[#3E2B2B] rounded-[1vw] shadow-md p-[1vw] flex border-[0.2vw] border-[#3E2B2B]">
+                            <div className="absolute top-[-2.5vh] left-[1vw] w-[7vw] h-[5vh] bg-[#3E2B2B] rounded-full flex items-center justify-center">
+                                <span className="text-[1vw] text-white font-poetsen">GAMES</span>
                             </div>
-                            <ul className="list-disc pl-6 pt-4 text-sm xl:text-sm 2xl:text-base space-y-1">
+                            <ul className="list-disc pl-[2vw] pt-[2vh] text-[1vw] space-y-[0.2vh]">
                                 <li>Animal Crossing</li>
                                 <li>Valorant</li>
                                 <li>Minecraft</li>
@@ -39,17 +39,17 @@ const AboutBoxes = () => {
                     </div>
 
                     {/* HOBBIES Box */}
-                    <div className="relative w-100 xl:w-100 2xl:w-[28rem] h-38 xl:h-38 2xl:h-44 bg-white text-[#3E2B2B] rounded-xl shadow-md p-4 xl:p-4 2xl:p-6 flex justify-center border-2 border-[#3E2B2B]">
-                        <div className="absolute top-[-20px] left-3 w-25 xl:w-25 2xl:w-28 h-10 xl:h-10 2xl:h-12 bg-[#3E2B2B] rounded-full flex items-center justify-center">
-                            <span className="text-sm xl:text-sm 2xl:text-base text-white font-poetsen">HOBBIES</span>
+                    <div className="relative w-[29.5vw] h-[18vh] bg-white text-[#3E2B2B] rounded-[1vw] shadow-md p-[1.2vw] flex justify-center border-[0.2vw] border-[#3E2B2B]">
+                        <div className="absolute top-[-2.5vh] left-[1vw] w-[7vw] h-[5vh] bg-[#3E2B2B] rounded-full flex items-center justify-center">
+                            <span className="text-[1vw] text-white font-poetsen">HOBBIES</span>
                         </div>
-                        <div className="pt-4 grid grid-cols-2 gap-x-8 text-sm xl:text-sm 2xl:text-base">
-                            <ul className="list-disc pl-5 space-y-1">
+                        <div className="pt-[2vh] grid grid-cols-2 gap-x-[3vw] text-[1vw]">
+                            <ul className="list-disc pl-[2vw] space-y-[0.3vh]">
                                 <li>Shopping</li>
                                 <li>Studying at Cafes</li>
                                 <li>Notetaking</li>
                             </ul>
-                            <ul className="list-disc pl-5 space-y-1">
+                            <ul className="list-disc pl-[1vw] space-y-[0.3vh]">
                                 <li>Photography</li>
                                 <li>Traveling</li>
                                 <li>Eating</li>

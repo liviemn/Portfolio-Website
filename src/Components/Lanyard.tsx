@@ -195,7 +195,7 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
                 ></div>
             </div>
 
-            <div className="flex gap-[2vw] items-center">
+            <div className="flex gap-[1.8vw] items-center">
             <FontAwesomeIcon icon={faBackward} className="text-[1.3vw] hover:scale-110 transition-transform duration-200 cursor-pointer" />
             <FontAwesomeIcon icon={faPause} className="text-[1.8vw] hover:scale-125 transition-transform duration-200 cursor-pointer" />
             <FontAwesomeIcon icon={faForward} className="text-[1.3vw] hover:scale-110 transition-transform duration-200 cursor-pointer" />
