@@ -31,11 +31,11 @@ const Home: React.FC = () => {
         <Icons />
 
         <section id="Home" className="scroll-mt-32">
-          <div className="absolute top-20 left-8 w-400 h-100 bg-white/40 backdrop-blur-lg border border-white/30 rounded-3xl p-10 shadow-lg max-w-3xl xl:max-w-3xl 2xl:max-w-5xl mt-28 z-10">
+          <div className="absolute top-20 left-8 w-400 h-100 bg-white/40 backdrop-blur-lg border border-white/30 rounded-3xl p-10 shadow-lg max-w-3xl xl:max-w-3xl 2xl:max-w-4xl mt-28 z-10">
             <img 
               src={Ribbon}
               alt="Ribbon"
-              className="absolute -top-6 -left-6 w-30 h-30 pointer-events-none"
+              className="absolute -top-6 -left-6 w-30 h-30 xl:w-30 2xl:w-38 xl:h-30 2xl:h-38 pointer-events-none"
             />
 
             <Introduction />
