@@ -9,7 +9,7 @@ import Milkshake from '../assets/milkshake.png';
 const Navigation: React.FC = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <div className="w-[75%] xl:w-[75%] 2xl:w-[80%] mx-auto mt-0 px-6 xl:px-8 2xl:px-10 py-9 xl:py-10 2xl:py-12 rounded-b-full bg-white/70 backdrop-blur-md shadow-lg flex items-center justify-between relative overflow-visible transition-all duration-500">
+      <div className="w-[75%] xl:w-[75%] 2xl:w-[80%] mx-auto mt-0 px-6 xl:px-6 2xl:px-8 py-9 xl:py-9 2xl:py-11 rounded-b-full bg-white/70 backdrop-blur-md shadow-lg flex items-center justify-between relative overflow-visible transition-all duration-500">
         
         {/* Cafe Sign */}
         <div className="w-[120px] xl:w-[120px] 2xl:w-[140px] h-[120px] xl:h-[120px] 2xl:h-[140px] absolute -top-10 xl:-top-10 2xl:-top-12 left-6 xl:left-6 2xl:left-10">
