@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 const Introduction: React.FC = () => {
   return (
     <div className="flex flex-col justify-center h-full py-16 xl:py-16 2xl:py-20">
-      <div className="max-w-3xl xl:max-w-3xl 2xl:max-w-5xl font-poetsen text-[#3E2B2B] text-left text-6xl xl:text-6xl 2xl:text-7xl ml-4 xl:ml-4 2xl:ml-6">
+      <div className="max-w-3xl font-poetsen text-[#3E2B2B] text-left text-6xl xl:text-6xl 2xl:text-7xl ml-4 xl:ml-4 2xl:ml-6">
         <Typewriter
           words={["Hello!", "My name is Olivia :)"]}
           loop
