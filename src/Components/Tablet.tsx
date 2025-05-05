@@ -60,7 +60,7 @@ const Tablet: React.FC = () => {
         </div>
 
         {/* Left side - Project list */}
-        <div className="space-y-4 items-start absolute left-20 top-36 text-white font-pixel max-h-[300px] xl:max-h-[300px] 2xl:max-h-[400px] overflow-y-auto">
+        <div className="space-y-4 items-start absolute left-20 top-36 text-white font-pixel max-h-[300px] xl:max-h-[300px] 2xl:max-h-[350px] overflow-y-auto">
           {[
             'Website',
             'Project Two',
@@ -74,8 +74,8 @@ const Tablet: React.FC = () => {
               onClick={(e) => handleBoxClick(project, e)}
             >
               <div className="flex items-center gap-x-3 ml-6">
-                <img src={File} alt="file icon" className="w-6 h-6" />
-                <span className="text-2xl">{project}</span>
+                <img src={File} alt="file icon" className="w-6 2xl:w-7 h-6 2xl:h-7" />
+                <span className="text-2xl 2xl:text-3xl">{project}</span>
               </div>
             </div>
           ))}
