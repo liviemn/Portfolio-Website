@@ -121,8 +121,8 @@ const Tablet: React.FC = () => {
               </p>
             </div>
           ) : (
-            <div className="flex flex-col items-center text-center space-y-[2vh]">
-              <img src={Pochacco} alt="Pochacco" className="w-[18vw] h-auto rounded-lg" />
+            <div className="flex flex-col items-center text-center space-y-[-1vh]">
+              <img src={Pochacco} alt="Pochacco" className="w-[16vw] h-auto rounded-lg" />
               <p className="text-[1.4vw] font-light">Tap a box on the left to see what's inside ✨</p>
             </div>
           )}
