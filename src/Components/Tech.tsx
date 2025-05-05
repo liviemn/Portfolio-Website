@@ -70,17 +70,24 @@ const TechCard: React.FC<{ tech: { icon: React.ReactElement; label: string }, co
         className="rounded-2xl bg-gradient-to-r from-[#D6B98C] via-[#C8A370] to-[#B58A56] p-[3px] hover:scale-105 transition-transform duration-300 shadow-md"
       >
         <div
-          className="flex flex-col items-center justify-center w-32 h-24 bg-cover bg-center rounded-2xl backdrop-blur-md"
+          className="flex flex-col items-center justify-center w-32 xl:w-32 2xl:w-40 h-24 xl:h-24 2xl:h-32 bg-cover bg-center rounded-2xl backdrop-blur-md"
           style={{
             backgroundImage: `url(${Wood})`,
           }}
         >
-          {tech.icon}
-          <p className="text-sm text-center font-semibold text-white">{tech.label}</p>
+          {/* Icon with responsive size */}
+          <div className="text-white mb-2 w-12 h-12 xl:w-12 xl:h-12 2xl:w-16 2xl:h-16">
+            {tech.icon}
+          </div>
+          {/* Label with responsive size */}
+          <p className="text-sm xl:text-sm 2xl:text-base text-center font-semibold text-white">
+            {tech.label}
+          </p>
         </div>
       </motion.div>
     );
-  };
+};
+
   
 
 export default Tech;
