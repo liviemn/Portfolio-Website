@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import SpotifyActivity from '../Components/Lanyard';
 import AboutBoxes from '../Components/AboutBoxes';
 import coffeecup from '../assets/coffeecup.png';
-import sleeping from '../assets/sleeping.gif'
+import sleeping from '../assets/sleeping.gif';
 
 function About() {
   const [visible, setVisible] = useState(true);
@@ -33,22 +33,35 @@ function About() {
       ref={aboutRef}
       className="relative h-screen flex justify-end items-end pr-16 pb-40"
     >
+      {/* About Me Ribbon */}
       <div className="absolute top-35 left-16 rotate-[-6deg]">
-          <div className="px-10 py-4 rounded-2x1 bg-[#3E2B2B] backdrop-blur-md shadow-lg text-4xl font-poetsen text-white drop-shadow-lg">
-            About Me
-          </div>
+        <div className="px-10 py-4 rounded-2xl bg-[#3E2B2B] backdrop-blur-md shadow-lg text-4xl font-poetsen text-white drop-shadow-lg">
+          About Me
+        </div>
       </div>
-      
+
+      {/* Info Boxes */}
       <AboutBoxes />
 
-      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-8 translate-y-20`}>
+      {/* Bottom Row (sleeping gif + coffee cup + Spotify) */}
+      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-8 translate-y-20 relative`}>
+        
+        {/* Sleeping GIF */}
         <img
           src={sleeping}
           alt="Sleeping"
-          className="absolute left-45 bottom-[-10px] w-40 h-40 z-10"
+          className="absolute left-[25%] xl:left-[25%] 2xl:left-[10%] bottom-[-10px] w-40 xl:w-40 2xl:w-52 h-40 xl:h-40 2xl:h-52 z-10"
           style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
         />
-        <img src={coffeecup} alt="Coffee Cup" className="w-80 h-80 translate-y-36 translate-x-18" />
+
+        {/* Coffee Cup */}
+        <img
+          src={coffeecup}
+          alt="Coffee Cup"
+          className="w-80 xl:w-80 2xl:w-96 h-80 xl:h-80 2xl:h-96 translate-y-36 translate-x-16 xl:translate-x-16 2xl:translate-x-20"
+        />
+
+        {/* Spotify */}
         <SpotifyActivity userId="348153501148381184" />
       </div>
     </div>
