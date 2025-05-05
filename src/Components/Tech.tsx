@@ -31,8 +31,8 @@ const getDelay = (column: number, row: number) => {
 
 const Tech: React.FC = () => {
   return (
-    <div className="absolute left-0 right-0 bg-transparent p-10 max-w-7xl mx-auto mt-28 z-10">
-      <div className="flex justify-start items-center gap-12 pl-8 xl:pl-8 2xl:pl-24">
+    <div className="absolute left-8 2xl:left-[-80px] right-8 bg-transparent p-10 max-w-7xl mx-auto mt-28 z-10">
+      <div className="flex justify-start items-center gap-12">
         {/* Left Column */}
         <div className="flex flex-col justify-center gap-6">
           {techsLeft.map((tech, index) => (
