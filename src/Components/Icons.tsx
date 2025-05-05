@@ -26,9 +26,9 @@ const Icons: React.FC = () => {
 
   return (
     <div
-      className="flex space-x-8 text-6xl fixed z-50"
+      className="flex space-x-[2.3vw] text-[4.2vw] fixed z-50"
       style={{
-        bottom: '100px',
+        bottom: '12.5vh',
         left: '100px',
         color: '#3E2B2B',
         opacity: opacityValue,

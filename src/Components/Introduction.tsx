@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const Introduction: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center h-[35vh] py-[8vh]">
+    <div className="flex flex-col justify-center h-[40vh] py-[8vh]">
       <div className="max-w-[45vw] font-poetsen text-[#3E2B2B] text-left text-[4.2vw] ml-[1vw]">
         <Typewriter
           words={["Hello!", "My name is Olivia :)"]}

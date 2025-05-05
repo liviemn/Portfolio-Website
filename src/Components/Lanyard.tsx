@@ -155,12 +155,12 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
   return (
     <div 
       ref={tiltRef}
-      className="relative w-[320px] xl:w-[320px] 2xl:w-[400px] h-[600px] xl:h-[600px] 2xl:h-[700px] bg-black rounded-[2.5rem] border-[10px] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center transform">
-      <div className="absolute top-0 w-[140px] h-[24px] bg-black rounded-b-xl z-10 left-1/2 -translate-x-1/2" />
+      className="relative w-[22.23vw] h-[73.3vh] bg-black rounded-[2.8vw] border-[0.72vw] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center transform">
+      <div className="absolute top-0 w-[9.7vw] h-[3vh] bg-black rounded-b-xl z-10 left-1/2 -translate-x-1/2" />
 
       <div
         
-        className={`relative w-[280px] xl:w-[280px] 2xl:w-[350px] h-[550px] xl:h-[550px] 2xl:h-[640px] rounded-xl bg-zinc-900 shadow-inner transform transition-opacity duration-500 ease-in-out ${
+        className={`relative w-[19.45vw] h-[67.2vh] rounded-xl bg-zinc-900 shadow-inner transform transition-opacity duration-500 ease-in-out ${
           fade ? 'opacity-0' : 'opacity-100'
         } overflow-hidden`}
         style={{ background: gradient }}
@@ -173,19 +173,19 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
           className="w-full h-[60%] object-cover"
         />
 
-        <div className="absolute top-3 left-3 text-white text-[10px] tracking-widest opacity-80 uppercase">
+        <div className="absolute top-[2.2%] left-[4.5%] text-white text-[0.7vw] tracking-widest opacity-80 uppercase">
           {spotify ? 'Now Playing' : 'Spotify'}
         </div>
 
-        <div className="p-3 text-white flex flex-col items-center text-center h-[40%] justify-center">
-          <h2 className="text-base xl:text-base 2xl:text-lg font-interbold">
+        <div className="p-[1.2vw] text-white flex flex-col items-center text-center h-[40%] justify-center">
+          <h2 className="text-[1.1vw] font-interbold">
             {spotify ? spotify.song : 'O F F L I N E'}
           </h2>
-          <p className="text-xs xl:text-xs 2xl:text-sm mt-1 text-zinc-300">{spotify?.artist}</p>
-          <p className="text-[10px] xl:text-[10px] 2xl:text-xs text-zinc-400 italic">{spotify?.album}</p>
+          <p className="text-[0.85vw] mt-[0.2vh] text-zinc-300">{spotify?.artist}</p>
+          <p className="text-[0.7vw] text-zinc-400 italic">{spotify?.album}</p>
 
-          <div className="p-3 flex flex-col justify-center items-center h-[40%] text-white">
-            <div className="w-[220px] 2xl:w-[280px] h-1 bg-zinc-800 rounded-full overflow-hidden mb-4">
+          <div className="p-1vh] flex flex-col justify-center items-center h-[40%] text-white">
+            <div className="w-[15.3vw] h-[0.5vh] bg-zinc-800 rounded-full overflow-hidden mb-[2vh]">
               <div
                 className="h-full bg-white"
                 style={{
@@ -195,10 +195,10 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
                 ></div>
             </div>
 
-            <div className="flex gap-6 items-center">
-            <FontAwesomeIcon icon={faBackward} className="text-xl hover:scale-110 transition-transform duration-200 cursor-pointer" />
-            <FontAwesomeIcon icon={faPause} className="text-2xl hover:scale-125 transition-transform duration-200 cursor-pointer" />
-            <FontAwesomeIcon icon={faForward} className="text-xl hover:scale-110 transition-transform duration-200 cursor-pointer" />
+            <div className="flex gap-[2vw] items-center">
+            <FontAwesomeIcon icon={faBackward} className="text-[1.3vw] hover:scale-110 transition-transform duration-200 cursor-pointer" />
+            <FontAwesomeIcon icon={faPause} className="text-[1.8vw] hover:scale-125 transition-transform duration-200 cursor-pointer" />
+            <FontAwesomeIcon icon={faForward} className="text-[1.3vw] hover:scale-110 transition-transform duration-200 cursor-pointer" />
             </div>
           </div>
         </div>
