@@ -60,7 +60,7 @@ const Tablet: React.FC = () => {
         </div>
 
         {/* Left side - Project list */}
-        <div className="space-y-4 items-start absolute left-20 top-36 text-white font-pixel max-h-[300px] overflow-y-auto">
+        <div className="space-y-4 items-start absolute left-20 top-36 text-white font-pixel max-h-[300px] xl:max-h-[300px] 2xl:max-h-[400px] overflow-y-auto">
           {[
             'Website',
             'Project Two',
@@ -70,7 +70,7 @@ const Tablet: React.FC = () => {
           ].map((project, index) => (
             <div
               key={index}
-              className="w-90 xl:w-90 2xl:w-100 h-15 xl:h-15 2xl:h-20 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
+              className="w-90 xl:w-90 2xl:w-100 h-15 xl:h-15 2xl:h-17 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
               onClick={(e) => handleBoxClick(project, e)}
             >
               <div className="flex items-center gap-x-3 ml-6">
