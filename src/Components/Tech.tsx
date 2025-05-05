@@ -31,24 +31,24 @@ const getDelay = (column: number, row: number) => {
 
 const Tech: React.FC = () => {
   return (
-    <div className="absolute left-8 2xl:left-[-200px] right-8 bg-transparent p-10 max-w-7xl mx-auto mt-28 z-10">
-      <div className="flex justify-start items-center gap-12">
+    <div className="absolute left-[5vw] right-[5vw] bg-transparent p-[3vw] max-w-[88vw] mx-auto mt-[13vh] z-10">
+      <div className="flex justify-start items-center gap-[3.2vw]">
         {/* Left Column */}
-        <div className="flex flex-col justify-center gap-6">
+        <div className="flex flex-col justify-center gap-[3vh]">
           {techsLeft.map((tech, index) => (
             <TechCard key={index} tech={tech} column={0} row={index} />
           ))}
         </div>
 
         {/* Middle Column */}
-        <div className="flex flex-col justify-center gap-6">
+        <div className="flex flex-col justify-center gap-[3vh]">
           {techsMiddle.map((tech, index) => (
             <TechCard key={index} tech={tech} column={1} row={index} />
           ))}
         </div>
 
         {/* Right Column */}
-        <div className="flex flex-col justify-center gap-6">
+        <div className="flex flex-col justify-center gap-[3vh]">
           {techsRight.map((tech, index) => (
             <TechCard key={index} tech={tech} column={2} row={index} />
           ))}
@@ -67,20 +67,20 @@ const TechCard: React.FC<{ tech: { icon: React.ReactElement; label: string }, co
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2.2, delay }}
         viewport={{ once: true, amount: 0.3 }}
-        className="rounded-2xl bg-gradient-to-r from-[#D6B98C] via-[#C8A370] to-[#B58A56] p-[3px] hover:scale-105 transition-transform duration-300 shadow-md"
+        className="rounded-[1.2vw] bg-gradient-to-r from-[#D6B98C] via-[#C8A370] to-[#B58A56] p-[0.2vw] hover:scale-105 transition-transform duration-300 shadow-md"
       >
         <div
-          className="flex flex-col items-center justify-center w-32 xl:w-32 2xl:w-40 h-24 xl:h-24 2xl:h-32 bg-cover bg-center rounded-2xl backdrop-blur-md"
+          className="flex flex-col items-center justify-center w-[9vw] h-[11.5vh] bg-cover bg-center rounded-[1.2vw] backdrop-blur-md"
           style={{
             backgroundImage: `url(${Wood})`,
           }}
         >
           {/* Icon with responsive size */}
-          <div className="text-white mb-2 w-12 h-12 xl:w-12 xl:h-12 2xl:w-16 2xl:h-16">
+          <div className="text-white mb-[0vh] w-[3.3vw] h-[3.75vw]">
             {tech.icon}
           </div>
           {/* Label with responsive size */}
-          <p className="text-sm xl:text-sm 2xl:text-base text-center font-semibold text-white">
+          <p className="text-[1vw] text-center font-semibold text-white flex items-center justify-center">
             {tech.label}
           </p>
         </div>
