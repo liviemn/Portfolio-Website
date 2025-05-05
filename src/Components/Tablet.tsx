@@ -82,7 +82,7 @@ const Tablet: React.FC = () => {
         </div>
 
         {/* Right side - Project Details or Pochacco */}
-        <div className="absolute right-20 top-36 text-white font-pixel max-w-[430px] 2xl:max-w-[480px]">
+        <div className="absolute right-20 top-36 text-white font-pixel max-w-[430px] 2xl:max-w-[600px]">
           {selectedBox ? (
             <div className="p-6 bg-[#3E2B2B] rounded-xl border-4 border-white shadow-md text-white">
               <div className="flex items-center gap-8 mb-4">
