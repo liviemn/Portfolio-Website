@@ -55,7 +55,7 @@ const Tablet: React.FC = () => {
         }}
       >
         {/* Title - My Coding Journey */}
-        <div className="absolute top-8 left-20 text-7xl xl:text-7x1 2xl:text-20x1 text-white font-pixel">
+        <div className="absolute top-8 left-20 text-7xl xl:text-7x1 2xl:text-9x1 text-white font-pixel">
           My Coding Journey
         </div>
 
