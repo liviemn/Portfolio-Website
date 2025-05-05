@@ -60,7 +60,7 @@ const Tablet: React.FC = () => {
         </div>
 
         {/* Left side - Project list */}
-        <div className="space-y-4 items-start absolute left-20 top-36 text-white font-pixel max-h-[300px] overflow-y-auto">
+        <div className="space-y-4 items-start absolute left-20 top-36 text-white font-pixel max-h-[300px] overflow-y-auto xl:max-h-[300px] 2xl:max-h-[400px]">
           {[
             'Website',
             'Project Two',
