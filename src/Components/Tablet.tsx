@@ -55,7 +55,7 @@ const Tablet: React.FC = () => {
         }}
       >
         {/* Title - My Coding Journey */}
-        <div className="absolute top-8 left-20 text-7xl text-white font-pixel">
+        <div className="absolute top-8 left-20 text-7xl xl:text-7x1 2xl:text-8x1 text-white font-pixel">
           My Coding Journey
         </div>
 
@@ -70,7 +70,7 @@ const Tablet: React.FC = () => {
           ].map((project, index) => (
             <div
               key={index}
-              className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
+              className="w-90 xl:w-90 2xl:w-96 h-15 xl:h-15 2xl:h-20 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
               onClick={(e) => handleBoxClick(project, e)}
             >
               <div className="flex items-center gap-x-3 ml-6">
