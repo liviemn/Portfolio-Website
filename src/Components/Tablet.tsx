@@ -28,7 +28,7 @@ const Tablet: React.FC = () => {
   };
 
   return (
-    <div className="w-4/5 xl:w-4/5 2xl:w-[85%] h-3/4 xl:h-3/4 2xl:h-[85%] bg-white border-4 border-brown rounded-3xl shadow-xl mt-24">
+    <div className="w-4/5 h-3/4 bg-white border-4 border-brown rounded-3xl shadow-xl mt-24">
       
       {/* Top Bar */}
       <div className="w-full h-15 bg-[#3E2B2B] rounded-t-2xl flex items-center justify-end text-white font-pixel text-3xl px-4">
@@ -47,7 +47,7 @@ const Tablet: React.FC = () => {
 
       {/* Inner Screen */}
       <div
-        className="w-[92%] xl:w-[92%] 2xl:w-[95%] h-[80%] xl:h-[80%] 2xl:h-[85%] border-4 border-brown shadow-xl flex justify-center items-start relative mt-8 mx-auto rounded-xl"
+        className="w-[92%] h-[80%] border-4 border-brown shadow-xl flex justify-center items-start relative mt-8 mx-auto rounded-xl"
         style={{
           backgroundImage: `url(${pixelbg})`,
           backgroundSize: 'cover',
@@ -55,7 +55,7 @@ const Tablet: React.FC = () => {
         }}
       >
         {/* Title - My Coding Journey */}
-        <div className="absolute top-8 left-20 xl:text-7xl 2xl:text-8xl text-white font-pixel">
+        <div className="absolute top-8 left-20 text-7xl text-white font-pixel">
           My Coding Journey
         </div>
 
@@ -70,7 +70,7 @@ const Tablet: React.FC = () => {
           ].map((project, index) => (
             <div
               key={index}
-              className="w-90 xl:w-90 2xl:w-96 h-15 xl:h-15 2xl:h-20 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
+              className="w-90 h-15 bg-[#3E2B2B] rounded-lg flex items-center border-2 transition-all duration-300 hover:h-20 cursor-pointer relative overflow-hidden"
               onClick={(e) => handleBoxClick(project, e)}
             >
               <div className="flex items-center gap-x-3 ml-6">
