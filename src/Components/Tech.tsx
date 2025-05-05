@@ -6,22 +6,22 @@ import Wood from "../assets/darkwood.jpeg";
 
 // Left, Middle, Right Columns
 const techsLeft = [
-  { icon: <FaReact className="w-12 h-12 mb-2 text-white" />, label: "React" },
-  { icon: <FaHtml5 className="w-12 h-12 mb-2 text-white" />, label: "HTML" },
-  { icon: <FaNodeJs className="w-12 h-12 mb-2 text-white" />, label: "Node.js" },
+  { icon: <FaReact className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "React" },
+  { icon: <FaHtml5 className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "HTML" },
+  { icon: <FaNodeJs className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "Node.js" },
 ];
 
 const techsMiddle = [
-  { icon: <SiTypescript className="w-12 h-12 mb-2 text-white" />, label: "TypeScript" },
-  { icon: <SiCss3 className="w-12 h-12 mb-2 text-white" />, label: "CSS" },
-  { icon: <FaJava className="w-12 h-12 mb-2 text-white" />, label: "Java" },
-  { icon: <SiThreedotjs className="w-12 h-12 mb-2 text-white" />, label: "Three.js" },
+  { icon: <SiTypescript className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "TypeScript" },
+  { icon: <SiCss3 className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "CSS" },
+  { icon: <FaJava className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "Java" },
+  { icon: <SiThreedotjs className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "Three.js" },
 ];
 
 const techsRight = [
-  { icon: <FaPython className="w-12 h-12 mb-2 text-white" />, label: "Python" },
-  { icon: <SiVite className="w-12 h-12 mb-2 text-white" />, label: "Vite" },
-  { icon: <SiTailwindcss className="w-12 h-12 mb-2 text-white" />, label: "TailwindCSS" },
+  { icon: <FaPython className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "Python" },
+  { icon: <SiVite className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "Vite" },
+  { icon: <SiTailwindcss className="w-[3.3vw] h-[3.3vw] mb-[1vh] text-white" />, label: "TailwindCSS" },
 ];
 
 // Helper to assign delay based on "how far from center"
