@@ -1,7 +1,7 @@
-// src/three/ThreeSetup.js
+
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-//import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
 
 const GLBModelLoader: React.FC = () => {
@@ -33,7 +33,7 @@ const GLBModelLoader: React.FC = () => {
 
     // Load the GLB model using GLTFLoader
     
-    /*const loader = new GLTFLoader();
+    const loader = new GLTFLoader();
     loader.load(
       '/Room.glb',
       (gltf) => {
@@ -46,7 +46,7 @@ const GLBModelLoader: React.FC = () => {
       (error) => {
         console.error('An error occurred while loading the GLB model:', error);
       }
-    );*/
+    );
 
     // Add lighting
     scene.add(new THREE.AmbientLight(0xFFFFFF, 1));
