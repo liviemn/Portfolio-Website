@@ -48,20 +48,33 @@ const GLBModelLoader: React.FC = () => {
     );
 
     // Add lighting
-    scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+    scene.add(new THREE.AmbientLight(0xFFFFFF, 1));
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    const pointLight = new THREE.PointLight(0xFFFFFF, 2, 100);
+    pointLight.position.set(5, 5, 5);
+    scene.add(pointLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 2);
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
 
-    // OrbitControls (optimized)
+    const spotLight = new THREE.SpotLight(0xFFFFFF, 1);
+    spotLight.position.set(0, 5, 5);
+    spotLight.angle = Math.PI / 6;
+    scene.add(spotLight);
+
+    
+    // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = false;  // no damping = lighter CPU
-    controls.autoRotate = true;      // auto rotate the model slowly
-    controls.autoRotateSpeed = 1.5;
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
+    controls.screenSpacePanning = false;
+    controls.enableZoom = false;
+
 
     // Animate
     const animate = () => {
+      controls.update();
       renderer.render(scene, camera);
     };
     renderer.setAnimationLoop(animate);
@@ -84,7 +97,7 @@ const GLBModelLoader: React.FC = () => {
       ref={containerRef}
       style={{
         width: '70%',
-        height: '55vh',
+        height: '60vh',
         margin: 'auto',
       }}
     />
