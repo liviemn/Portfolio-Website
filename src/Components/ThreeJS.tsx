@@ -16,8 +16,8 @@ const GLBModelLoader: React.FC = () => {
     const camera = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
 
-    const width = 900;
-    const height = 800;
+    const width = window.innerWidth * 0.9;
+    const height = window.innerHeight * 0.8;
     renderer.setSize(width, height);
     renderer.setClearColor(0x000000, 0);
     renderer.shadowMap.enabled = true;
@@ -48,33 +48,20 @@ const GLBModelLoader: React.FC = () => {
     );
 
     // Add lighting
-    scene.add(new THREE.AmbientLight(0xFFFFFF, 1));
+    scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
-    const pointLight = new THREE.PointLight(0xFFFFFF, 2, 100);
-    pointLight.position.set(5, 5, 5);
-    scene.add(pointLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 2);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
 
-    const spotLight = new THREE.SpotLight(0xFFFFFF, 1);
-    spotLight.position.set(0, 5, 5);
-    spotLight.angle = Math.PI / 6;
-    scene.add(spotLight);
-
-    
-    // Controls
+    // OrbitControls (optimized)
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.25;
-    controls.screenSpacePanning = false;
-    controls.enableZoom = false;
-
+    controls.enableDamping = false;  // no damping = lighter CPU
+    controls.autoRotate = true;      // auto rotate the model slowly
+    controls.autoRotateSpeed = 1.5;
 
     // Animate
     const animate = () => {
-      controls.update();
       renderer.render(scene, camera);
     };
     renderer.setAnimationLoop(animate);
@@ -96,8 +83,8 @@ const GLBModelLoader: React.FC = () => {
     <div
       ref={containerRef}
       style={{
-        width: '900px',
-        height: '800px',
+        width: '70%',
+        height: '55vh',
         margin: 'auto',
       }}
     />
