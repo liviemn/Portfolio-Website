@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from '../Components/Navigation';
 import Introduction from '../Components/Introduction';
-//import GLBModelLoader from '../Components/ThreeJS';
+import GLBModelLoader from '../Components/ThreeJS';
 import Icons from '../Components/Icons';
 import Ribbon from '../assets/ribbon.png';
 
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
 
       <div className="relative pt-[8vh] min-h-screen px-[4vw]">
         <div className="absolute right-[-7vw] top-[-35vh] transform -translate-y-1/2 z-0">
-          
+          <GLBModelLoader />
         </div>
 
         <Icons />
