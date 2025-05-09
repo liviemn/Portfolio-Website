@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import File from '../assets/file.png';
-import Pochacco from '../assets/pochacco.gif';
+//import Pochacco from '../assets/pochacco.gif';
 import { FaGithub } from "react-icons/fa";
-//import pixelbg from '../assets/pixelbg.webp';
+import pixelbg from '../assets/pixelbg.webp';
 import { RectangleHorizontal, Minus, X } from "lucide-react";
 
 const Tablet: React.FC = () => {
@@ -29,11 +29,11 @@ const Tablet: React.FC = () => {
       {/* Inner Screen */}
       <div
         className="w-[92%] h-[80%] border-[0.3vw] border-brown shadow-xl flex justify-center items-start relative mt-[4vh] mx-auto rounded-[1.2vw]"
-        /*style={{
+        style={{
           backgroundImage: `url(${pixelbg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-        }}*/
+        }}
       >
         {/* Title - My Coding Journey */}
         <div className="absolute top-[2vh] left-[5vw] text-[5vw] text-white font-pixel">
@@ -103,7 +103,7 @@ const Tablet: React.FC = () => {
             </div>
           ) : (
             <div className="flex flex-col items-center text-center space-y-[-1vh]">
-              <img src={Pochacco} alt="Pochacco" className="w-[16vw] h-auto rounded-lg" />
+
               <p className="text-[1.4vw] font-light">Tap a box on the left to see what's inside ✨</p>
             </div>
           )}
