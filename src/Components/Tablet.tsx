@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import File from '../assets/file.png';
 import Pochacco from '../assets/pochacco.gif';
 import { FaGithub } from "react-icons/fa";
-import pixelbg from '../assets/pixelbg.webp';
+//import pixelbg from '../assets/pixelbg.webp';
 import { RectangleHorizontal, Minus, X } from "lucide-react";
 
 const Tablet: React.FC = () => {
@@ -29,11 +29,11 @@ const Tablet: React.FC = () => {
       {/* Inner Screen */}
       <div
         className="w-[92%] h-[80%] border-[0.3vw] border-brown shadow-xl flex justify-center items-start relative mt-[4vh] mx-auto rounded-[1.2vw]"
-        style={{
+        /*style={{
           backgroundImage: `url(${pixelbg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-        }}
+        }}*/
       >
         {/* Title - My Coding Journey */}
         <div className="absolute top-[2vh] left-[5vw] text-[5vw] text-white font-pixel">
