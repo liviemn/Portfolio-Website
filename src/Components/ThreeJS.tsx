@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
 
+
 const GLBModelLoader: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const modelLoaded = useRef(false); // Track if the model is already loaded
@@ -31,11 +32,11 @@ const GLBModelLoader: React.FC = () => {
 
     containerRef.current.appendChild(renderer.domElement);
 
-    // Load the GLB model using GLTFLoader
+    const modelPath = import.meta.env.BASE_URL + './room.glb';
     
     const loader = new GLTFLoader();
     loader.load(
-      '/Room.glb',
+      modelPath,
       (gltf) => {
         modelLoaded.current = true; // Set the flag before adding the model
         const model = gltf.scene;

@@ -24,7 +24,7 @@ const Home: React.FC = () => {
       <Navigation />
 
       <div className="relative pt-[8vh] min-h-screen px-[4vw]">
-        <div className="absolute right-[-7vw] top-[-35vh] transform -translate-y-1/2 z-0">
+        <div className="absolute right-[0] top-[5vh] z-0">
           <GLBModelLoader />
         </div>
 

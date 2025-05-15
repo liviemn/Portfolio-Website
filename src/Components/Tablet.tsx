@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import File from '../assets/file.png';
-//import Pochacco from '../assets/pochacco.gif';
 import { FaGithub } from "react-icons/fa";
 import pixelbg from '../assets/pixelbg.webp';
 import { RectangleHorizontal, Minus, X } from "lucide-react";
@@ -41,7 +40,7 @@ const Tablet: React.FC = () => {
         </div>
 
         {/* Left side - Project list */}
-        <div className="space-y-[2vh] items-start absolute left-[5vw] top-[18vh] text-white font-pixel max-h-[36vh] overflow-y-auto">
+        <div className="space-y-[2vh] items-start absolute left-[5vw] top-[18vh] text-white font-pixel max-h-[36vh] overflow-x-visible overflow-y-auto">
           {[
             'Website',
             'Project Two',
@@ -62,9 +61,9 @@ const Tablet: React.FC = () => {
           ))}
         </div>
 
-        {/* Right side - Project Details or Pochacco */}
+        {/* Right side - Project Details */}
         <div className="absolute right-[5vw] top-[17vh] text-white font-pixel max-w-[30vw]">
-          {selectedBox ? (
+          {selectedBox && (
             <div className="pt-[1vh] px-[2vw] pb-[2vw] bg-[#3E2B2B] rounded-[1vw] border-[0.3vw] border-white shadow-md text-white">
               <div className="flex items-center gap-[2.5vw] mb-[-0.2vh]">
                 <h2 className="text-[3.5vw] break-words">{selectedBox}</h2>
@@ -85,30 +84,28 @@ const Tablet: React.FC = () => {
                 </a>
               </div>
               <p className="text-[1.2vw] leading-relaxed break-words">
-                {selectedBox === 'Website' && (
+                {selectedBox === 'Website' ? (
                   <>
                     I created a website portfolio to showcase myself and my skills!
                     I had a fun time designing and creating this website.
                     <div className="flex flex-wrap gap-[0.8vw] mt-[2.2vh]">
                       {['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'].map((tech) => (
-                        <div key={tech} className="bg-white text-[#3E2B2B] rounded-full px-[0.9vw] py-[0.5vh] text-[0.9vw] font-semibold">
+                        <div
+                          key={tech}
+                          className="bg-white text-[#3E2B2B] rounded-full px-[0.9vw] py-[0.5vh] text-[0.9vw] font-semibold"
+                        >
                           {tech}
                         </div>
                       ))}
                     </div>
                   </>
+                ) : (
+                  <span>Coming Soon.</span>
                 )}
-                {selectedBox !== 'Website' && <span>Coming Soon.</span>}
               </p>
-            </div>
-          ) : (
-            <div className="flex flex-col items-center text-center space-y-[-1vh]">
-
-              <p className="text-[1.4vw] font-light">Tap a box on the left to see what's inside ✨</p>
             </div>
           )}
         </div>
-
       </div>
     </div>
   );
