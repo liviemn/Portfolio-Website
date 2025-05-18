@@ -31,12 +31,10 @@ const GLBModelLoader: React.FC = () => {
     camera.lookAt(0, 0, 0);
 
     containerRef.current.appendChild(renderer.domElement);
-
-    const modelPath = import.meta.env.BASE_URL + './room.glb';
     
     const loader = new GLTFLoader();
     loader.load(
-      modelPath,
+      './assets/Room.glb',
       (gltf) => {
         modelLoaded.current = true; // Set the flag before adding the model
         const model = gltf.scene;
