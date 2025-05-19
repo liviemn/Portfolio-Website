@@ -41,12 +41,7 @@
 }
 
 body {
-    /*background: linear-gradient(135deg, #b79891, #a38178, #94716b);
-    background-size: 200% 200%;
-    animation: gradient-flow 15s ease-in-out infinite;
-    background-repeat: no-repeat;
-    background-attachment: fixed;*/
-    background-image: url('./assets/wood.png');
+    background-image: url('./assets/wood.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

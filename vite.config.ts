@@ -6,4 +6,14 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: './', 
   plugins: [react(), tailwindcss()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          three: ['three'],              // splits three.js into its own chunk
+          react: ['react', 'react-dom'], // splits React and ReactDOM
+        },
+      },
+    },
+  },
 })
