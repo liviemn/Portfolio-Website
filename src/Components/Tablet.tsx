@@ -40,13 +40,11 @@ const Tablet: React.FC = () => {
         </div>
 
         {/* Left side - Project list */}
-        <div className="space-y-[2vh] items-start absolute left-[5vw] top-[18vh] text-white font-pixel max-h-[36vh] overflow-x-visible overflow-y-auto">
+        <div className="space-y-[2vh] items-start absolute left-[5vw] top-[18vh] text-white font-pixel max-h-[36vh]">
           {[
             'Website',
             'Project Two',
             'Project Three',
-            'Project Four',
-            'Project Five'
           ].map((project, index) => (
             <div
               key={index}
