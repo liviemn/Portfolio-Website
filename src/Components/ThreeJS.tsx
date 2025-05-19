@@ -27,7 +27,7 @@ const GLBModelLoader: React.FC = () => {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
 
-    camera.position.set(-5, 6, 5);
+    camera.position.set(-4, 5, 4);
     camera.lookAt(0, 0, 0);
 
     containerRef.current.appendChild(renderer.domElement);
