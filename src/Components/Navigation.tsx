@@ -50,8 +50,8 @@ const Navigation: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <div className="block sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-lg rounded-t-2xl">
+      {/* Mobile Navigation (dock-style) */}
+      <div className="block sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-lg rounded-t-2xl">
         <div className="flex justify-around items-center px-4 py-3">
           {navItems.map(({ label, icon }) => (
             <button
@@ -60,11 +60,9 @@ const Navigation: React.FC = () => {
                 const section = document.getElementById(label);
                 section?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="flex flex-col items-center justify-center text-[3.5vw] font-poetsen text-white"
+              className="flex flex-col items-center justify-center text-[3.5vw] font-poetsen text-gray-800"
             >
-              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-1 border border-white/40 shadow-sm backdrop-blur-sm">
-                <img src={icon} alt={label} className="w-6 h-6" />
-              </div>
+              <img src={icon} alt={label} className="w-6 h-6 mb-1" />
               {label}
             </button>
           ))}
