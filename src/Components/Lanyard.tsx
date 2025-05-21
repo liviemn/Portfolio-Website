@@ -155,7 +155,7 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
   return (
     <div 
       ref={tiltRef}
-      className="relative w-[22.23vw] max-w-[420px] aspect-[5.33/10] bg-black rounded-[2.8vw] border-[0.72vw] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center transform">
+      className="relative w-[22.23vw] max-w-[400px] aspect-[5.33/10] bg-black rounded-[2.8vw] border-[0.72vw] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center transform">
       <div className="absolute top-0 w-[9.7vw] h-[3vh] bg-black rounded-b-xl z-10 left-1/2 -translate-x-1/2" />
 
       <div
