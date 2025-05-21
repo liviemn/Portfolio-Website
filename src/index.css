@@ -56,18 +56,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/*@keyframes gradient-flow {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-} */
-
 .gradient-inner {
     background: linear-gradient(to bottom, #878280 0%, #8E6B55 50%, #6F4E4B 100%);
   }
