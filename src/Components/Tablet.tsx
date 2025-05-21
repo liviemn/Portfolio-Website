@@ -53,7 +53,7 @@ const Tablet: React.FC = () => {
             >
               <div className="flex items-center gap-x-[1vw] ml-[1.7vw]">
                 <img src={File} alt="file icon" className="w-[2vw] h-[2vw]" />
-                <span className="text-[1.7vw]">{project}</span>
+                <span className="text-base sm:text-lg md:text-xl lg:text-2xl">{project}</span>
               </div>
             </div>
           ))}
@@ -62,9 +62,9 @@ const Tablet: React.FC = () => {
         {/* Right side - Project Details */}
         <div className="w-[50%] pt-[17vh] pr-[4vw] text-white font-pixel">
           {selectedBox && (
-            <div className="pt-[1vh] px-[2vw] pb-[2vw] bg-[#3E2B2B] rounded-[1vw] border-[0.3vw] border-white shadow-md text-white">
-              <div className="flex items-center gap-[2.5vw] mb-[-0.2vh]">
-                <h2 className="text-[3.5vw] break-words">{selectedBox}</h2>
+            <div className="pt-[3vh] px-[2vw] pb-[2vw] bg-[#3E2B2B] rounded-[1vw] border-[0.3vw] border-white shadow-md text-white">
+              <div className="flex items-center gap-[2.5vw] mb-[1vh]">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words">{selectedBox}</h2>
                 <a
                   href={(() => {
                     switch (selectedBox) {
@@ -81,7 +81,7 @@ const Tablet: React.FC = () => {
                   <FaGithub />
                 </a>
               </div>
-              <p className="text-[1.2vw] leading-relaxed break-words">
+              <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
                 {selectedBox === 'Website' ? (
                   <>
                     I created a website portfolio to showcase myself and my skills!
@@ -90,7 +90,7 @@ const Tablet: React.FC = () => {
                       {['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'].map((tech) => (
                         <div
                           key={tech}
-                          className="bg-white text-[#3E2B2B] rounded-full px-[0.9vw] py-[0.5vh] text-[0.9vw] font-semibold"
+                          className="bg-white text-[#3E2B2B] rounded-full px-[0.9vw] py-[0.5vh] text-xs sm:text-sm font-semibold"
                         >
                           {tech}
                         </div>
