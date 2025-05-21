@@ -19,49 +19,62 @@ const Icons: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div
-      className="flex space-x-[2.3vw] text-[4.2vw] fixed z-50"
-      style={{
-        bottom: '12.5vh',
-        left: '100px',
-        color: '#3E2B2B',
-        opacity: opacityValue,
-        transform: `translateX(-${transformValue}px)`,
-        transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
-      }}
-    >
-      <a
-        href="https://www.linkedin.com/in/liviemoon"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="!text-[#3E2B2B] hover:!text-white transition-transform transform hover:scale-110"
+    <>
+      {/* Desktop: fixed & animated */}
+      <div
+        className="hidden sm:flex space-x-[2.3vw] text-[4.2vw] fixed z-50"
+        style={{
+          bottom: '12.5vh',
+          left: '100px',
+          color: '#3E2B2B',
+          opacity: opacityValue,
+          transform: `translateX(-${transformValue}px)`,
+          transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
+        }}
       >
-        <FaLinkedin />
-      </a>
-      <a
-        href="https://open.spotify.com/user/liviemn"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="!text-[#3E2B2B] hover:!text-white transition-transform transform hover:scale-110"
-      >
-        <FaSpotify />
-      </a>
-      <a
-        href="https://github.com/liviemn"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="!text-[#3E2B2B] hover:!text-white transition-transform transform hover:scale-110"
-      >
-        <FaGithub />
-      </a>
-    </div>
+        <IconLinks />
+      </div>
+
+      {/* Mobile: static at top */}
+      <div className="flex sm:hidden justify-center gap-6 text-[6vw] mt-4 text-[#3E2B2B]">
+        <IconLinks />
+      </div>
+    </>
   );
 };
+
+// Reusable icon links
+const IconLinks = () => (
+  <>
+    <a
+      href="https://www.linkedin.com/in/liviemoon"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-white transition-transform transform hover:scale-110"
+    >
+      <FaLinkedin />
+    </a>
+    <a
+      href="https://open.spotify.com/user/liviemn"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-white transition-transform transform hover:scale-110"
+    >
+      <FaSpotify />
+    </a>
+    <a
+      href="https://github.com/liviemn"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-white transition-transform transform hover:scale-110"
+    >
+      <FaGithub />
+    </a>
+  </>
+);
 
 export default Icons;
