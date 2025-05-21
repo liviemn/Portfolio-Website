@@ -8,10 +8,10 @@ const Tablet: React.FC = () => {
   const [selectedBox, setSelectedBox] = useState<string | null>(null);
 
   return (
-    <div className="w-[75vw] h-[75vh] bg-white border-[0.3vw] border-brown rounded-[1.5vw] shadow-xl mt-[30vh] mx-auto">
+    <div className="w-[75vw] aspect-[17.5/10] max-w-[1200px] bg-white border-[0.3vw] border-brown rounded-[1.5vw] shadow-xl mt-[30vh] mx-auto">
       
       {/* Top Bar */}
-      <div className="w-full h-[7vh] bg-[#3E2B2B] rounded-t-[1.2vw] flex items-center justify-end text-white font-pixel px-[1vw]">
+      <div className="w-full h-[9.5%] bg-[#3E2B2B] rounded-t-[1.2vw] flex items-center justify-end text-white font-pixel px-[1vw]">
         <div className="flex items-center divide-x divide-black text-white">
           <div className="px-[1.2vw]">
             <RectangleHorizontal className="w-[2vw] h-[1.7vw] cursor-pointer hover:text-gray-300" />
