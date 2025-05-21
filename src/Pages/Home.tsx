@@ -44,7 +44,9 @@ const Home: React.FC = () => {
 
           {/* Mobile 3D Model below intro */}
           <div className="block sm:hidden mt-[6vh] flex justify-center">
-            <GLBModelLoader />
+            <div className="w-[80vw] h-[60vw]">
+              <GLBModelLoader />
+            </div>
           </div>
         </section>
       </div>
