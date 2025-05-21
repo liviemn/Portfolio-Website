@@ -35,7 +35,7 @@ const Tablet: React.FC = () => {
         }}
       >
         {/* Title - My Coding Journey */}
-        <div className="absolute top-[2vh] left-[5vw] text-[5vw] text-white font-pixel">
+        <div className="absolute top-[2vh] left-[5vw] text-5xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-pixel">
           My Coding Journey
         </div>
 
@@ -48,7 +48,7 @@ const Tablet: React.FC = () => {
           ].map((project, index) => (
             <div
               key={index}
-              className="w-[24vw] h-[7.5vh] bg-[#3E2B2B] rounded-[0.6vw] flex items-center border-[0.15vw] transition-transform duration-300 hover:scale-105 cursor-pointer"
+              className="w-[93%] h-[7.5vh] bg-[#3E2B2B] rounded-[0.6vw] flex items-center border-[0.15vw] transition-transform duration-300 hover:scale-105 cursor-pointer"
               onClick={() => setSelectedBox(project)}
             >
               <div className="flex items-center gap-x-[1vw] ml-[1.7vw]">
