@@ -44,13 +44,13 @@ function About() {
       <AboutBoxes />
 
       {/* Bottom Row (sleeping gif + coffee cup + Spotify) */}
-      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-[2vw] translate-y-[8vh] relative`}>
+      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex flex-col sm:flex-row items-center sm:gap-[2vw] gap-6 sm:translate-y-[8vh] relative`}>
         
         {/* Sleeping GIF */}
         <img
           src={sleeping}
           alt="Sleeping"
-          className="absolute left-[11vw] bottom-[-2vh] w-[11vw] h-[11vw] z-10"
+          className="absolute left-[11vw] bottom-0 w-[20vw] sm:w-[11vw] h-auto z-10"
           style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
         />
 
@@ -58,7 +58,7 @@ function About() {
         <img
           src={coffeecup}
           alt="Coffee Cup"
-          className="w-[22vw] h-[22vw] translate-y-[18vh] translate-x-[4vw]"
+          className="w-[50vw] sm:w-[22vw] h-auto translate-y-[4vh] sm:translate-y-[18vh] sm:translate-x-[4vw]"
         />
 
         {/* Spotify */}
