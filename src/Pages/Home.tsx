@@ -10,9 +10,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      setLastScrollY(currentScrollY);
+      setLastScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -23,22 +21,30 @@ const Home: React.FC = () => {
     <>
       <Navigation />
 
-      <div className="relative pt-[8vh] min-h-screen px-[4vw]">
-        <div className="absolute right-[-15vh] top-[18vh]">
+      <div className="relative pt-[8vh] min-h-screen px-4 sm:px-[4vw]">
+        {/* Desktop 3D Model (absolute position) */}
+        <div className="hidden sm:block absolute right-[-15vh] top-[18vh]">
           <GLBModelLoader />
         </div>
 
+        {/* Icons component (unchanged) */}
         <Icons />
 
         <section id="Home" className="scroll-mt-[8vh]">
-          <div className="absolute top-[10vh] left-[3vw] w-[53vw] h-[49vh] bg-white/40 backdrop-blur-lg border border-white/30 rounded-[2vw] p-[3vw] shadow-lg mt-[13.5vh] z-10">
-            <img 
+          <div className="relative top-[2vh] left-[-1vw] w-full sm:w-[53vw] sm:h-[49vh] bg-white/40 backdrop-blur-lg border border-white/30 rounded-[2vw] p-6 sm:p-[3vw] shadow-lg sm:mt-[13.5vh] z-10">
+            {/* Ribbon */}
+            <img
               src={Ribbon}
               alt="Ribbon"
-              className="absolute -top-[3vh] -left-[2vw] w-[9vw] h-[9vw] pointer-events-none"
+              className="absolute -top-6 -left-4 sm:-top-[3vh] sm:-left-[2vw] w-[20vw] sm:w-[9vw] h-auto pointer-events-none"
             />
 
             <Introduction />
+          </div>
+
+          {/* Mobile 3D Model below intro */}
+          <div className="block sm:hidden mt-[6vh] flex justify-center">
+            <GLBModelLoader />
           </div>
         </section>
       </div>
