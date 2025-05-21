@@ -160,7 +160,7 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
 
       <div
         
-        className={`relative w-[94%] h-[92%] rounded-xl bg-zinc-900 shadow-inner transform transition-opacity duration-500 ease-in-out ${
+        className={`relative w-[94%] aspect-[5.1/10] rounded-xl bg-zinc-900 shadow-inner transform transition-opacity duration-500 ease-in-out ${
           fade ? 'opacity-0' : 'opacity-100'
         } overflow-hidden`}
         style={{ background: gradient }}
