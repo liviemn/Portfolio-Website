@@ -27,7 +27,7 @@ const Tablet: React.FC = () => {
 
       {/* Inner Screen */}
       <div
-        className="w-[92%] h-[80%] border-[0.3vw] border-brown shadow-xl flex justify-center items-start relative mt-[4vh] mx-auto rounded-[1.2vw]"
+        className="w-[92%] h-[80%] border-[0.3vw] border-brown shadow-xl flex justify-between items-start relative mt-[4vh] mx-auto rounded-[1.2vw] gap-[2vw]"
         style={{
           backgroundImage: `url(${pixelbg})`,
           backgroundSize: 'cover',
@@ -40,7 +40,7 @@ const Tablet: React.FC = () => {
         </div>
 
         {/* Left side - Project list */}
-        <div className="space-y-[2vh] items-start absolute left-[5vw] top-[18vh] text-white font-pixel max-h-[36vh]">
+        <div className="w-[45%] space-y-[2vh] text-white font-pixel pt-[18vh] pl-[5vw]">
           {[
             'Website',
             'Project Two',
@@ -60,7 +60,7 @@ const Tablet: React.FC = () => {
         </div>
 
         {/* Right side - Project Details */}
-        <div className="absolute right-[5vw] top-[17vh] text-white font-pixel max-w-[30vw]">
+        <div className="w-[50%] pt-[17vh] pr-[4vw] text-white font-pixel">
           {selectedBox && (
             <div className="pt-[1vh] px-[2vw] pb-[2vw] bg-[#3E2B2B] rounded-[1vw] border-[0.3vw] border-white shadow-md text-white">
               <div className="flex items-center gap-[2.5vw] mb-[-0.2vh]">
