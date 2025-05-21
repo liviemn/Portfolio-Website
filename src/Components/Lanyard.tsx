@@ -156,9 +156,10 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
     <div 
       ref={tiltRef}
       className="relative w-[22.23vw] max-w-[420px] aspect-[5.33/10] bg-black rounded-[2.8vw] border-[0.72vw] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center transform">
-      <div className="absolute top-0 w-[46%] h-[4%] bg-black rounded-b-xl z-10 left-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 w-[9.7vw] h-[3vh] bg-black rounded-b-xl z-10 left-1/2 -translate-x-1/2" />
 
       <div
+        
         className={`relative w-[94%] h-[92%] rounded-xl bg-zinc-900 shadow-inner transform transition-opacity duration-500 ease-in-out ${
           fade ? 'opacity-0' : 'opacity-100'
         } overflow-hidden`}
