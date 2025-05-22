@@ -29,7 +29,7 @@ const AboutBoxes = () => {
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={controls}
-      className="absolute left-1/2 sm:left-[30%] top-[25%] sm:top-[33.5%] transform -translate-x-1/2"
+      className="absolute left-1/2 sm:left-[30%] top-[13%] sm:top-[33.5%] transform -translate-x-1/2"
     >
       <div className="flex flex-col space-y-[4vh]">
         <div className="flex space-x-[1.5vw]">

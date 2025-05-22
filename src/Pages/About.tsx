@@ -35,7 +35,7 @@ function About() {
       className="relative h-screen flex justify-center sm:justify-end items-end pr-[5vw] pb-[20vh]"
     >
       {/* About Me*/}
-      <div className="absolute top-[15vh] left-[15vw] text-[#3E2B2B] text-[4.5vw] font-sans-serif font-poetsen">
+      <div className="absolute top-[5vh] sm:top-[15vh] left-[15vw] text-[#3E2B2B] text-[4.5vw] font-sans-serif font-poetsen">
           <Wave text={'Get To Know Me'} />
       </div>
 
@@ -43,13 +43,13 @@ function About() {
       <AboutBoxes />
 
       {/* Bottom Row (sleeping gif + coffee cup + Spotify) */}
-      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex flex-col sm:flex-row items-center gap-[4vh] sm:gap-[2vw] translate-y-[20vh] sm:translate-y-[8vh] relative`}>
+      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex flex-col sm:flex-row items-center gap-[4vh] sm:gap-[2vw] translate-y-[17vh] sm:translate-y-[8vh] relative`}>
         
         {/* Sleeping GIF */}
         <img
           src={sleeping}
           alt="Sleeping"
-          className="absolute left-[0vw] sm:left-[11vw] bottom-[-3vh] sm:bottom-[-2vh] w-[25vw] sm:w-[11vw] sm:h-[11vw] z-10"
+          className="absolute left-[0vw] sm:left-[11vw] bottom-[-2vh] sm:bottom-[-2vh] w-[25vw] sm:w-[11vw] sm:h-[11vw] z-10"
           style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
         />
 
@@ -57,7 +57,7 @@ function About() {
         <img
           src={coffeecup}
           alt="Coffee Cup"
-          className="w-[40vw] sm:w-[22vw] sm:h-[22vw] translate-y-[42vh] sm:translate-y-[18vh] translate-x-[-15vw] sm:translate-x-[4vw]"
+          className="w-[40vw] sm:w-[22vw] sm:h-[22vw] translate-y-[48vh] sm:translate-y-[18vh] translate-x-[-15vw] sm:translate-x-[4vw]"
         />
 
         {/* Spotify */}
