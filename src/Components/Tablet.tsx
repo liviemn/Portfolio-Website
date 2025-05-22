@@ -8,19 +8,19 @@ const Tablet: React.FC = () => {
   const [selectedBox, setSelectedBox] = useState<string | null>(null);
 
   return (
-    <div className="w-[75vw] aspect-[17.5/10] max-w-[1200px] bg-white border-[0.3vw] border-brown rounded-[1.5vw] shadow-xl mt-[30vh] mx-auto">
+    <div className="w-[90vw] sm:w-[75vw] aspect-[3/4] sm:aspect-[17.5/10] max-w-[370px] sm:max-w-[1200px] bg-white border-[0.3vw] border-brown rounded-[1.5vw] shadow-xl mt-[15vh] sm:mt-[30vh] mx-auto">
       
       {/* Top Bar */}
-      <div className="w-full h-[9.5%] bg-[#3E2B2B] rounded-t-[1.2vw] flex items-center justify-end text-white font-pixel px-[1vw]">
+      <div className="w-full h-[5vh] sm:h-[9.5%] bg-[#3E2B2B] rounded-t-[1.2vw] flex items-center justify-end text-white font-pixel px-[1vw]">
         <div className="flex items-center divide-x divide-black text-white">
           <div className="px-[1.2vw]">
-            <RectangleHorizontal className="w-[2vw] h-[1.7vw] cursor-pointer hover:text-gray-300" />
+            <RectangleHorizontal className="w-[4vw] sm:w-[2vw] h-auto cursor-pointer hover:text-gray-300" />
           </div>
           <div className="px-[1.2vw]">
-            <Minus className="w-[2vw] h-[1.7vw] cursor-pointer hover:text-gray-300" />
+            <Minus className="w-[4vw] sm:w-[2vw] h-auto cursor-pointer hover:text-gray-300" />
           </div>
           <div className="px-[1.2vw]">
-            <X className="w-[2vw] h-[1.7vw] cursor-pointer hover:text-gray-300" />
+            <X className="w-[4vw] sm:w-[2vw] h-auto cursor-pointer hover:text-gray-300" />
           </div>
         </div>
       </div>
@@ -35,12 +35,12 @@ const Tablet: React.FC = () => {
         }}
       >
         {/* Title - My Coding Journey */}
-        <div className="absolute top-[2vh] left-[5vw] text-5xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-pixel">
+        <div className="text-center sm:absolute sm:top-[2vh] sm:left-[5vw] text-[6vw] sm:text-5xl md:text-6xl lg:text-7xl text-white font-pixel">
           My Coding Journey
         </div>
 
         {/* Left side - Project list */}
-        <div className="w-[45%] space-y-[2vh] text-white font-pixel pt-[18vh] pl-[5vw]">
+        <div className="w-full sm:w-[45%] space-y-[2vh] text-white font-pixel pt-[18vh] pl-[5vw]">
           {[
             'Website',
             'Project Two',
@@ -48,7 +48,7 @@ const Tablet: React.FC = () => {
           ].map((project, index) => (
             <div
               key={index}
-              className="w-[93%] h-[7.5vh] bg-[#3E2B2B] rounded-[0.6vw] flex items-center border-[0.15vw] transition-transform duration-300 hover:scale-105 cursor-pointer"
+              className="w-[90%] h-[7.5vh] bg-[#3E2B2B] rounded-[0.6vw] flex items-center border-[0.15vw] transition-transform duration-300 hover:scale-105 cursor-pointer"
               onClick={() => setSelectedBox(project)}
             >
               <div className="flex items-center gap-x-[1vw] ml-[1.7vw]">
