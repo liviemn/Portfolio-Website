@@ -38,7 +38,9 @@ const GLBModelLoader: React.FC = () => {
       (gltf) => {
         modelLoaded.current = true; // Set the flag before adding the model
         const model = gltf.scene;
-        model.scale.set(2, 2, 2);
+        const isMobile = window.innerWidth < 768;
+        const scale = isMobile ? 1 : 2;
+        model.scale.set(scale, scale, scale);
         scene.add(model);
       },
       undefined,
