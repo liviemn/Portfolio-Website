@@ -110,6 +110,8 @@ const GLBModelLoader: React.FC = () => {
         width: '70%',
         height: '60vh',
         margin: 'auto',
+        touchAction: 'none',
+        pointerEvents: window.innerWidth < 768 ? 'none' : 'auto',
       }}
     />
   );
