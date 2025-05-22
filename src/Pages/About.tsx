@@ -43,7 +43,7 @@ function About() {
       <AboutBoxes />
 
       {/* Bottom Row (sleeping gif + coffee cup + Spotify) */}
-      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex items-center gap-[2vw] translate-y-[8vh] relative`}>
+      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex flex-col sm:flex-row items-center gap-[4vh] sm:gap-[2vw] translate-y-[8vh] relative`}>
         
         {/* Sleeping GIF */}
         <img

@@ -59,7 +59,7 @@ const AboutBoxes = () => {
               <li>Valorant</li>
               <li>Minecraft</li>
               <li>Stardew Valley</li>
-              <li>Elden Ring</li>
+              <li>Expedition 33</li>
             </ul>
           </div>
 
