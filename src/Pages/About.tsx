@@ -32,7 +32,7 @@ function About() {
     <div
       id="About"
       ref={aboutRef}
-      className="relative h-screen flex justify-end items-end pr-[5vw] pb-[20vh]"
+      className="relative h-screen flex justify-center sm:justify-end items-end pr-[5vw] pb-[20vh]"
     >
       {/* About Me*/}
       <div className="absolute top-[15vh] left-[15vw] text-[#3E2B2B] text-[4.5vw] font-sans-serif font-poetsen">
