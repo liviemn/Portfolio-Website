@@ -36,7 +36,7 @@ function About() {
     >
       {/* About Me*/}
       <div className="absolute top-[15vh] left-[15vw] text-[#3E2B2B] text-[4.5vw] font-sans-serif font-poetsen">
-          <Wave text={'get to know me'} />
+          <Wave text={'Get To Know Me'} />
       </div>
 
       {/* Info Boxes */}
