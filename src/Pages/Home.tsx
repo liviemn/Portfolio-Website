@@ -41,7 +41,7 @@ const Home: React.FC = () => {
           <Icons />
 
           {/* Mobile 3D Model below intro */}
-          <div className="block sm:hidden mt-[0vh] flex items-center justify-center">
+          <div className="block sm:hidden absolute mt-[-5vh] flex left-[-3vh]">
             <div className="w-[80vw] h-[60vw]">
               <GLBModelLoader />
             </div>
