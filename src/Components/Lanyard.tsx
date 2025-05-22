@@ -40,7 +40,8 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (tiltRef.current) {
+    const isMobile = window.innerWidth < 768;
+    if (tiltRef.current && !isMobile) {
       VanillaTilt.init(tiltRef.current, {
         max: 10,
         speed: 400,
@@ -48,7 +49,13 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
         'max-glare': 0.2,
       });
     }
+    return () => {
+      if (tiltRef.current && (tiltRef.current as any).vanillaTilt) {
+        (tiltRef.current as any).vanillaTilt.destroy();
+      }
+    };
   }, []);
+  
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
