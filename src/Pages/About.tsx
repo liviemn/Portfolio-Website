@@ -3,6 +3,7 @@ import SpotifyActivity from '../Components/Lanyard';
 import AboutBoxes from '../Components/AboutBoxes';
 import coffeecup from '../assets/coffeecup.png';
 import sleeping from '../assets/sleeping.gif';
+import Wave from '../Components/Wave'
 
 function About() {
   const [visible, setVisible] = useState(true);
@@ -34,10 +35,8 @@ function About() {
       className="relative h-screen flex justify-end items-end pr-[5vw] pb-[20vh]"
     >
       {/* About Me*/}
-      <div className="absolute top-[17vh] left-[5vw] rotate-[-6deg]">
-        <div className="px-[2.5vw] py-[1vh] rounded-[1vw] bg-[#3E2B2B] backdrop-blur-md shadow-lg text-[2.6vw] font-poetsen text-white drop-shadow-lg">
-          About Me
-        </div>
+      <div className="absolute top-[15vh] left-[15vw] text-[#3E2B2B] text-[4.5vw] font-sans-serif font-poetsen">
+          <Wave text={'get to know me'} />
       </div>
 
       {/* Info Boxes */}
