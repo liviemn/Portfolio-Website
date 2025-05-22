@@ -7,6 +7,28 @@ import { RectangleHorizontal, Minus, X } from "lucide-react";
 const Tablet: React.FC = () => {
   const [selectedBox, setSelectedBox] = useState<string | null>(null);
 
+  const projects = [
+    {
+      name: 'Website',
+      link: 'https://github.com/liviemn/Portfolio-Website',
+      description:
+        'I created a website portfolio to showcase myself and my skills! I had a fun time designing and creating this website.',
+      tags: ['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'],
+    },
+    {
+      name: 'Project Two',
+      link: '#',
+      description: 'Coming Soon.',
+      tags: [],
+    },
+    {
+      name: 'Project Three',
+      link: '#',
+      description: 'Coming Soon.',
+      tags: [],
+    },
+  ];
+
   return (
     <div className="w-[90vw] sm:w-[75vw] aspect-[3/4] sm:aspect-[17.5/10] max-w-[370px] sm:max-w-[1200px] bg-white border-[0.3vw] border-brown rounded-[1.5vw] shadow-xl mt-[15vh] sm:mt-[30vh] mx-auto">
       
@@ -27,67 +49,98 @@ const Tablet: React.FC = () => {
 
       {/* Inner Screen */}
       <div
-        className="w-[92%] h-[80%] border-[0.3vw] border-brown shadow-xl flex justify-between items-start relative mt-[4vh] mx-auto rounded-[1.2vw] gap-[2vw]"
+        className="w-[92%] h-[80%] border-[0.3vw] border-brown shadow-xl flex flex-col sm:flex-row justify-between items-start relative mt-[4vh] mx-auto rounded-[1.2vw] gap-[2vw]"
         style={{
           backgroundImage: `url(${pixelbg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        {/* Title - My Coding Journey */}
+        {/* Title */}
         <div className="text-center sm:absolute sm:top-[2vh] sm:left-[5vw] text-[6vw] sm:text-5xl md:text-6xl lg:text-7xl text-white font-pixel">
           My Coding Journey
         </div>
 
-        {/* Left side - Project list */}
-        <div className="w-full sm:w-[45%] space-y-[2vh] text-white font-pixel pt-[18vh] pl-[5vw]">
-          {[
-            'Website',
-            'Project Two',
-            'Project Three',
-          ].map((project, index) => (
-            <div
-              key={index}
-              className="w-[90%] h-[7.5vh] bg-[#3E2B2B] rounded-[0.6vw] flex items-center border-[0.15vw] transition-transform duration-300 hover:scale-105 cursor-pointer"
-              onClick={() => setSelectedBox(project)}
-            >
-              <div className="flex items-center gap-x-[1vw] ml-[1.7vw]">
-                <img src={File} alt="file icon" className="w-[2vw] h-[2vw]" />
-                <span className="text-base sm:text-lg md:text-xl lg:text-2xl">{project}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Right side - Project Details */}
-        <div className="w-[50%] pt-[17vh] pr-[4vw] text-white font-pixel">
-          {selectedBox && (
-            <div className="pt-[3vh] px-[2vw] pb-[2vw] bg-[#3E2B2B] rounded-[1vw] border-[0.3vw] border-white shadow-md text-white">
-              <div className="flex items-center gap-[2.5vw] mb-[1vh]">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words">{selectedBox}</h2>
-                <a
-                  href={(() => {
-                    switch (selectedBox) {
-                      case 'Website':
-                        return 'https://github.com/liviemn/Portfolio-Website';
-                      default:
-                        return '#';
-                    }
-                  })()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-gray-300 text-[3.5vw]"
+        {/* Mobile: Horizontal Scrollable Cards */}
+        <div className="sm:hidden w-full h-full mt-[10vh] px-[4vw] overflow-x-auto pb-[10vh]">
+            <div className="flex gap-4 pr-[4vw] font-pixel">
+                {projects.map((project, idx) => (
+                <div
+                    key={idx}
+                    className="min-w-[72vw] bg-[#3E2B2B] text-white border-white border-[0.3vw] rounded-[1vw] px-[4vw] py-[3vh] shadow-md"
                 >
-                  <FaGithub />
-                </a>
+                    <div className="flex items-center justify-between mb-2">
+                    <h2 className="text-xl font-pixel break-words">{project.name}</h2>
+                    {project.link !== '#' && (
+                        <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-gray-300 text-[5.5vw]"
+                        >
+                        <FaGithub />
+                        </a>
+                    )}
+                    </div>
+                    <p className="text-xs leading-relaxed break-words mb-2">{project.description}</p>
+                    {project.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                        {project.tags.map((tech) => (
+                        <div
+                            key={tech}
+                            className="bg-white text-[#3E2B2B] rounded-full px-2 py-0.5 text-[0.65rem] font-semibold"
+                        >
+                            {tech}
+                        </div>
+                        ))}
+                    </div>
+                    )}
+                </div>
+                ))}
+            </div>
+            </div>
+        {/* Desktop Only */}
+        <div className="hidden sm:flex w-full">
+          {/* Left side - Project list */}
+          <div className="w-[45%] space-y-[2vh] text-white font-pixel pt-[18vh] pl-[5vw]">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="w-[90%] h-[7.5vh] bg-[#3E2B2B] rounded-[0.6vw] flex items-center border-[0.15vw] transition-transform duration-300 hover:scale-105 cursor-pointer"
+                onClick={() => setSelectedBox(project.name)}
+              >
+                <div className="flex items-center gap-x-[1vw] ml-[1.7vw]">
+                  <img src={File} alt="file icon" className="w-[2vw] h-[2vw]" />
+                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl">{project.name}</span>
+                </div>
               </div>
-              <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
-                {selectedBox === 'Website' ? (
-                  <>
-                    I created a website portfolio to showcase myself and my skills!
-                    I had a fun time designing and creating this website.
+            ))}
+          </div>
+
+          {/* Right side - Project Details */}
+          <div className="w-[50%] pt-[17vh] pr-[4vw] ml-[3.5vw] text-white font-pixel">
+            {selectedBox && (() => {
+              const selected = projects.find(p => p.name === selectedBox);
+              if (!selected) return null;
+              return (
+                <div className="pt-[3vh] px-[2vw] pb-[2vw] bg-[#3E2B2B] rounded-[1vw] border-[0.3vw] border-white shadow-md text-white">
+                  <div className="flex items-center gap-[2.5vw] mb-[1vh]">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl break-words">{selected.name}</h2>
+                    {selected.link !== '#' && (
+                      <a
+                        href={selected.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-gray-300 text-[3.5vw]"
+                      >
+                        <FaGithub />
+                      </a>
+                    )}
+                  </div>
+                  <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">{selected.description}</p>
+                  {selected.tags.length > 0 && (
                     <div className="flex flex-wrap gap-[0.8vw] mt-[2.2vh]">
-                      {['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'].map((tech) => (
+                      {selected.tags.map((tech) => (
                         <div
                           key={tech}
                           className="bg-white text-[#3E2B2B] rounded-full px-[0.9vw] py-[0.5vh] text-xs sm:text-sm font-semibold"
@@ -96,13 +149,11 @@ const Tablet: React.FC = () => {
                         </div>
                       ))}
                     </div>
-                  </>
-                ) : (
-                  <span>Coming Soon.</span>
-                )}
-              </p>
-            </div>
-          )}
+                  )}
+                </div>
+              );
+            })()}
+          </div>
         </div>
       </div>
     </div>

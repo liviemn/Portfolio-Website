@@ -40,7 +40,7 @@ const Icons: React.FC = () => {
       </div>
 
       {/* Mobile: static at top */}
-      <div className="flex sm:hidden gap-6 text-[6vw] text-[#3E2B2B] absolute top-4 left-4 z-40">
+      <div className="flex sm:hidden gap-6 text-[6vw] text-[#3E2B2B] absolute top-4 right-4 z-40">
         <IconLinks />
       </div>
     </>

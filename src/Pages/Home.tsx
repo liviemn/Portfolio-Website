@@ -22,15 +22,8 @@ const Home: React.FC = () => {
       <Navigation />
 
       <div className="relative pt-[8vh] min-h-screen px-4 sm:px-[4vw]">
-        {/* Desktop 3D Model (absolute position) */}
-        <div className="hidden sm:block absolute right-[-15vh] top-[18vh]">
-          <GLBModelLoader />
-        </div>
 
-        {/* Icons component (unchanged) */}
-        <Icons />
-
-        <section id="Home" className="scroll-mt-[8vh]">
+        <section id="Home" className="scroll-mt-[22vh]">
           <div className="relative top-[2vh] left-[-1vw] w-full sm:w-[53vw] sm:h-[49vh] bg-white/40 backdrop-blur-lg border border-white/30 rounded-[2vw] p-6 sm:p-[3vw] shadow-lg sm:mt-[13.5vh] z-10">
             {/* Ribbon */}
             <img
@@ -40,7 +33,12 @@ const Home: React.FC = () => {
             />
 
             <Introduction />
+            
           </div>
+          <div className="hidden sm:block absolute right-[-15vh] top-[18vh]">
+            <GLBModelLoader />
+          </div>
+          <Icons />
 
           {/* Mobile 3D Model below intro */}
           <div className="block sm:hidden mt-[6vh] flex justify-center">
