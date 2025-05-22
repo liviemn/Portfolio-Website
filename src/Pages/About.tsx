@@ -43,13 +43,13 @@ function About() {
       <AboutBoxes />
 
       {/* Bottom Row (sleeping gif + coffee cup + Spotify) */}
-      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex flex-col sm:flex-row items-center gap-[4vh] sm:gap-[2vw] translate-y-[8vh] relative`}>
+      <div className={`${visible ? 'animate-slide-in' : 'animate-slide-out'} flex flex-col sm:flex-row items-center gap-[4vh] sm:gap-[2vw] translate-y-[20vh] sm:translate-y-[8vh] relative`}>
         
         {/* Sleeping GIF */}
         <img
           src={sleeping}
           alt="Sleeping"
-          className="absolute left-[11vw] bottom-[-2vh] w-[11vw] h-[11vw] z-10"
+          className="absolute left-[0vw] sm:left-[11vw] bottom-[-3vh] sm:bottom-[-2vh] w-[25vw] sm:w-[11vw] sm:h-[11vw] z-10"
           style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
         />
 
@@ -57,11 +57,13 @@ function About() {
         <img
           src={coffeecup}
           alt="Coffee Cup"
-          className="w-[22vw] h-[22vw] translate-y-[18vh] translate-x-[4vw]"
+          className="w-[40vw] sm:w-[22vw] sm:h-[22vw] translate-y-[42vh] sm:translate-y-[18vh] translate-x-[-15vw] sm:translate-x-[4vw]"
         />
 
         {/* Spotify */}
-        <SpotifyActivity userId="348153501148381184" />
+        <div className="translate-x-[20vw] sm:translate-x-0">
+          <SpotifyActivity userId="348153501148381184" />
+        </div>
       </div>
     </div>
   );
