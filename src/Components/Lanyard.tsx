@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import VanillaTilt from 'vanilla-tilt';
-import Ghibli from '../assets/ghibli.gif';
+import Ghibli from '../assets/ghibli.mp4';
 import ColorThief from 'colorthief';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPause, faForward, faBackward } from '@fortawesome/free-solid-svg-icons';
@@ -82,11 +82,11 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
         setPrevTrackId(null);
       }
     };
-
+  
     fetchSpotifyData();
     const interval = setInterval(fetchSpotifyData, 15000);
     return () => clearInterval(interval);
-  }, [userId, prevTrackId]);
+  }, [userId]); // ✅ FIXED  
 
   const [progress, setProgress] = useState(0);
   
@@ -172,13 +172,26 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
         } overflow-hidden`}
         style={{ background: gradient }}
       >
-        <img
-          ref={imgRef}
-          crossOrigin="anonymous"
-          src={spotify ? spotify.album_art_url : Ghibli}
-          alt={spotify ? spotify.album : 'Not listening to Spotify'}
-          className="w-full h-[60%] object-cover"
-        />
+        {spotify ? (
+          <img
+            ref={imgRef}
+            crossOrigin="anonymous"
+            src={spotify.album_art_url}
+            alt={spotify.album}
+            className="w-full h-[60%] object-cover"
+          />
+        ) : (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-[60%] object-cover"
+          >
+            <source src={Ghibli} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
 
         <div className="absolute top-[2.2%] left-[4.5%] text-white text-[0.7vw] tracking-widest opacity-80 uppercase">
           {spotify ? 'Now Playing' : 'Spotify'}
