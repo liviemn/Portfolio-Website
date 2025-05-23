@@ -8,7 +8,7 @@ function Skills() {
       className="relative min-h-screen flex flex-col items-center px-[5vw]"
     >
       {/* Title — absolutely positioned on desktop, static on mobile */}
-      <div className="text-[#3E2B2B] text-[8vw] sm:text-[4.5vw] font-sans-serif font-poetsen z-20 
+      <div className="text-[#3E2B2B] text-[8vw] sm:text-[4.5vw] text-outline font-poetsen font-[800] z-20 
                       mt-[5vh] sm:mt-0 
                       sm:absolute sm:top-[15vh] sm:right-[15vw]">
         <Wave text={'Skills & Tools'} />

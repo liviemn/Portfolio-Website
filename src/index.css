@@ -29,6 +29,8 @@
     font-family: Pixel;
     src: url("../src/assets/fonts/Pixel.ttf")
 }
+  
+
 
 
 @theme {
@@ -89,5 +91,17 @@ body {
   
   .animate-slide-out {
     animation: slideOutRight 0.8s ease-in forwards;
+  }
+  
+  .text-outline {
+    text-shadow:
+      2px 2px 0 white,
+     -2px 2px 0 white,
+      2px -2px 0 white,
+     -2px -2px 0 white,
+      0 2px 0 white,
+      2px 0 0 white,
+      0 -2px 0 white,
+     -2px 0 0 white;
   }
   

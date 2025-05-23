@@ -58,7 +58,7 @@ function About() {
       className="relative h-screen flex justify-center sm:justify-end items-end pr-[5vw] pb-[20vh]"
     >
       {/* About Me */}
-      <div className="absolute top-[5vh] sm:top-[15vh] left-[15vw] text-[#3E2B2B] text-[8vw] sm:text-[4.5vw] font-sans-serif font-poetsen">
+      <div className="absolute top-[5vh] sm:top-[15vh] left-[15vw] text-[#3E2B2B] text-outline text-[8vw] sm:text-[4.5vw] font-poetsen font-[800]">
         <Wave text={'Get To Know Me'} />
       </div>
 
