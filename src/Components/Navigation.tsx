@@ -51,7 +51,7 @@ const Navigation: React.FC = () => {
       </div>
 
       {/* Mobile Navigation*/}
-      <div className="block sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-lg border-t border-neutral-300">
+      <div className="block sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-lg border-t border-neutral-300 rounded-t-2xl">
         <div className="flex justify-around items-center px-4 py-3">
           {navItems.map(({ label, icon }) => (
             <button
