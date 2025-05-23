@@ -24,9 +24,9 @@ const techsRight = [
   { icon: <SiTailwindcss className="text-white text-[6.5vw] sm:text-[3vw] mb-[1vh]" />, label: "TailwindCSS" },
 ];
 
-// Helper to assign delay based on "how far from center"
+// Delay helper
 const getDelay = (column: number, row: number) => {
-  return (Math.abs(column - 1) + Math.abs(row - 1)) * 0.2;
+  return (Math.abs(column - 1) + Math.abs(row - 1)) * 0.15;
 };
 
 const Tech: React.FC = () => {
@@ -67,21 +67,20 @@ const TechCard: React.FC<{
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 2.2, delay }}
+      initial={{ opacity: 0, translateY: 20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.3 }}
+      style={{ willChange: 'opacity, transform' }}
       className="rounded-[1.2vw] bg-gradient-to-r from-[#D6B98C] via-[#C8A370] to-[#B58A56] p-[0.2vw] hover:scale-105 transition-transform duration-300 shadow-md"
     >
       <div
         className="flex flex-col items-center justify-center w-[20vw] sm:w-[9vw] aspect-[2.75/2] bg-cover bg-center rounded-[1.2vw] backdrop-blur-md"
         style={{ backgroundImage: `url(${Wood})` }}
       >
-        {/* Icon with responsive sizing and centering */}
         <div className="text-white flex items-center justify-center w-[8vw] h-[8vw] sm:w-[3.3vw] sm:h-[3.3vw]">
           {tech.icon}
         </div>
-        {/* Label */}
         <p className="text-[2.2vw] sm:text-[1vw] text-center font-semibold text-white">
           {tech.label}
         </p>

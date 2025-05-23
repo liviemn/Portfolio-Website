@@ -2,23 +2,21 @@ import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-
 const AboutBoxes = () => {
-    const controls = useAnimation();
-    const { ref, inView } = useInView({
-      threshold: 0.2,
-      triggerOnce: true,
-    });
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
 
   useEffect(() => {
     if (inView) {
       controls.start({
         opacity: 1,
-        y: 0,
+        translateY: 0,
         transition: {
           duration: 0.8,
-          type: 'spring',
-          bounce: 0.5,
+          ease: 'easeOut',
         },
       });
     }
@@ -27,14 +25,14 @@ const AboutBoxes = () => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, translateY: 30 }}
       animate={controls}
+      style={{ willChange: 'transform, opacity' }}
       className="absolute left-1/2 sm:left-[30%] top-[13.5%] sm:top-[33.5%] transform -translate-x-1/2"
     >
       <div className="flex flex-col space-y-[4vh]">
         <div className="flex space-x-[1.5vw]">
-
-          {/* INTERESTS Box */}
+          {/* INTERESTS */}
           <div className="relative w-[36vw] sm:w-[14vw] aspect-[4/4] bg-white text-[#3E2B2B] rounded-[3vw] sm:rounded-[1vw] shadow-md p-[1vw] flex border-[0.4vw] sm:border-[0.2vw] border-[#3E2B2B]">
             <div className="absolute top-[-1.5vh] sm:top-[-2.5vh] left-[1vw] w-[16vw] sm:w-[7vw] aspect-[9.5/4] bg-[#3E2B2B] rounded-full flex items-center justify-center">
               <span className="text-[2.5vw] sm:text-[1vw] text-white font-poetsen">INTERESTS</span>
@@ -49,7 +47,7 @@ const AboutBoxes = () => {
             </ul>
           </div>
 
-          {/* GAMES Box */}
+          {/* GAMES */}
           <div className="relative w-[36vw] sm:w-[14vw] aspect-[4/4] bg-white text-[#3E2B2B] rounded-[3vw] sm:rounded-[1vw] shadow-md p-[1vw] flex border-[0.4vw] sm:border-[0.2vw] border-[#3E2B2B]">
             <div className="absolute top-[-1.5vh] sm:top-[-2.5vh] left-[1vw] w-[16vw] sm:w-[7vw] aspect-[9.5/4] bg-[#3E2B2B] rounded-full flex items-center justify-center">
               <span className="text-[2.5vw] sm:text-[1vw] text-white font-poetsen">GAMES</span>
@@ -62,10 +60,9 @@ const AboutBoxes = () => {
               <li>Expedition 33</li>
             </ul>
           </div>
-
         </div>
 
-        {/* HOBBIES Box */}
+        {/* HOBBIES */}
         <div className="relative w-[74vw] sm:w-[29.5vw] aspect-[12/4] bg-white text-[#3E2B2B] rounded-[3vw] sm:rounded-[1vw] shadow-md p-[1.2vw] flex justify-center border-[0.4vw] sm:border-[0.2vw] border-[#3E2B2B]">
           <div className="absolute top-[-1.5vh] sm:top-[-2.5vh] left-[1vw] w-[16vw] sm:w-[7vw] aspect-[9.5/4] bg-[#3E2B2B] rounded-full flex items-center justify-center">
             <span className="text-[2.5vw] sm:text-[1vw] text-white font-poetsen">HOBBIES</span>
