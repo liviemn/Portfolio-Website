@@ -16,7 +16,7 @@ const AboutBoxes = () => {
         opacity: 1,
         y: 0,
         transition: {
-          duration: 2.3,
+          duration: 0.8,
           type: 'spring',
           bounce: 0.5,
         },
