@@ -34,7 +34,7 @@ interface SpotifyActivityProps {
 
 const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
   const [spotify, setSpotify] = useState<SpotifyData | null>(null);
-  const [prevTrackId, setPrevTrackId] = useState<string | null>(null);
+  const [, setPrevTrackId] = useState<string | null>(null);
   const [fade, setFade] = useState(false);
   const [gradient, setGradient] = useState<string>('');
   const [, setTextColor] = useState<string>('black');
