@@ -4,6 +4,8 @@ import Ghibli from '../assets/ghibli.mp4';
 import ColorThief from 'colorthief';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPause, faForward, faBackward } from '@fortawesome/free-solid-svg-icons';
+let lanyardInterval: ReturnType<typeof setInterval> | null = null;
+let lastFetchedTrackId: string | null = null;
 
 
 interface SpotifyData {
@@ -35,13 +37,13 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
   const [prevTrackId, setPrevTrackId] = useState<string | null>(null);
   const [fade, setFade] = useState(false);
   const [gradient, setGradient] = useState<string>('');
-  const [, setTextColor] = useState<string>('black'); // Default text color
+  const [, setTextColor] = useState<string>('black');
   const tiltRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
+  const isMobile = window.innerWidth < 768;
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    if (tiltRef.current && !isMobile) {
+    if (!isMobile && tiltRef.current) {
       VanillaTilt.init(tiltRef.current, {
         max: 10,
         speed: 400,
@@ -49,13 +51,13 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
         'max-glare': 0.2,
       });
     }
+
     return () => {
-      if (tiltRef.current && (tiltRef.current as any).vanillaTilt) {
+      if (!isMobile && tiltRef.current && (tiltRef.current as any).vanillaTilt) {
         (tiltRef.current as any).vanillaTilt.destroy();
       }
     };
-  }, []);
-  
+  }, [isMobile]);
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
@@ -64,17 +66,19 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
         const json: LanyardResponse = await res.json();
         if (json.success && json.data.listening_to_spotify && json.data.spotify) {
           const newTrack = json.data.spotify;
-          if (newTrack.track_id !== prevTrackId) {
+          if (newTrack.track_id !== lastFetchedTrackId) {
             setFade(true);
             setTimeout(() => {
               setSpotify(newTrack);
               setPrevTrackId(newTrack.track_id);
+              lastFetchedTrackId = newTrack.track_id;
               setFade(false);
             }, 300);
           }
         } else {
           setSpotify(null);
           setPrevTrackId(null);
+          lastFetchedTrackId = null;
         }
       } catch (err) {
         console.error('Error fetching Lanyard data:', err);
@@ -83,31 +87,50 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
       }
     };
   
+    // Fetch immediately on mount
     fetchSpotifyData();
-    const interval = setInterval(fetchSpotifyData, 15000);
-    return () => clearInterval(interval);
-  }, [userId]); // ✅ FIXED  
+  
+    // Only set interval once
+    if (!lanyardInterval) {
+      lanyardInterval = setInterval(fetchSpotifyData, 15000);
+    }
+  
+    // Optional: clear when window unloads (not unmount, since it's singleton)
+    const unloadHandler = () => {
+      if (lanyardInterval) {
+        clearInterval(lanyardInterval);
+        lanyardInterval = null;
+      }
+    };
+  
+    window.addEventListener('beforeunload', unloadHandler);
+    return () => window.removeEventListener('beforeunload', unloadHandler);
+  }, [userId]);
+  
 
   const [progress, setProgress] = useState(0);
-  
+
   useEffect(() => {
     let animationFrameId: number;
-  
-    const updateProgress = () => {
-      if (spotify) {
-        const now = Date.now();
-        const total = spotify.timestamps.end - spotify.timestamps.start;
-        const current = now - spotify.timestamps.start;
-        const percent = Math.min((current / total) * 100, 100);
-        setProgress(percent);
-      } else {
-        setProgress(0);
+    let lastUpdate = 0;
+
+    const updateProgress = (timestamp: number) => {
+      if (timestamp - lastUpdate > 1000) {
+        if (spotify) {
+          const now = Date.now();
+          const total = spotify.timestamps.end - spotify.timestamps.start;
+          const current = now - spotify.timestamps.start;
+          const percent = Math.min((current / total) * 100, 100);
+          setProgress(percent);
+        } else {
+          setProgress(0);
+        }
+        lastUpdate = timestamp;
       }
       animationFrameId = requestAnimationFrame(updateProgress);
     };
-  
+
     animationFrameId = requestAnimationFrame(updateProgress);
-  
     return () => cancelAnimationFrame(animationFrameId);
   }, [spotify]);
 
@@ -120,53 +143,53 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
   };
 
   useEffect(() => {
-    const getGradientFromImage = () => {
-      const img = imgRef.current;
-      if (!img) return;
+    if (spotify && !isMobile) {
+      const getGradientFromImage = () => {
+        const img = imgRef.current;
+        if (!img) return;
 
-      const colorThief = new ColorThief();
+        const colorThief = new ColorThief();
 
-      if (img.complete) {
-        try {
-          const rgb: number[] = colorThief.getColor(img);
-          const luminance = getLuminance(rgb);
-          const newTextColor = luminance > 0.5 ? 'black' : 'white'; // Dark backgrounds get white text
-          setTextColor(newTextColor);
-          setGradient(`linear-gradient(135deg, rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]}), #3E2B2B)`);
-        } catch (error) {
-          console.warn('ColorThief error:', error);
-        }
-      } else {
-        img.addEventListener('load', () => {
+        if (img.complete) {
           try {
             const rgb: number[] = colorThief.getColor(img);
             const luminance = getLuminance(rgb);
-            const newTextColor = luminance > 0.5 ? 'black' : 'white'; // Dark backgrounds get white text
+            const newTextColor = luminance > 0.5 ? 'black' : 'white';
             setTextColor(newTextColor);
             setGradient(`linear-gradient(135deg, rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]}), #3E2B2B)`);
           } catch (error) {
             console.warn('ColorThief error:', error);
           }
-        });
-      }
-    };
+        } else {
+          img.addEventListener('load', () => {
+            try {
+              const rgb: number[] = colorThief.getColor(img);
+              const luminance = getLuminance(rgb);
+              const newTextColor = luminance > 0.5 ? 'black' : 'white';
+              setTextColor(newTextColor);
+              setGradient(`linear-gradient(135deg, rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]}), #3E2B2B)`);
+            } catch (error) {
+              console.warn('ColorThief error:', error);
+            }
+          });
+        }
+      };
 
-    if (spotify) {
-        getGradientFromImage();
+      getGradientFromImage();
     } else {
-        setGradient('linear-gradient(135deg,rgb(64, 64, 85),rgb(231, 179, 134))');
-        setTextColor('white');
+      setGradient('linear-gradient(135deg,rgb(64, 64, 85),rgb(231, 179, 134))');
+      setTextColor('white');
     }
-  }, [spotify]);
+  }, [spotify, isMobile]);
 
   return (
-    <div 
-      ref={tiltRef}
-      className="relative w-[42vw] sm:w-[22.23vw] max-w-[400px] aspect-[5.33/10] bg-black rounded-[4vw] sm:rounded-[2.8vw] border-[0.72vw] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center transform">
+    <div
+      ref={!isMobile ? tiltRef : undefined}
+      className="relative w-[42vw] sm:w-[22.23vw] max-w-[400px] aspect-[5.33/10] bg-black rounded-[4vw] sm:rounded-[2.8vw] border-[0.72vw] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center transform"
+    >
       <div className="absolute top-0 w-[45%] max-w-[160px] h-[0.8rem] sm:h-[1.45rem] bg-black rounded-b-xl z-10 left-1/2 -translate-x-1/2" />
 
       <div
-        
         className={`relative w-[94%] aspect-[5.1/10] rounded-xl bg-zinc-900 shadow-inner transform transition-opacity duration-500 ease-in-out ${
           fade ? 'opacity-0' : 'opacity-100'
         } overflow-hidden`}
@@ -209,23 +232,22 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
               <div
                 className="h-full bg-white"
                 style={{
-                    width: `${progress}%`,
-                    transition: 'width 0.2s ease-out',
+                  width: `${progress}%`,
+                  transition: 'width 0.2s ease-out',
                 }}
-                ></div>
+              ></div>
             </div>
 
             <div className="flex gap-[1.8vw] items-center">
-            <FontAwesomeIcon icon={faBackward} className="text-[1.3vw] hover:scale-110 transition-transform duration-200 cursor-pointer" />
-            <FontAwesomeIcon icon={faPause} className="text-[1.8vw] hover:scale-125 transition-transform duration-200 cursor-pointer" />
-            <FontAwesomeIcon icon={faForward} className="text-[1.3vw] hover:scale-110 transition-transform duration-200 cursor-pointer" />
+              <FontAwesomeIcon icon={faBackward} className="text-[1.3vw] hover:scale-110 transition-transform duration-200 cursor-pointer" />
+              <FontAwesomeIcon icon={faPause} className="text-[1.8vw] hover:scale-125 transition-transform duration-200 cursor-pointer" />
+              <FontAwesomeIcon icon={faForward} className="text-[1.3vw] hover:scale-110 transition-transform duration-200 cursor-pointer" />
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-
 };
 
 export default SpotifyActivity;

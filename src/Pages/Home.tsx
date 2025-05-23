@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Navigation from '../Components/Navigation';
 import Introduction from '../Components/Introduction';
-import GLBModelLoader from '../Components/ThreeJS';
 import Icons from '../Components/Icons';
 import Ribbon from '../assets/ribbon.webp';
 
-// Custom hook to detect mobile screen
+// Lazy load the 3D model component
+const GLBModelLoader = lazy(() => import('../Components/ThreeJS'));
+
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -49,16 +50,18 @@ const Home: React.FC = () => {
             <Introduction />
           </div>
 
-          {/* Conditionally render only one GLB model */}
-          {isMobile ? (
-            <div className="absolute mt-[-5vh] flex left-[-3vh] w-[80vw] h-[60vw]">
-              <GLBModelLoader />
-            </div>
-          ) : (
-            <div className="absolute right-[-15vh] top-[18vh]">
-              <GLBModelLoader />
-            </div>
-          )}
+          {/* Conditionally render only one GLB model (lazy-loaded) */}
+          <Suspense fallback={<div className="text-white">Loading 3D model...</div>}>
+            {isMobile ? (
+              <div className="absolute mt-[-5vh] flex left-[-3vh] w-[80vw] h-[60vw]">
+                <GLBModelLoader />
+              </div>
+            ) : (
+              <div className="absolute right-[-15vh] top-[18vh]">
+                <GLBModelLoader />
+              </div>
+            )}
+          </Suspense>
 
           <Icons />
         </section>
