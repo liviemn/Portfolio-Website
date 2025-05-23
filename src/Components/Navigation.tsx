@@ -50,24 +50,31 @@ const Navigation: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation (dock-style) */}
-      <div className="block sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-lg rounded-t-2xl">
+      {/* Mobile Navigation*/}
+      <div className="block sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-lg border-t border-neutral-300">
         <div className="flex justify-around items-center px-4 py-3">
           {navItems.map(({ label, icon }) => (
             <button
               key={label}
               onClick={() => {
-                const section = document.getElementById(label);
-                section?.scrollIntoView({ behavior: 'smooth' });
+              const section = document.getElementById(label);
+              section?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="flex flex-col items-center justify-center text-[3.5vw] font-poetsen text-gray-800"
+              className="flex flex-col items-center justify-center"
             >
-              <img src={icon} alt={label} className="w-6 h-6 mb-1" />
-              {label}
-            </button>
-          ))}
-        </div>
-      </div>
+            <div className="w-[14vw] h-[14vw] max-w-[64px] max-h-[64px] bg-[#F2D7B6] rounded-full shadow-inner flex items-center justify-center mb-[0.5vh] border-[3px] border-white">
+              <img
+                src={icon}
+                alt={label}
+                className="w-[6vw] h-[6vw] max-w-[32px] max-h-[32px]"
+              />
+            </div>
+          <span className="text-[3.5vw] font-poetsen text-gray-800">{label}</span>
+        </button>
+        ))}
+    </div>
+    </div>
+
     </>
   );
 };
