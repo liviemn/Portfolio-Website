@@ -109,6 +109,8 @@ const GLBModelLoader: React.FC = () => {
       style={{
         width: '70%',
         height: '60vh',
+        minHeight: '60vh',
+        display: 'block',
         margin: 'auto',
         touchAction: 'none',
         pointerEvents: window.innerWidth < 768 ? 'none' : 'auto',
