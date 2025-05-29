@@ -16,6 +16,13 @@ const GLBModelLoader: React.FC = () => {
     const camera = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
 
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+        renderer.setPixelRatio(0.75); // reduce pixel density to improve performance
+    } else {
+        renderer.setPixelRatio(window.devicePixelRatio);
+    }
+
     const width = window.innerWidth * 0.9;
     const height = window.innerHeight * 0.8;
     renderer.setSize(width, height);
@@ -68,7 +75,6 @@ const GLBModelLoader: React.FC = () => {
     scene.add(spotLight);
 
     // Orbit Controls (Desktop only)
-    const isMobile = window.innerWidth < 768;
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.25;
@@ -76,19 +82,25 @@ const GLBModelLoader: React.FC = () => {
     controls.enableZoom = false;
     controls.enabled = !isMobile;
 
+    let lastFrameTime = 0;
+
     // Animation loop
-    const animate = () => {
+    const animate = (time: number) => {
       requestAnimationFrame(animate);
 
-      if (isMobile && modelRef.current) {
-        modelRef.current.rotation.y += 0.01; // Auto-rotate on mobile
-      } else {
-        controls.update(); // Desktop controls
+      const delta = time - lastFrameTime;
+
+      if (isMobile && modelRef.current && delta > 33) {
+        modelRef.current.rotation.y += 0.01;
+        lastFrameTime = time;
+      }
+      if (!isMobile) {
+        controls.update();
       }
 
       renderer.render(scene, camera);
     };
-    animate();
+    requestAnimationFrame(animate);
 
     // Cleanup
     return () => {
