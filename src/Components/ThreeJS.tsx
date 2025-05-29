@@ -14,14 +14,23 @@ const GLBModelLoader: React.FC = () => {
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-
     const isMobile = window.innerWidth < 768;
-    if (isMobile) {
-        renderer.setPixelRatio(0.75); // reduce pixel density to improve performance
-    } else {
-        renderer.setPixelRatio(window.devicePixelRatio);
-    }
+
+    // ✅ Create renderer with alpha and optimized buffer handling
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+      preserveDrawingBuffer: false, // better memory performance
+    });
+
+    // ✅ Smart pixel ratio: balance clarity & performance
+    const maxPixelRatio = 1.5;
+    const targetPixelRatio = isMobile
+      ? Math.min(window.devicePixelRatio, maxPixelRatio)
+      : window.devicePixelRatio;
+
+    renderer.setPixelRatio(targetPixelRatio);
+
 
     const width = window.innerWidth * 0.9;
     const height = window.innerHeight * 0.8;
