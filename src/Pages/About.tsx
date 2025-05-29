@@ -90,9 +90,12 @@ function About() {
         />
 
         {/* Spotify */}
-        <div className="translate-x-[20vw] sm:translate-x-0">
-          <SpotifyActivity userId="348153501148381184" />
-        </div>
+        {!isMobile && (
+  <div className="translate-x-[20vw] sm:translate-x-0">
+    <SpotifyActivity userId="348153501148381184" />
+  </div>
+)}
+
       </motion.div>
     </div>
   );
