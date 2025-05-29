@@ -16,14 +16,12 @@ const GLBModelLoader: React.FC = () => {
     const camera = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
     const isMobile = window.innerWidth < 768;
 
-    // ✅ Create renderer with alpha and optimized buffer handling
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
-      preserveDrawingBuffer: false, // better memory performance
+      preserveDrawingBuffer: false, 
     });
 
-    // ✅ Smart pixel ratio: balance clarity & performance
     const maxPixelRatio = 1.5;
     const targetPixelRatio = isMobile
       ? Math.min(window.devicePixelRatio, maxPixelRatio)
@@ -91,25 +89,30 @@ const GLBModelLoader: React.FC = () => {
     controls.enableZoom = false;
     controls.enabled = !isMobile;
 
-    let lastFrameTime = 0;
+    let lastFrame = 0;
 
-    // Animation loop
     const animate = (time: number) => {
-      requestAnimationFrame(animate);
-
-      const delta = time - lastFrameTime;
-
-      if (isMobile && modelRef.current && delta > 33) {
-        modelRef.current.rotation.y += 0.01;
-        lastFrameTime = time;
-      }
-      if (!isMobile) {
-        controls.update();
-      }
-
-      renderer.render(scene, camera);
-    };
     requestAnimationFrame(animate);
+
+    const delta = time - lastFrame;
+    const isMobile = window.innerWidth < 768;
+    const fpsCap = isMobile ? 30 : 60;
+    const interval = 1000 / fpsCap;
+
+    if (delta >= interval) {
+        if (isMobile && modelRef.current) {
+        modelRef.current.rotation.y += 0.005; // slower rotation
+        } else {
+        controls.update();
+        }
+
+        renderer.render(scene, camera);
+        lastFrame = time;
+    }
+    };
+
+    requestAnimationFrame(animate);
+
 
     // Cleanup
     return () => {
