@@ -5,13 +5,12 @@ import SpotifyActivity from '../Components/Lanyard';
 import AboutBoxes from '../Components/AboutBoxes';
 import coffeecup from '../assets/coffeecup.png';
 import sleeping from '../assets/sleeping.gif';
-//import Wave from '../Components/Wave';
+import Wave from '../Components/Wave'; // Re-enable Wave import
 
 function About() {
   const [, setVisible] = useState(true);
   const aboutRef = useRef<HTMLDivElement>(null);
 
-  // Scroll-triggered animation controls
   const controls = useAnimation();
   const { ref: bottomRowRef, inView } = useInView({
     threshold: 0.2,
@@ -22,20 +21,13 @@ function About() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
+      ([entry]) => setVisible(entry.isIntersecting),
       { threshold: 0.3 }
     );
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
-
+    if (aboutRef.current) observer.observe(aboutRef.current);
     return () => {
-      if (aboutRef.current) {
-        observer.unobserve(aboutRef.current);
-      }
+      if (aboutRef.current) observer.unobserve(aboutRef.current);
     };
   }, []);
 
@@ -45,13 +37,13 @@ function About() {
         opacity: 1,
         y: 0,
         transition: {
-          duration:isMobile ? 1.1 : 2.3,
+          duration: isMobile ? 1.1 : 2.3,
           type: isMobile ? 'tween' : 'spring',
           bounce: isMobile ? 0.1 : 0.5,
         },
       });
     }
-  }, [inView, controls]);
+  }, [inView, controls, isMobile]);
 
   return (
     <div
@@ -59,15 +51,25 @@ function About() {
       ref={aboutRef}
       className="relative h-screen flex justify-center sm:justify-end items-end pr-[5vw] pb-[20vh]"
     >
-      {/* About Me */}
+      {/* Title - Wave on desktop, simple fade on mobile */}
       <div className="absolute top-[5vh] sm:top-[15vh] left-[15vw] text-[#3E2B2B] text-outline text-[8vw] sm:text-[4.5vw] font-poetsen font-[800]">
-        Get to Know Me
+        {isMobile ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            Get to Know Me
+          </motion.div>
+        ) : (
+          <Wave text="Get to Know Me" />
+        )}
       </div>
 
       {/* Info Boxes */}
       <AboutBoxes />
 
-      {/* Bottom Row (sleeping gif + coffee cup + Spotify) */}
+      {/* Bottom Row (GIF + Cup + Spotify) */}
       <motion.div
         ref={bottomRowRef}
         animate={controls}
