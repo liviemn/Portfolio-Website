@@ -5,7 +5,7 @@ import SpotifyActivity from '../Components/Lanyard';
 import AboutBoxes from '../Components/AboutBoxes';
 import coffeecup from '../assets/coffeecup.png';
 import sleeping from '../assets/sleeping.gif';
-import Wave from '../Components/Wave';
+//import Wave from '../Components/Wave';
 
 function About() {
   const [, setVisible] = useState(true);
