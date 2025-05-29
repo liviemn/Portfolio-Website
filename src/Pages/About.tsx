@@ -70,7 +70,7 @@ function About() {
         ref={bottomRowRef}
         animate={controls}
         initial={{ opacity: 0, y: 50 }}
-        className="flex flex-col sm:flex-row items-center gap-[4vh] sm:gap-[2vw] translate-y-[17vh] sm:translate-y-[8vh] relative"
+        className="flex flex-col sm:flex-row items-center gap-[4vh] sm:gap-[2vw] translate-y-[22vh] sm:translate-y-[8vh] relative"
       >
         {/* Sleeping GIF */}
         <img
