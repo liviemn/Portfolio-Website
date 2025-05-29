@@ -39,8 +39,9 @@ function About() {
         y: 0,
         transition: {
           duration: isMobile ? 1.1 : 2.3,
+          ease: isMobile ? 'easeOut' : undefined,
           type: isMobile ? 'tween' : 'spring',
-          bounce: isMobile ? 0.1 : 0.5,
+          bounce: isMobile ? 0 : 0.5,
         },
       });
     }
