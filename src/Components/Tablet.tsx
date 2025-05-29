@@ -30,7 +30,7 @@ const Tablet: React.FC = () => {
   ];
 
   return (
-    <div className="w-[90vw] sm:w-[75vw] aspect-[3/4] sm:aspect-[17.5/10] max-w-[370px] sm:max-w-[1200px] bg-white border-[0.3vw] border-brown rounded-[2vw] sm:rounded-[1.5vw] shadow-xl mt-[15vh] sm:mt-[30vh] mx-auto">
+    <div className="w-[90vw] sm:w-[75vw] aspect-[3/4] sm:aspect-[17.5/10] max-w-[370px] sm:max-w-[1200px] bg-white border-[0.3vw] border-brown rounded-[2vw] sm:rounded-[1.5vw] shadow-xl mx-auto">
       
       {/* Top Bar */}
       <div className="w-full h-[5vh] sm:h-[9.5%] bg-[#3E2B2B] rounded-t-[1.2vw] flex items-center justify-end text-white font-pixel px-[1vw]">
