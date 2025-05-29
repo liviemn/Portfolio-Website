@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import SpotifyActivity from '../Components/Lanyard';
-import AboutBoxes from '../Components/AboutBoxes';
+//import AboutBoxes from '../Components/AboutBoxes';
 import coffeecup from '../assets/coffeecup.png';
 import sleeping from '../assets/sleeping.gif';
 import Wave from '../Components/Wave';
