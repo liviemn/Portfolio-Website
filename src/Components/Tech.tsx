@@ -24,69 +24,65 @@ const techsRight = [
   { icon: <SiTailwindcss className="text-white text-[6.5vw] sm:text-[3vw] mb-[1vh]" />, label: "TailwindCSS" },
 ];
 
-// Delay helper
-const getDelay = (column: number, row: number) => {
-  return (Math.abs(column - 1) + Math.abs(row - 1)) * 0.15;
-};
 
 const Tech: React.FC = () => {
-  return (
-    <div className="absolute left-[5vw] right-[5vw] bg-transparent p-[3vw] max-w-[88vw] mx-auto mt-[13vh] z-10">
-      <div className="flex justify-center sm:justify-start items-center gap-[3.2vw]">
-        {/* Left Column */}
-        <div className="flex flex-col justify-center gap-[3vh]">
-          {techsLeft.map((tech, index) => (
-            <TechCard key={index} tech={tech} column={0} row={index} />
-          ))}
+    return (
+      <motion.div
+        initial={{ opacity: 0, translateY: 30 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.3 }}
+        style={{ willChange: 'opacity, transform' }}
+        className="absolute left-[5vw] right-[5vw] bg-transparent p-[3vw] max-w-[88vw] mx-auto mt-[13vh] z-10"
+      >
+        <div className="flex justify-center sm:justify-start items-center gap-[3.2vw]">
+          {/* Left Column */}
+          <div className="flex flex-col justify-center gap-[3vh]">
+            {techsLeft.map((tech, index) => (
+              <TechCard key={index} tech={tech} />
+            ))}
+          </div>
+  
+          {/* Middle Column */}
+          <div className="flex flex-col justify-center gap-[3vh]">
+            {techsMiddle.map((tech, index) => (
+              <TechCard key={index} tech={tech} />
+            ))}
+          </div>
+  
+          {/* Right Column */}
+          <div className="flex flex-col justify-center gap-[3vh]">
+            {techsRight.map((tech, index) => (
+              <TechCard key={index} tech={tech} />
+            ))}
+          </div>
         </div>
-
-        {/* Middle Column */}
-        <div className="flex flex-col justify-center gap-[3vh]">
-          {techsMiddle.map((tech, index) => (
-            <TechCard key={index} tech={tech} column={1} row={index} />
-          ))}
-        </div>
-
-        {/* Right Column */}
-        <div className="flex flex-col justify-center gap-[3vh]">
-          {techsRight.map((tech, index) => (
-            <TechCard key={index} tech={tech} column={2} row={index} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
+      </motion.div>
+    );
+  };
+  
 
 const TechCard: React.FC<{
-  tech: { icon: React.ReactElement; label: string };
-  column: number;
-  row: number;
-}> = ({ tech, column, row }) => {
-  const delay = getDelay(column, row);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, translateY: 20 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
-      viewport={{ once: true, amount: 0.3 }}
-      style={{ willChange: 'opacity, transform' }}
-      className="rounded-[1.2vw] bg-gradient-to-r from-[#D6B98C] via-[#C8A370] to-[#B58A56] p-[0.2vw] hover:scale-105 transition-transform duration-300 shadow-md"
-    >
+    tech: { icon: React.ReactElement; label: string };
+  }> = ({ tech }) => {
+    return (
       <div
-        className="flex flex-col items-center justify-center w-[20vw] sm:w-[9vw] aspect-[2.75/2] bg-cover bg-center rounded-[1.2vw] backdrop-blur-md"
-        style={{ backgroundImage: `url(${Wood})` }}
+        className="rounded-[1.2vw] bg-gradient-to-r from-[#D6B98C] via-[#C8A370] to-[#B58A56] p-[0.2vw] hover:scale-105 transition-transform duration-300 shadow-md"
       >
-        <div className="text-white flex items-center justify-center w-[8vw] h-[8vw] sm:w-[3.3vw] sm:h-[3.3vw]">
-          {tech.icon}
+        <div
+          className="flex flex-col items-center justify-center w-[20vw] sm:w-[9vw] aspect-[2.75/2] bg-cover bg-center rounded-[1.2vw] backdrop-blur-md"
+          style={{ backgroundImage: `url(${Wood})` }}
+        >
+          <div className="text-white flex items-center justify-center w-[8vw] h-[8vw] sm:w-[3.3vw] sm:h-[3.3vw]">
+            {tech.icon}
+          </div>
+          <p className="text-[2.2vw] sm:text-[1vw] text-center font-semibold text-white">
+            {tech.label}
+          </p>
         </div>
-        <p className="text-[2.2vw] sm:text-[1vw] text-center font-semibold text-white">
-          {tech.label}
-        </p>
       </div>
-    </motion.div>
-  );
-};
+    );
+  };
+  
 
 export default Tech;
