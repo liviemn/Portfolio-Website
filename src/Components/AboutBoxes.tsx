@@ -1,26 +1,8 @@
-import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { useSpringInView } from '../Components/Animation';
 
-const AboutBoxes = () => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({
-        opacity: 1,
-        translateY: 0,
-        transition: {
-          duration: 0.8,
-          ease: 'easeOut',
-        },
-      });
-    }
-  }, [inView, controls]);
+const AboutBoxes: React.FC<{ delay?: number }> = ({ delay = 0.2 }) => {
+    const { ref, controls } = useSpringInView(delay);
 
   return (
     <motion.div
