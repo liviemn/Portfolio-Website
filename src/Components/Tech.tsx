@@ -1,10 +1,8 @@
-// src/Components/Tech.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaHtml5, FaNodeJs, FaPython, FaJava } from 'react-icons/fa';
 import { SiTypescript, SiCss3, SiThreedotjs, SiVite, SiTailwindcss } from 'react-icons/si';
 import Wood from "../assets/darkwood.jpeg";
-import { useSpringInView } from '../Components/Animation'; // adjust path if needed
 
 // Left, Middle, Right Columns
 const techsLeft = [
@@ -66,22 +64,27 @@ const TechCard: React.FC<{
   row: number;
 }> = ({ tech, column, row }) => {
   const delay = getDelay(column, row);
-  const { ref, controls, initial } = useSpringInView(delay);
 
   return (
     <motion.div
-      ref={ref}
-      initial={initial}
-      animate={controls}
-      className="flex flex-col items-center justify-center w-[20vw] sm:w-[9vw] aspect-[2.75/2] bg-cover bg-center rounded-[1.2vw] backdrop-blur-md"
-      style={{ backgroundImage: `url(${Wood})` }}
+      initial={{ opacity: 0, translateY: 20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.3 }}
+      style={{ willChange: 'opacity, transform' }}
+      className="rounded-[1.2vw] bg-gradient-to-r from-[#D6B98C] via-[#C8A370] to-[#B58A56] p-[0.2vw] hover:scale-105 transition-transform duration-300 shadow-md"
     >
-      <div className="text-white flex items-center justify-center w-[8vw] h-[8vw] sm:w-[3.3vw] sm:h-[3.3vw]">
-        {tech.icon}
+      <div
+        className="flex flex-col items-center justify-center w-[20vw] sm:w-[9vw] aspect-[2.75/2] bg-cover bg-center rounded-[1.2vw] backdrop-blur-md"
+        style={{ backgroundImage: `url(${Wood})` }}
+      >
+        <div className="text-white flex items-center justify-center w-[8vw] h-[8vw] sm:w-[3.3vw] sm:h-[3.3vw]">
+          {tech.icon}
+        </div>
+        <p className="text-[2.2vw] sm:text-[1vw] text-center font-semibold text-white">
+          {tech.label}
+        </p>
       </div>
-      <p className="text-[2.2vw] sm:text-[1vw] text-center font-semibold text-white">
-        {tech.label}
-      </p>
     </motion.div>
   );
 };
