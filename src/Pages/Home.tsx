@@ -1,29 +1,16 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '../Components/Navigation';
 import Introduction from '../Components/Introduction';
 import Icons from '../Components/Icons';
 import Ribbon from '../assets/ribbon.webp';
 
 // Lazy load the 3D model component
-const GLBModelLoader = lazy(() => import('../Components/ThreeJS'));
+//const GLBModelLoader = lazy(() => import('../Components/ThreeJS'));
 
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia('(max-width: 640px)');
-    const update = () => setIsMobile(media.matches);
-    update();
-    media.addEventListener('change', update);
-    return () => media.removeEventListener('change', update);
-  }, []);
-
-  return isMobile;
-};
 
 const Home: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
-  const isMobile = useIsMobile();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +38,7 @@ const Home: React.FC = () => {
           </div>
 
           {/* Conditionally render only one GLB model (lazy-loaded) */}
-          <Suspense fallback={<div className="text-white">Loading 3D model...</div>}>
+          {/*<Suspense fallback={<div className="text-white">Loading 3D model...</div>}>
             {isMobile ? (
               <div className="absolute mt-[-5vh] flex left-[-3vh] w-[80vw] h-[60vw]">
                 <GLBModelLoader />
@@ -61,7 +48,7 @@ const Home: React.FC = () => {
                 <GLBModelLoader />
               </div>
             )}
-          </Suspense>
+          </Suspense> */}
 
           <Icons />
         </section>
