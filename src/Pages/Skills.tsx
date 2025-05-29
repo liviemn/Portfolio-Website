@@ -1,5 +1,5 @@
 import Tech from '../Components/Tech';
-import Wave from '../Components/Wave';
+//import Wave from '../Components/Wave';
 
 function Skills() {
   return (
@@ -11,7 +11,7 @@ function Skills() {
       <div className="text-[#3E2B2B] text-[8vw] sm:text-[4.5vw] text-outline font-poetsen font-[800] z-20 
                       mt-[15vh] sm:mt-0 
                       sm:absolute sm:top-[15vh] sm:right-[15vw]">
-        <Wave text={'Skills & Tools'} />
+        Skills & Tools
       </div>
 
       {/* Tech Stack (margin added on mobile to push below title) */}

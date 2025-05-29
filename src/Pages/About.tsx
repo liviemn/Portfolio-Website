@@ -2,10 +2,10 @@ import { useEffect, useState, useRef } from 'react';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import SpotifyActivity from '../Components/Lanyard';
-//import AboutBoxes from '../Components/AboutBoxes';
+import AboutBoxes from '../Components/AboutBoxes';
 import coffeecup from '../assets/coffeecup.png';
 import sleeping from '../assets/sleeping.gif';
-import Wave from '../Components/Wave';
+//import Wave from '../Components/Wave';
 
 function About() {
   const [, setVisible] = useState(true);
@@ -61,11 +61,11 @@ function About() {
     >
       {/* About Me */}
       <div className="absolute top-[5vh] sm:top-[15vh] left-[15vw] text-[#3E2B2B] text-outline text-[8vw] sm:text-[4.5vw] font-poetsen font-[800]">
-        <Wave text={'Get To Know Me'} />
+        Get to Know Me
       </div>
 
       {/* Info Boxes */}
-      <div className="w-full h-[20vh] bg-pink-100 text-center">Testing No Boxes</div>
+      <AboutBoxes />
 
       {/* Bottom Row (sleeping gif + coffee cup + Spotify) */}
       <motion.div
