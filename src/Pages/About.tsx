@@ -75,12 +75,15 @@ function About() {
         className="flex flex-col sm:flex-row items-center gap-[4vh] sm:gap-[2vw] translate-y-[22vh] sm:translate-y-[8vh] relative"
       >
         {/* Sleeping GIF */}
-        <img
-          src={sleeping}
-          alt="Sleeping"
-          className="absolute left-[0vw] sm:left-[11vw] bottom-[-2vh] sm:bottom-[-2vh] w-[25vw] sm:w-[11vw] aspect-[1/1] z-10"
-          style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
-        />
+        {!isMobile && (
+  <img
+    src={sleeping}
+    alt="Sleeping"
+    className="absolute left-[11vw] bottom-[-2vh] w-[11vw] aspect-[1/1] z-10"
+    style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
+  />
+)}
+
 
         {/* Coffee Cup */}
         <img
@@ -90,12 +93,9 @@ function About() {
         />
 
         {/* Spotify */}
-        {!isMobile && (
-  <div className="translate-x-[20vw] sm:translate-x-0">
-    <SpotifyActivity userId="348153501148381184" />
-  </div>
-)}
-
+        <div className="translate-x-[20vw] sm:translate-x-0">
+          <SpotifyActivity userId="348153501148381184" />
+        </div>
       </motion.div>
     </div>
   );
