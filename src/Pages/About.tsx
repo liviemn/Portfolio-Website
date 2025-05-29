@@ -76,7 +76,7 @@ function About() {
         <img
           src={sleeping}
           alt="Sleeping"
-          className="absolute left-[0vw] sm:left-[11vw] bottom-[-2vh] sm:bottom-[-2vh] w-[25vw] sm:w-[11vw] sm:h-[11vw] z-10"
+          className="absolute left-[0vw] sm:left-[11vw] bottom-[-2vh] sm:bottom-[-2vh] w-[25vw] sm:w-[11vw] aspect-[1/1] z-10"
           style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
         />
 
@@ -84,7 +84,7 @@ function About() {
         <img
           src={coffeecup}
           alt="Coffee Cup"
-          className="w-[40vw] sm:w-[22vw] sm:h-[22vw] translate-y-[48vh] sm:translate-y-[18vh] translate-x-[-15vw] sm:translate-x-[4vw]"
+          className="w-[40vw] sm:w-[22vw] aspect-[1/1] translate-y-[48vh] sm:translate-y-[18vh] translate-x-[-15vw] sm:translate-x-[4vw]"
         />
 
         {/* Spotify */}

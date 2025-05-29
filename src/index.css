@@ -3,31 +3,37 @@
 @font-face {
     font-family: Montserrat;
     src: url("../src/assets/fonts/Montserrat-SemiBold.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: Poetsen;
     src: url("../src/assets/fonts/PoetsenOne-Regular.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: Fredoka;
     src: url("../src/assets/fonts/Fredoka.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: InterBold;
     src: url("../src/assets/fonts/InterBold.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: Londrina;
     src: url("../src/assets/fonts/LondrinaSolid-Regular.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: Pixel;
-    src: url("../src/assets/fonts/Pixel.ttf")
+    src: url("../src/assets/fonts/Pixel.ttf");
+    font-display: swap;
 }
   
 
@@ -41,6 +47,18 @@
     --font-londrina: Londrina, "sans-serif";
     --font-pixel: Pixel, "sans-serif";
 }
+
+canvas#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    display: block;
+  }
+  
 
 body {
     background-image: url('./assets/wood.webp');
