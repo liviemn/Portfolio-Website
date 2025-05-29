@@ -18,6 +18,8 @@ function About() {
     triggerOnce: true,
   });
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -43,9 +45,9 @@ function About() {
         opacity: 1,
         y: 0,
         transition: {
-          duration: 2.3,
-          type: 'spring',
-          bounce: 0.5,
+          duration:isMobile ? 1.1 : 2.3,
+          type: isMobile ? 'tween' : 'spring',
+          bounce: isMobile ? 0.1 : 0.5,
         },
       });
     }

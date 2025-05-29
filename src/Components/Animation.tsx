@@ -6,6 +6,8 @@ export const useSpringInView = (delay = 0, threshold = 0.3) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold, triggerOnce: true });
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   useEffect(() => {
     if (inView) {
       controls.start({
@@ -14,8 +16,8 @@ export const useSpringInView = (delay = 0, threshold = 0.3) => {
         scale: 1,
         rotate: 0,
         transition: {
-          duration: 1.5,      // Slightly faster
-          type: 'spring',
+          duration: isMobile ? 1 : 1.5,      // Slightly faster
+          type: isMobile ? 'tween' : 'spring',
           bounce: 0.4,        // Single soft bounce
           delay,
         },
@@ -28,9 +30,9 @@ export const useSpringInView = (delay = 0, threshold = 0.3) => {
     controls,
     initial: {
       opacity: 0,
-      y: 100,       // Start lower
+      y: isMobile ? 50 : 100,       // Start lower
       scale: 0.95,  // Slight zoom
-      rotate: -3,   // Optional tilt
+      rotate: isMobile ? 0 : -3,   // Optional tilt
     },
   };
 };

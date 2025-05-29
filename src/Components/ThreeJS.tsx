@@ -34,7 +34,7 @@ const GLBModelLoader: React.FC = () => {
     const height = window.innerHeight * 0.8;
     renderer.setSize(width, height);
     renderer.setClearColor(0x000000, 0);
-    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.enabled = !isMobile;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
     camera.aspect = width / height;
