@@ -5,7 +5,8 @@ import SpotifyActivity from '../Components/Lanyard';
 import AboutBoxes from '../Components/AboutBoxes';
 import coffeecup from '../assets/coffeecup.png';
 import sleeping from '../assets/sleeping.gif';
-import Wave from '../Components/Wave'; // Re-enable Wave import
+import Wave from '../Components/Wave';
+import { useSpringInView } from '../Components/Animation';
 
 function About() {
   const [, setVisible] = useState(true);
@@ -18,13 +19,13 @@ function About() {
   });
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const { ref: mobileTitleRef, controls: mobileTitleControls, initial } = useSpringInView();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
       { threshold: 0.3 }
     );
-
     if (aboutRef.current) observer.observe(aboutRef.current);
     return () => {
       if (aboutRef.current) observer.unobserve(aboutRef.current);
@@ -51,13 +52,13 @@ function About() {
       ref={aboutRef}
       className="relative h-screen flex justify-center sm:justify-end items-end pr-[5vw] pb-[20vh]"
     >
-      {/* Title - Wave on desktop, simple fade on mobile */}
+      {/* Title: Spring on mobile, Wave on desktop */}
       <div className="absolute top-[5vh] sm:top-[15vh] left-[15vw] text-[#3E2B2B] text-outline text-[8vw] sm:text-[4.5vw] font-poetsen font-[800]">
         {isMobile ? (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            ref={mobileTitleRef}
+            initial={initial}
+            animate={mobileTitleControls}
           >
             Get to Know Me
           </motion.div>
@@ -69,14 +70,13 @@ function About() {
       {/* Info Boxes */}
       <AboutBoxes />
 
-      {/* Bottom Row (GIF + Cup + Spotify) */}
+      {/* Bottom Row */}
       <motion.div
         ref={bottomRowRef}
         animate={controls}
         initial={{ opacity: 0, y: 50 }}
         className="flex flex-col sm:flex-row items-center gap-[4vh] sm:gap-[2vw] translate-y-[22vh] sm:translate-y-[8vh] relative"
       >
-        {/* Sleeping GIF */}
         <img
           src={sleeping}
           alt="Sleeping"
@@ -84,14 +84,12 @@ function About() {
           style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
         />
 
-        {/* Coffee Cup */}
         <img
           src={coffeecup}
           alt="Coffee Cup"
           className="w-[40vw] sm:w-[22vw] aspect-[1/1] translate-y-[48vh] sm:translate-y-[18vh] translate-x-[-15vw] sm:translate-x-[4vw]"
         />
 
-        {/* Spotify */}
         <div className="translate-x-[20vw] sm:translate-x-0">
           <SpotifyActivity userId="348153501148381184" />
         </div>
