@@ -57,16 +57,46 @@ canvas#bg {
     z-index: -1;
     pointer-events: none;
     display: block;
-  }
-  
+}
 
-body {
-    background-image: url('./assets/wood.webp');
+.section-home {
+    background-image: url('./assets/home.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    height: 100vh;
-    width: 100%;
+}
+  
+.section-about {
+    background-image: url('./assets/about.webp');
+    background-size: cover;
+    background-position: center;
+}
+  
+.section-skills {
+    background-image: url('./assets/skills.webp');
+    background-size: cover;
+    background-position: center;
+}
+  
+.section-projects {
+    background-image: url('./assets/projects.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.section-home,
+.section-about,
+.section-skills,
+.section-projects {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  overflow: hidden;
+}
+
+
+body {
     font-family: var(--font-montserrat);
     color: #333;
     line-height: 1.6;
