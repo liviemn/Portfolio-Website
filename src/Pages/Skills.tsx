@@ -15,7 +15,7 @@ function Skills() {
       {/* Title: Wave on desktop, simple animation on mobile */}
       <div
         className="text-[#3E2B2B] text-[8vw] sm:text-[4.5vw] text-outline font-poetsen font-[800] z-20 
-                  mt-[15vh] sm:mt-0 
+                  mt-[7vh] sm:mt-0 
                   sm:absolute sm:top-[15vh] sm:right-[15vw]"
       >
         {isMobile ? (
@@ -32,7 +32,7 @@ function Skills() {
       </div>
 
       {/* Tech Stack */}
-      <div className="mt-[5vh] sm:mt-0 w-full">
+      <div className="mt-[-8vh] sm:mt-0 w-full">
         <Tech />
       </div>
     </div>
