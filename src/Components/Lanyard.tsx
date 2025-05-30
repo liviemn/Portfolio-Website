@@ -185,7 +185,7 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
   return (
     <div
       ref={!isMobile ? tiltRef : undefined}
-      className="relative w-[42vw] sm:w-[22.23vw] max-w-[400px] aspect-[5.33/10] bg-black rounded-[4vw] sm:rounded-[2.8vw] border-[0.72vw] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center sm:transform"
+      className="relative w-[37vw] sm:w-[22.23vw] max-w-[400px] aspect-[5.33/10] bg-black rounded-[4vw] sm:rounded-[2.8vw] border-[0.72vw] border-zinc-800 shadow-2xl overflow-hidden flex items-center justify-center sm:transform"
     >
       <div className="absolute top-0 w-[45%] max-w-[160px] h-[0.8rem] sm:h-[1.45rem] bg-black rounded-b-xl z-10 left-1/2 -translate-x-1/2" />
 
