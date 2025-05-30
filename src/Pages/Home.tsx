@@ -4,7 +4,6 @@ import Introduction from '../Components/Introduction';
 import Icons from '../Components/Icons';
 import Ribbon from '../assets/ribbon.webp';
 
-// Lazy load the 3D model component
 const GLBModelLoader = lazy(() => import('../Components/ThreeJS'));
 
 const useIsMobile = () => {
@@ -41,7 +40,6 @@ const Home: React.FC = () => {
       <div className="relative pt-[8vh] min-h-screen px-4 sm:px-[4vw]">
         <section id="Home" className="scroll-mt-[22vh]">
           <div className="relative top-[2vh] left-[-1vw] w-full sm:w-[53vw] sm:h-[49vh] bg-white/40 backdrop-blur-lg border border-white/30 rounded-[2vw] p-6 sm:p-[3vw] shadow-lg sm:mt-[13.5vh] z-10">
-            {/* Ribbon */}
             <img
               src={Ribbon}
               alt="Ribbon"
@@ -50,7 +48,6 @@ const Home: React.FC = () => {
             <Introduction />
           </div>
 
-          {/* Conditionally render only one GLB model (lazy-loaded) */}
           <Suspense fallback={<div className="text-white">Loading 3D model...</div>}>
             {isMobile ? (
               <div className="absolute mt-[-5vh] flex left-[-3vh] w-[80vw] h-[60vw]">

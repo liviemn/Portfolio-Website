@@ -4,7 +4,6 @@ import { FaReact, FaHtml5, FaNodeJs, FaPython, FaJava } from 'react-icons/fa';
 import { SiTypescript, SiCss3, SiThreedotjs, SiVite, SiTailwindcss } from 'react-icons/si';
 import Wood from "../assets/darkwood.jpeg";
 
-// Left, Middle, Right Columns
 const techsLeft = [
   { icon: <FaReact className="text-white text-[7vw] sm:text-[3vw] mb-[1vh]" />, label: "React" },
   { icon: <FaHtml5 className="text-white text-[7vw] sm:text-[3vw] mb-[1vh]" />, label: "HTML" },

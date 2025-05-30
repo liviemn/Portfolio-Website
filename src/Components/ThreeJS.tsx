@@ -11,7 +11,6 @@ const GLBModelLoader: React.FC = () => {
   useEffect(() => {
     if (!containerRef.current || modelLoaded.current) return;
 
-    // Scene, Camera, Renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
     const isMobile = window.innerWidth < 768;
@@ -44,7 +43,6 @@ const GLBModelLoader: React.FC = () => {
 
     containerRef.current.appendChild(renderer.domElement);
 
-    // Model loading
     const loader = new GLTFLoader();
     loader.load(
       './assets/Room.glb',
@@ -65,7 +63,6 @@ const GLBModelLoader: React.FC = () => {
       }
     );
 
-    // Lighting
     scene.add(new THREE.AmbientLight(0xffffff, 1));
 
     const pointLight = new THREE.PointLight(0xffffff, 2, 100);
@@ -81,7 +78,6 @@ const GLBModelLoader: React.FC = () => {
     spotLight.angle = Math.PI / 6;
     scene.add(spotLight);
 
-    // Orbit Controls (Desktop only)
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.25;
@@ -114,7 +110,6 @@ const GLBModelLoader: React.FC = () => {
     requestAnimationFrame(animate);
 
 
-    // Cleanup
     return () => {
       controls.dispose();
       renderer.dispose();

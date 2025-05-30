@@ -16,9 +16,9 @@ export const useSpringInView = (delay = 0, threshold = 0.3) => {
         scale: 1,
         rotate: 0,
         transition: {
-          duration: isMobile ? 1 : 1.5,      // Slightly faster
+          duration: isMobile ? 1 : 1.5,
           type: isMobile ? 'tween' : 'spring',
-          bounce: 0.4,        // Single soft bounce
+          bounce: 0.4,
           delay,
         },
       });
@@ -30,9 +30,9 @@ export const useSpringInView = (delay = 0, threshold = 0.3) => {
     controls,
     initial: {
       opacity: 0,
-      y: isMobile ? 50 : 100,       // Start lower
-      scale: 0.95,  // Slight zoom
-      rotate: isMobile ? 0 : -3,   // Optional tilt
+      y: isMobile ? 50 : 100,
+      scale: 0.95,
+      rotate: isMobile ? 0 : -3, 
     },
   };
 };

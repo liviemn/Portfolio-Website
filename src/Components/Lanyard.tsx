@@ -87,15 +87,12 @@ const SpotifyActivity: React.FC<SpotifyActivityProps> = ({ userId }) => {
       }
     };
   
-    // Fetch immediately on mount
     fetchSpotifyData();
   
-    // Only set interval once
     if (!lanyardInterval) {
       lanyardInterval = setInterval(fetchSpotifyData, 15000);
     }
   
-    // Optional: clear when window unloads (not unmount, since it's singleton)
     const unloadHandler = () => {
       if (lanyardInterval) {
         clearInterval(lanyardInterval);

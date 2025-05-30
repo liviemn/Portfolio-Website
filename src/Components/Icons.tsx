@@ -24,7 +24,7 @@ const Icons: React.FC = () => {
 
   return (
     <>
-      {/* Desktop: fixed & animated */}
+      {/* Desktop */}
       <div
         className="hidden sm:flex space-x-[2.3vw] text-[4.2vw] fixed z-50"
         style={{
@@ -39,7 +39,7 @@ const Icons: React.FC = () => {
         <IconLinks />
       </div>
 
-      {/* Mobile: static at top */}
+      {/* Mobile */}
       <div className="flex sm:hidden gap-6 text-[6vw] text-[#3E2B2B] absolute top-4 right-4 z-40">
         <IconLinks />
       </div>
@@ -47,7 +47,7 @@ const Icons: React.FC = () => {
   );
 };
 
-// Reusable icon links
+
 const IconLinks = () => (
   <>
     <a

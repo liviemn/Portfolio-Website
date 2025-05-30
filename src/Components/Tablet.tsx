@@ -16,10 +16,10 @@ const Tablet: React.FC = () => {
       tags: ['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'],
     },
     {
-      name: 'Project Two',
+      name: 'Music Player',
       link: '#',
-      description: 'Coming Soon.',
-      tags: [],
+      description: 'Currently Working On :)',
+      tags: ['Swift', 'HTML'],
     },
     {
       name: 'Project Three',
@@ -47,7 +47,6 @@ const Tablet: React.FC = () => {
         </div>
       </div>
 
-      {/* Inner Screen */}
       <div
         className="w-[95%] sm:w-[92%] h-[85%] sm:h-[80%] border-[0.3vw] border-brown shadow-xl flex flex-col sm:flex-row justify-between items-start relative mt-[2vh] sm:mt-[4vh] mx-auto rounded-[2vw] sm:rounded-[1.2vw] gap-[2vw]"
         style={{
@@ -56,12 +55,11 @@ const Tablet: React.FC = () => {
           backgroundPosition: 'center',
         }}
       >
-        {/* Title */}
         <div className="text-center w-full sm:text-left sm:absolute sm:top-[2vh] sm:left-[5vw] text-[6vw] sm:text-5xl md:text-6xl lg:text-7xl text-white font-pixel">
           My Coding Journey
         </div>
 
-        {/* Mobile: Horizontal Scrollable Cards */}
+        {/* Mobile */}
         <div className="sm:hidden w-full h-full mt-[5vh] px-[4vw] pb-[4vh] overflow-x-auto snap-x snap-mandatory">
           <div className="flex gap-5 pr-[4vw] font-pixel">
             {projects.map((project, idx) => (
@@ -69,7 +67,6 @@ const Tablet: React.FC = () => {
                 key={idx}
                 className="snap-center min-w-[80vw] bg-[#3E2B2B] text-white border-white border-[0.3vw] rounded-[1.5vw] px-[5vw] py-[3vh] shadow-lg flex flex-col justify-between"
             >
-                {/* Header */}
                 <div className="flex items-center justify-between mb-3">
                 <h2 className="text-[5vw] font-pixel">{project.name}</h2>
                 {project.link !== '#' && (
@@ -84,12 +81,10 @@ const Tablet: React.FC = () => {
                 )}
                 </div>
 
-                {/* Description */}
                 <p className="text-[3.2vw] leading-snug break-words mb-3">
                 {project.description}
                 </p>
 
-                {/* Tags */}
                 {project.tags.length > 0 && (
                 <div className="flex flex-wrap gap-[1vw] mt-auto">
                     {project.tags.map((tech) => (
@@ -107,9 +102,9 @@ const Tablet: React.FC = () => {
           </div>
         </div>
 
-        {/* Desktop Only */}
+        {/* Desktop */}
         <div className="hidden sm:flex w-full">
-          {/* Left side - Project list */}
+          {/* Project list */}
           <div className="w-[45%] space-y-[2vh] text-white font-pixel pt-[18vh] pl-[5vw]">
             {projects.map((project, index) => (
               <div
@@ -125,7 +120,7 @@ const Tablet: React.FC = () => {
             ))}
           </div>
 
-          {/* Right side - Project Details */}
+          {/* Project Details */}
           <div className="w-[50%] pt-[17vh] pr-[4vw] ml-[3.5vw] text-white font-pixel">
             {selectedBox && (() => {
               const selected = projects.find(p => p.name === selectedBox);
