@@ -81,17 +81,17 @@ function About() {
         <img
           src={sleeping}
           alt="Sleeping"
-          className="absolute left-[-3vw] sm:left-[11vw] bottom-[13vh] sm:bottom-[-2vh] w-[25vw] sm:w-[11vw] aspect-[1/1] z-10"
+          className="absolute left-[-2vw] sm:left-[11vw] bottom-[9vh] sm:bottom-[-2vh] w-[25vw] sm:w-[11vw] aspect-[1/1] z-10"
           style={{ transform: 'translateX(-60%) rotate(-8deg)' }}
         />
 
         <img
           src={coffeecup}
           alt="Coffee Cup"
-          className="w-[40vw] sm:w-[22vw] aspect-[1/1] translate-y-[22vh] sm:translate-y-[18vh] translate-x-[-15vw] sm:translate-x-[4vw]"
+          className="w-[40vw] sm:w-[22vw] aspect-[1/1] translate-y-[31vh] sm:translate-y-[18vh] translate-x-[-15vw] sm:translate-x-[4vw]"
         />
 
-        <div className="translate-x-[20vw] sm:translate-x-0 translate-y-[-15vh] sm:translate-y-0">
+        <div className="translate-x-[20vw] sm:translate-x-0 translate-y-[-10vh] sm:translate-y-0">
           <SpotifyActivity userId="348153501148381184" />
         </div>
       </motion.div>
