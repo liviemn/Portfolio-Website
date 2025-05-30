@@ -104,6 +104,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background-color: #5C3A21;
 }
 
 .gradient-inner {
