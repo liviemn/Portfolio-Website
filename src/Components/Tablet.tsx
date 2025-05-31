@@ -22,9 +22,9 @@ const Tablet: React.FC = () => {
       tags: ['Swift', 'HTML'],
     },
     {
-      name: 'Project Three',
+      name: 'Spotify Wrapped',
       link: '#',
-      description: 'Coming Soon.',
+      description: 'Currently Working On :)',
       tags: [],
     },
   ];
