@@ -16,10 +16,10 @@ const Tablet: React.FC = () => {
       tags: ['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'],
     },
     {
-      name: 'Music Player',
-      link: '#',
-      description: 'Currently Working On :)',
-      tags: ['Swift', 'HTML'],
+      name: 'Discord Music Player',
+      link: 'https://github.com/liviemn/discord-music-bot',
+      description: 'Created my own music bot called MoonCloud. Most bots dont work due to change of TOS but I made mine through multiple sources, but especially soundcloud. Still in progress!',
+      tags: ['Javascript', 'Discord.js', 'Discord API'],
     },
     {
       name: 'Spotify Wrapped',
