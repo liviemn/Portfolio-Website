@@ -16,9 +16,9 @@ const Tablet: React.FC = () => {
       tags: ['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'],
     },
     {
-      name: 'Discord Music Player',
+      name: 'Discord Music Bot',
       link: 'https://github.com/liviemn/discord-music-bot',
-      description: 'Created my own music bot called MoonCloud. Most bots dont work due to change of TOS but I made mine through multiple sources, but especially soundcloud. Still in progress!',
+      description: 'Created my own music bot called MoonCloud. Most bots dont work due to change of TOS but I made mine through multiple sources. Testing Mode!',
       tags: ['Javascript', 'Discord.js', 'Discord API'],
     },
     {
