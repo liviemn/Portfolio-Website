@@ -141,6 +141,17 @@ body {
   .animate-slide-out {
     animation: slideOutRight 0.8s ease-in forwards;
   }
+
+  @keyframes slide-left-right {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+    100% { transform: translateX(0); }
+  }
+
+  .slide-left-right {
+    animation: slide-left-right 1.2s ease-in-out infinite;
+  }
+
   
   .text-outline {
     text-shadow:

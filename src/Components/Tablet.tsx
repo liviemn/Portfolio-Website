@@ -30,6 +30,7 @@ const Tablet: React.FC = () => {
   ];
 
   return (
+    
     <div className="w-[90vw] sm:w-[75vw] aspect-[3/4] sm:aspect-[17.5/10] max-w-[370px] sm:max-w-[1200px] bg-white border-[0.3vw] border-brown rounded-[2vw] sm:rounded-[1.5vw] shadow-xl mx-auto sm:mt-[-8vh]">
       
       {/* Top Bar */}
@@ -100,7 +101,7 @@ const Tablet: React.FC = () => {
             </div>
             ))}
           </div>
-          <div className="flex justify-end mt-3 text-white font-pixel text-[3.5vw]">
+          <div className="flex justify-start pl-3 mt-3 text-white font-pixel text-[3.5vw] slide-left-right">
             <span>Swipe Right</span>
             <ArrowRight className="ml-2 w-[5vw] h-[5vw]" />
           </div>
