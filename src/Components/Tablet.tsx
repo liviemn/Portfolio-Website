@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import File from '../assets/file.png';
 import { FaGithub } from "react-icons/fa";
 import pixelbg from '../assets/pixelbg.webp';
-import { RectangleHorizontal, Minus, X } from "lucide-react";
+import { RectangleHorizontal, Minus, X, ArrowRight } from "lucide-react";
 
 const Tablet: React.FC = () => {
   const [selectedBox, setSelectedBox] = useState<string | null>(null);
@@ -100,7 +100,12 @@ const Tablet: React.FC = () => {
             </div>
             ))}
           </div>
+          <div className="flex justify-end mt-3 text-white font-pixel text-[3.5vw]">
+            <span>Swipe Right</span>
+            <ArrowRight className="ml-2 w-[5vw] h-[5vw]" />
+          </div>
         </div>
+        
 
         {/* Desktop */}
         <div className="hidden sm:flex w-full">
