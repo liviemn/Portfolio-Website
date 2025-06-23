@@ -9,11 +9,11 @@ const Tablet: React.FC = () => {
 
   const projects = [
     {
-      name: 'Website',
-      link: 'https://github.com/liviemn/Portfolio-Website',
+      name: 'Mini Spotify Wrapped',
+      link: 'https://github.com/liviemn/mini-spotify-wrapped',
       description:
-        'I created a website portfolio to showcase myself and my skills! I had a fun time designing and creating this website.',
-      tags: ['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'],
+        'Created a personalized Spotify Wrapped - see your top songs and artists!',
+      tags: ['React', 'SpringBoot', 'Java', 'Spotify API', 'OAuth2'],
     },
     {
       name: 'Discord Music Bot',
@@ -22,10 +22,11 @@ const Tablet: React.FC = () => {
       tags: ['Javascript', 'Discord.js', 'Discord API'],
     },
     {
-      name: 'Spotify Wrapped',
-      link: '#',
-      description: 'Currently Working On :)',
-      tags: [],
+      name: 'Website',
+      link: 'https://github.com/liviemn/Portfolio-Website',
+      description:
+        'I created a website portfolio to showcase myself and my skills! I had a fun time designing and creating this website.',
+      tags: ['React', 'Typescript', 'TailwindCSS', 'ThreeJS', 'HTML', 'CSS', 'Lanyard'],
     },
   ];
 
