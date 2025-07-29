@@ -18,7 +18,7 @@ const Tablet: React.FC = () => {
     {
       name: 'Discord Music Bot',
       link: 'https://github.com/liviemn/discord-music-bot',
-      description: 'Created my own music bot called MoonCloud. Most bots dont work due to change of TOS but I made mine through multiple sources. Testing Mode!',
+      description: 'Created my own music bot called MoonCloud. Most bots dont work due to change of TOS but I made mine through multiple sources.',
       tags: ['Javascript', 'Discord.js', 'Discord API'],
     },
     {
