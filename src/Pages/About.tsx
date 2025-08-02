@@ -53,17 +53,17 @@ function About() {
       ref={aboutRef}
       className="relative h-screen flex justify-center sm:justify-end items-end pr-[5vw] pb-[20vh]"
     >
-      <div className="absolute top-[5vh] sm:top-[15vh] left-[15vw] text-[#3E2B2B] text-outline text-[8vw] sm:text-[4.5vw] font-poetsen font-[800]">
+      <div className="absolute top-[5vh] sm:top-[15vh] left-[15vw] text-[#3E2B2B] text-[8vw] sm:text-[4.5vw] font-poetsen font-[800]">
         {isMobile ? (
           <motion.div
             ref={mobileTitleRef}
             initial={initial}
             animate={mobileTitleControls}
           >
-            Get to Know Me
+            /about me
           </motion.div>
         ) : (
-          <Wave text="Get to Know Me" />
+          <Wave text="/about me" />
         )}
       </div>
 

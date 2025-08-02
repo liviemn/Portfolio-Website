@@ -2,6 +2,7 @@ import Tech from '../Components/Tech';
 import Wave from '../Components/Wave';
 import { motion } from 'framer-motion';
 import { useSpringInView } from '../Components/Animation';
+import Experience from '../Components/Experience';
 
 function Skills() {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -13,7 +14,7 @@ function Skills() {
       className="relative min-h-screen flex flex-col items-center px-[5vw]"
     >
       <div
-        className="text-[#3E2B2B] text-[8vw] sm:text-[4.5vw] text-outline font-poetsen font-[800] z-20 
+        className="text-[#3E2B2B] text-[8vw] sm:text-[4.5vw] font-poetsen font-[800] z-20 
                   mt-[7vh] sm:mt-0 
                   sm:absolute sm:top-[15vh] sm:right-[15vw]"
       >
@@ -23,15 +24,19 @@ function Skills() {
             initial={initial}
             animate={controls}
           >
-            Skills & Tools
+            /skills & tools
           </motion.div>
         ) : (
-          <Wave text={'Skills & Tools'} />
+          <Wave text={'/skills & experiences'} />
         )}
       </div>
-
-      <div className="mt-[-8vh] sm:mt-0 w-full">
-        <Tech />
+      <div className="flex flex-col sm:flex-row gap-6 w-full mt-[6vh] sm:mt-[20vh]">
+        <div className="sm:w-1/2">
+          <Tech />
+        </div>
+        <div className="sm:w-1/2 flex justify-center items-center">
+          <Experience />
+        </div>
       </div>
     </div>
   );
