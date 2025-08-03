@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import awsLogo from "../assets/aws-certified-cloud-practitioner.png";
 
+
 const AWS: React.FC = () => {
   const [flipped, setFlipped] = useState(false);
 
@@ -28,7 +29,7 @@ const AWS: React.FC = () => {
     >
       <div
         onClick={() => setFlipped(!flipped)}
-        className="w-[70%] sm:w-[60%] md:w-[60%] max-w-xl h-[100px] sm:h-[130px] perspective cursor-pointer"
+        className="w-[70%] sm:w-[45%] max-w-xl h-[100px] sm:h-[130px] perspective cursor-pointer"
       >
         <motion.div
           animate={{ rotateY: flipped ? 180 : 0 }}
@@ -45,7 +46,7 @@ const AWS: React.FC = () => {
             <h2 className="text-xs sm:text-sm font-semibold text-[#4b2e1a]">
               AWS Certified Cloud Practitioner
             </h2>
-            <p className="text-[10px] sm:text-xs text-[#6b4b35] mt-1">
+            <p className="text-[0.65rem] sm:text-xs text-[#6b4b35] mt-1">
               Click to view Credential ID
             </p>
           </div>
@@ -55,7 +56,7 @@ const AWS: React.FC = () => {
             <h2 className="text-xs sm:text-sm font-semibold text-[#4b2e1a] mb-1">
               Credential ID
             </h2>
-            <p className="text-sm sm:text-base font-mono text-[#6b4b35]">67b9b0c8354e47bc800e51bca8482aec</p>
+            <p className="text-[0.65rem] sm:text-xs font-mono text-[#6b4b35]">67b9b0c8354e47bc800e51bca8482aec</p>
           </div>
         </motion.div>
       </div>
