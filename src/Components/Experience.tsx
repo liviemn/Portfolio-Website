@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsClock } from "react-icons/bs";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 type Experience = {
   date: string;
@@ -29,8 +31,30 @@ const experiences: Experience[] = [
 ];
 
 const CafeTimelineList: React.FC = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: "spring",
+          stiffness: 70,
+          damping: 15,
+        },
+      });
+    }
+  }, [controls, inView]);
+
   return (
-    <div className="bg-white/30 backdrop-blur-md rounded-3xl p-3.5 sm:p-8 shadow-xl border border-white/20 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mt-83 sm:mt-16 mx-auto space-y-6">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={controls}
+      className="bg-white/30 backdrop-blur-md rounded-3xl p-3.5 sm:p-6 shadow-xl border border-white/20 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mt-83 sm:mt-9 mx-auto space-y-6"
+    >
       {experiences.map((exp, index) => (
         <div
           key={index}
@@ -40,11 +64,15 @@ const CafeTimelineList: React.FC = () => {
             <BsClock className="mr-2" />
             {exp.date}
           </div>
-          <h3 className="text-[0.70rem] sm:text-base font-bold text-[#4b2e1a] mb-1">{exp.title}</h3>
-          <p className="text-[0.65rem] sm:text-sm text-[#6b4b35] leading-relaxed">{exp.description}</p>
+          <h3 className="text-[0.70rem] sm:text-base font-bold text-[#4b2e1a] mb-1">
+            {exp.title}
+          </h3>
+          <p className="text-[0.65rem] sm:text-sm text-[#6b4b35] leading-relaxed">
+            {exp.description}
+          </p>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

@@ -15,7 +15,7 @@ function Skills() {
     >
       <div
         className="text-[#3E2B2B] text-[8vw] sm:text-[4.5vw] font-poetsen font-[800] z-20 
-                  mt-[7vh] sm:mt-0 
+                  mt-[7vh] sm:mt-[-5vh] 
                   sm:absolute sm:top-[15vh] sm:right-[15vw]"
       >
         {isMobile ? (
