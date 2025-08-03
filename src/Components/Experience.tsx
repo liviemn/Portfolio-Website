@@ -43,6 +43,8 @@ const CafeTimelineList: React.FC = () => {
           type: "spring",
           stiffness: 70,
           damping: 15,
+          delay: 0.2,
+          duration: 1.2,
         },
       });
     }
@@ -53,7 +55,7 @@ const CafeTimelineList: React.FC = () => {
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={controls}
-      className="bg-white/30 backdrop-blur-md rounded-3xl p-3.5 sm:p-6 shadow-xl border border-white/20 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mt-83 sm:mt-9 mx-auto space-y-6"
+      className="bg-white/30 backdrop-blur-md rounded-3xl p-3.5 sm:p-6 shadow-xl border border-white/20 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mt-10 sm:mt-9 mx-auto space-y-6"
     >
       {experiences.map((exp, index) => (
         <div
