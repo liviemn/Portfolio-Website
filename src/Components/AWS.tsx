@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import awsLogo from "../assets/aws-certified-cloud-practitioner.png"; // update if needed
+import awsLogo from "../assets/aws-certified-cloud-practitioner.png";
 
 const AWS: React.FC = () => {
   const [flipped, setFlipped] = useState(false);

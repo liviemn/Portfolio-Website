@@ -32,7 +32,7 @@ const Tech: React.FC = () => {
         transition={{ duration: 1.2, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.3 }}
         style={{ willChange: 'opacity, transform' }}
-        className="absolute left-[5vw] right-[5vw] bg-transparent p-[3vw] max-w-[88vw] mx-auto mt-[-2vh] sm:mt-[-6vh]"
+        className="absolute left-[7.5vw] right-[5vw] bg-transparent p-[3vw] max-w-[88vw] mx-auto mt-[-2vh] sm:mt-[-5vh]"
       >
         <div className="flex justify-center sm:justify-start items-center gap-[3.2vw]">
           {/* Left Column */}
@@ -69,7 +69,7 @@ const TechCard: React.FC<{
         className="rounded-[1.2vw] bg-gradient-to-r from-[#D6B98C] via-[#C8A370] to-[#B58A56] p-[0.2vw] hover:scale-105 transition-transform duration-300 shadow-md"
       >
         <div
-          className="flex flex-col items-center justify-center w-[20vw] sm:w-[9vw] aspect-[2.75/2] bg-cover bg-center rounded-[1.2vw] backdrop-blur-md"
+          className="flex flex-col items-center justify-center w-[20vw] sm:w-[8.5vw] aspect-[2.75/2] bg-cover bg-center rounded-[1.2vw] backdrop-blur-md"
           style={{ backgroundImage: `url(${Wood})` }}
         >
           <div className="text-white flex items-center justify-center w-[8vw] h-[8vw] sm:w-[3.3vw] sm:h-[3.3vw]">
