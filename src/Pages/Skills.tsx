@@ -1,6 +1,6 @@
 import Tech from '../Components/Tech';
 import Wave from '../Components/Wave';
-import AWS from '../Components/AWS';
+//import AWS from '../Components/AWS';
 import { motion } from 'framer-motion';
 import { useSpringInView } from '../Components/Animation';
 import Experience from '../Components/Experience';
@@ -34,7 +34,6 @@ function Skills() {
       <div className="flex flex-col sm:flex-row gap-6 w-full mt-[6vh] sm:mt-[20vh]">
         <div className="sm:w-1/2">
           <Tech />
-          <AWS />
         </div>
         <div className="sm:w-1/2 flex justify-center items-center">
           <Experience />
