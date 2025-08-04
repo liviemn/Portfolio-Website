@@ -38,12 +38,12 @@ const CafeTimelineList: React.FC = () => {
       ref={ref}
       initial={initial}
       animate={controls}
-      className="bg-white/30 backdrop-blur-md rounded-3xl p-3.5 sm:p-6 shadow-xl border border-white/20 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mt-10 sm:mt-9 mx-auto space-y-6"
+      className="bg-white/30 rounded-3xl p-3.5 sm:p-6 shadow-xl border border-white/20 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mt-10 sm:mt-9 mx-auto space-y-6"
     >
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className="bg-white/50 backdrop-blur-md rounded-2xl p-2 sm:p-4 shadow-md border border-[#ecdccd] hover:scale-[1.02] transition-all duration-300"
+          className="bg-white/50 rounded-2xl p-2 sm:p-4 shadow-md border border-[#ecdccd] hover:scale-[1.02] transition-all duration-300"
         >
           <div className="flex items-center text-[#7a5230] font-medium text-[0.65rem] sm:text-sm mb-1">
             <BsClock className="mr-2" />
