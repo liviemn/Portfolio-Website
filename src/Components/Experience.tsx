@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BsClock } from "react-icons/bs";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { useSpringInView } from "../Components/Animation";
 
 type Experience = {
   date: string;
@@ -31,29 +31,12 @@ const experiences: Experience[] = [
 ];
 
 const CafeTimelineList: React.FC = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({
-        opacity: 1,
-        y: 0,
-        transition: {
-          type: "spring",
-          stiffness: 70,
-          damping: 15,
-          delay: 0.2,
-          duration: 1.2,
-        },
-      });
-    }
-  }, [controls, inView]);
+  const { ref, controls, initial } = useSpringInView(0.2, 0.3);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={initial}
       animate={controls}
       className="bg-white/30 backdrop-blur-md rounded-3xl p-3.5 sm:p-6 shadow-xl border border-white/20 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mt-10 sm:mt-9 mx-auto space-y-6"
     >
