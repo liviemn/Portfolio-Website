@@ -60,10 +60,10 @@ function About() {
             initial={initial}
             animate={mobileTitleControls}
           >
-            /about me
+            About Me
           </motion.div>
         ) : (
-          <Wave text="/about me" />
+          <Wave text="About Me" />
         )}
       </div>
 

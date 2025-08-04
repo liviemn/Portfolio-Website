@@ -26,10 +26,10 @@ function Skills() {
             initial={initial}
             animate={controls}
           >
-            /skills & tools
+            Skills & Experiences
           </motion.div>
         ) : (
-          <Wave text={'/skills & experiences'} />
+          <Wave text={'Skills & Experiences'} />
         )}
       </div>
       <div className="flex flex-col sm:flex-row gap-6 w-full mt-[6vh] sm:mt-[10vh]">
