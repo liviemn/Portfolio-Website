@@ -32,7 +32,7 @@ const Tech: React.FC = () => {
         transition={{ duration: 1.2, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.3 }}
         style={{ willChange: 'opacity, transform' }}
-        className="absolute left-[7.5vw] right-[5vw] bg-transparent p-[3vw] max-w-[88vw] mx-auto mt-[-2vh] sm:mt-[-5vh] xlg:mt-[-15vh]"
+        className="absolute left-[7.5vw] right-[5vw] bg-transparent p-[3vw] max-w-[88vw] mx-auto mt-[-2vh] sm:mt-[-5vh] xlg:mt-[-20vh]"
       >
         <div className="flex justify-center sm:justify-start items-center gap-[3.2vw]">
           {/* Left Column */}
