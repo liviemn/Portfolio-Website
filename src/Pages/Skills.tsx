@@ -1,6 +1,6 @@
 import Tech from '../Components/Tech';
 import Wave from '../Components/Wave';
-import AWS from '../Components/AWS';
+//import AWS from '../Components/AWS';
 import { motion } from 'framer-motion';
 import { useSpringInView } from '../Components/Animation';
 import Experience from '../Components/Experience';
