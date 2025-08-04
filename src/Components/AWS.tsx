@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import awsLogo from "../assets/aws-certified-cloud-practitioner.png";
+import awsLogo from "../assets/aws-certified-cloud-practitioner.webp";
 
 
 const AWS: React.FC = () => {
@@ -39,6 +39,7 @@ const AWS: React.FC = () => {
           {/* Front Side */}
           <div className="absolute w-full h-full backface-hidden bg-white/50 backdrop-blur-md rounded-2xl shadow-xl border border-[#ecdccd] p-4 flex flex-col items-center justify-center text-center">
             <img
+              loading ="lazy"
               src={awsLogo}
               alt="AWS Certified Badge"
               className="w-11 h-11 sm:w-16 sm:h-16 object-contain mb-1 sm:mb-2"

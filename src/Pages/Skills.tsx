@@ -1,9 +1,10 @@
+import React, { Suspense } from 'react';
 import Tech from '../Components/Tech';
 import Wave from '../Components/Wave';
 import AWS from '../Components/AWS';
 import { motion } from 'framer-motion';
 import { useSpringInView } from '../Components/Animation';
-import Experience from '../Components/Experience';
+const Experience = React.lazy(() => import('../Components/Experience'));
 
 function Skills() {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -37,7 +38,9 @@ function Skills() {
           <AWS />
         </div>
         <div className="sm:w-1/2 flex justify-center items-center">
-          <Experience />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Experience />
+          </Suspense>
         </div>
       </div>
     </div>
