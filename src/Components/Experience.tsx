@@ -1,7 +1,7 @@
 import React from "react";
 import { BsClock } from "react-icons/bs";
 import { motion } from "framer-motion";
-import { useSpringInView } from "../Components/Animation";
+import { useInView } from "react-intersection-observer";
 
 type Experience = {
   date: string;
@@ -31,19 +31,20 @@ const experiences: Experience[] = [
 ];
 
 const CafeTimelineList: React.FC = () => {
-  const { ref, controls, initial } = useSpringInView(0.2, 0.3);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
     <motion.div
       ref={ref}
-      initial={initial}
-      animate={controls}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="bg-white/30 rounded-3xl p-3.5 sm:p-6 shadow-xl border border-white/20 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mt-10 sm:mt-9 mx-auto space-y-6"
     >
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className="bg-white/50 rounded-2xl p-2 sm:p-4 shadow-md border border-[#ecdccd] hover:scale-[1.02] transition-all duration-300"
+          className="bg-white/50 backdrop-blur-md rounded-2xl p-2 sm:p-4 shadow-md border border-[#ecdccd] hover:scale-[1.02] transition-all duration-300 will-change-transform"
         >
           <div className="flex items-center text-[#7a5230] font-medium text-[0.65rem] sm:text-sm mb-1">
             <BsClock className="mr-2" />
