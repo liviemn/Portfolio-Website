@@ -4,6 +4,7 @@ import AWS from '../Components/AWS';
 import { motion } from 'framer-motion';
 import { useSpringInView } from '../Components/Animation';
 import Experience from '../Components/Experience';
+import awsicon from '../assets/aws-certified-cloud-practitioner.png'
 
 function Skills() {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -32,9 +33,9 @@ function Skills() {
         )}
       </div>
       <div className="flex flex-col sm:flex-row gap-6 w-full mt-[6vh] sm:mt-[20vh]">
-        <div className="sm:w-1/2 flex">
+        <div className="sm:w-1/2 flex flex-col items-center">
           <Tech />
-          <AWS />
+          <img src={awsicon} alt="AWS Certified Badge" className="w-[10vh] h-[10vh] sm:w-[13vh] sm:h-[13vh] object-contain mb-1 sm:mb-5" />
         </div>
         <div className="sm:w-1/2 flex justify-center items-center">
           <Experience />
