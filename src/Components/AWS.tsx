@@ -25,7 +25,7 @@ const AWS: React.FC = () => {
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={controls}
-      className="w-full flex justify-center mt-86 sm:mt-120 xlg:mt-140"
+      className="w-full flex justify-center mt-86 sm:mt-[58vh] xlg:mt-[78vh]"
     >
       <div
         onClick={() => setFlipped(!flipped)}
