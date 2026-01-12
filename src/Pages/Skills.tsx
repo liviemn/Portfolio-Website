@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import Tech from '../Components/Tech';
 import Wave from '../Components/Wave';
-import AWS from '../Components/AWS';
+//import AWS from '../Components/AWS';
 import { motion } from 'framer-motion';
 import { useSpringInView } from '../Components/Animation';
 const Experience = React.lazy(() => import('../Components/Experience'));
@@ -35,7 +35,7 @@ function Skills() {
       <div className="flex flex-col sm:flex-row gap-6 w-full mt-[6vh] sm:mt-[10vh]">
         <div className="sm:w-1/2 flex flex-col">
           <Tech />
-          <AWS />
+          
         </div>
         <div className="sm:w-1/2 flex justify-center items-center">
           <Suspense fallback={<div>Loading...</div>}>

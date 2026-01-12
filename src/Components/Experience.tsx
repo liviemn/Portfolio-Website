@@ -11,7 +11,7 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
-    date: "2025 — Present",
+    date: "Aug 2025 — Sept 2025",
     title: "AI Agent Builder Intern",
     description:
       "Built and deployed a fully functional AI agent simulating complex enterprise workflows at NeuralSeek. Developed logic flows, API integrations, and decision frameworks for autonomous agent behavior.",
